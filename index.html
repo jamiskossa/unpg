@@ -3,74 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header Futuriste 3</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+    <title>Les Républicains - Accueil</title>
+    <!-- Lien vers la feuille de style CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Lien vers Google Fonts pour une police moderne -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </head>
 <body>
-    <header class="header-color-transition">
-        <div class="logo"><strong>UNPG</strong></div>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">&#9776;</label>
-        <nav class="menu">
-            <a href="index.html">Accueil</a>
-            <a href="about.html">À propos</a>
-            <a href="programme.html">Programme</a>
-            <a href="events.html">Événements</a>
-            <a href="blog.html">Blog</a>
-            <a href="videos.html">Vidéos</a>
-            <a href="aderer.html">Adhésion</a>
-            <a href="contact.html">Contact</a>
-            
-        </nav>
-        <div class="header-buttons">
-            <a href="dons.html" class="btn donate">Faire un Don</a>
-            <a href="rejoindreparti.html" class="btn join">Rejoindre le Parti</a>
+
+    <!-- En-tête avec logo, menu et boutons -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo des Républicains">
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                &#9776; <!-- Icône hamburger -->
+            </div>
+            <nav class="navbar" id="navbar">
+                <ul class="nav-list">
+                    <li><a href="#">Qui sommes-nous</a>
+                        <ul class="dropdown">
+                            <li><a href="equipe.html">Notre équipe</a></li>
+                            <li><a href="#">Conseil stratégique</a></li>
+                            <li><a href="#">Shadow cabinet</a></li>
+                            <li><a href="#">Nos instances</a></li>
+                            <li><a href="#">Textes fondateurs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Actualités</a></li>
+                    <li><a href="#">Nos idées</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Le contre-budget de l'UNDP</a></li>
+                            <li><a href="#">Education</a></li>
+                            <li><a href="#">Redonner la parole aux Guinéens</a></li>
+                            <li><a href="#">Logement</a></li>
+                            <li><a href="programme.html">Une certaine idée</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Votre fédération</a></li>
+                </ul>
+                <div class="buttons">
+                    <a href="aderer.html" class="btn-futuristic blue-btn">Adhérer</a>
+                    <a href="dons.html" class="btn-futuristic white-btn">Faire un don</a>
+                </div>
+            </nav>
         </div>
     </header>
 
-    <!-- Bannière Principale futuriste -->
-    <section class="banner banner-neon">
-        <video autoplay muted loop class="background-video">
-            <source src="unpg.mp4" type="video/mp4">
-        </video>
-        <div class="banner-text">
-            <h1>Bienvenue sur le site officiel de [UNPG]</h1>
-            <p>Unis pour un avenir meilleur</p>
-            <a href="programme.html" class="btn">Programmes</a>
-            <a href="newsletter.html" class="btn">Newsletter</a>
+    <!-- Section de la bannière futuriste -->
+    <section class="hero-banner">
+        <div class="banner-content">
+            <h1>Construisons l'avenir ensemble</h1>
+            <p>Le paradoxe Guinéen : Riche en ressources, pauvre parmi les pauvres.</p>
+            <p>Ensemble chageons l'histoire.</p>
+            <a href="aderer.html" class="cta-button">Rejoignez le mouvement</a>
         </div>
     </section>
 
-    <!-- Galerie Photo futuriste avec CSS Grid -->
-    <section class="gallery gallery-dynamic">
-        <h2>Galerie Photo</h2>
-        <div class="gallery-grid">
-            <img src="logo.png" alt="Photo 1">
-            <img src="logo.png" alt="Photo 2">
-            <img src="logo.png" alt="Photo 3">
-            <!-- Ajouter plus de photos -->
-            <img src="logo.png" alt="Photo 1">
-            <img src="logo.png" alt="Photo 2">
-            <img src="logo.png" alt="Photo 3">
+   <!-- Slideshow container -->
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+        <img src="miroir.jpg" style="width:100%">
+        <div class="text">Caption Text</div>
+    </div>
+
+    <div class="mySlides fade">
+        <img src="casquevr.webp" style="width:100%">
+        <div class="text">Caption Two</div>
+    </div>
+
+    <div class="mySlides fade">
+        <img src="casque.webp" style="width:100%">
+        <div class="text">Caption Three</div>
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+  <!-- Section Slogan -->
+    <section class="slogan-section">
+        <div class="slogan-content">
+            <h2>Vous en avez assez ?</h2>
+            <a href="contact.html" class="cta-button">Dites-le !</a>
         </div>
     </section>
 
+    <!-- Section Newsletter -->
+    <section class="newsletter-section">
+        <div class="newsletter-content">
+            <h2>Abonnez-vous à notre newsletter</h2>
+            <p>Recevez les dernières nouvelles et mises à jour directement dans votre boîte e-mail.</p>
+            <form action="#" method="post" class="newsletter-form">
+                <input type="email" name="email" placeholder="Votre adresse e-mail" required>
+                <a href="newsletter.html" class="cta-button">S'inscrire!</a>
+            </form>
+        </div>
+    </section>
 
-    <!-- Footer Holographique Animé -->
-    <footer class="footer footer-holographic">
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <!-- Section Slogan -->
+    <section class="slogan-section">
+        <div class="slogan-content">
+            <h2>Redonner la parole aux Guinéens</h2>
+            <a href="blog.html" class="cta-button">Lire la suite</a>
+        </div>
+    </section>
+
+     <!-- Section Logement -->
+     <section class="housing-section">
+        <div class="housing-content">
+            <h2>Nos propositions pour résoudre la crise</h2>
+            <a href="blog.html" class="cta-button">Lire la suite</a>
+        </div>
+    </section>
+
+    <!-- Section Plateforme -->
+    <section class="platform-section">
+        <div class="platform-content">
+            <h1>Guinéennes et Guinéens</h1>
+            <p>Plateforme participative pour toutes les Guinéennes et tous les Guinéens</p>
+            <a href="avis.html" class="cta-button">Donner votre Avis</a>
+            <!-- Optionnel: Ajouter un bouton pour un call-to-action -->
+            <!-- <a href="#more-info" class="cta-button">En savoir plus</a> -->
+        </div>
+    </section>
+    <!-- Section Plateforme -->
+    <section class="platform-section">
+        <div class="platform-content">
+            <h1>Nos Programmes</h1>
+            
+            <a href="programme.html" class="cta-button">Découvrir</a>
+            <!-- Optionnel: Ajouter un bouton pour un call-to-action -->
+            <!-- <a href="#more-info" class="cta-button">En savoir plus</a> -->
+        </div>
+    </section>
+
+    <!-- Section Réseaux sociaux -->
+    <section class="social-media-section">
+        <div class="social-media-content">
+            <h2>Nous suivre sur les réseaux sociaux</h2>
+            <div class="social-media-icons">
+                <a href="https://facebook.com" class="social-icon facebook" target="_blank" aria-label="Facebook"></a>
+                <a href="https://twitter.com" class="social-icon twitter" target="_blank" aria-label="Twitter"></a>
+                <a href="https://instagram.com" class="social-icon instagram" target="_blank" aria-label="Instagram"></a>
+                <a href="https://linkedin.com" class="social-icon linkedin" target="_blank" aria-label="LinkedIn"></a>
+                <a href="https://youtube.com" class="social-icon youtube" target="_blank" aria-label="YouTube"></a>
             </div>
-            <p>&copy; 2024 Yattara Ousmane. Tous droits réservés.</p>
+        </div>
+    </section>
+
+    <!-- Section de soutien -->
+    <section class="support-section">
+        <div class="container">
+            <div class="support-column">
+                <h2>Nous comptons sur votre soutien</h2>
+                <p>Faites un don pour renforcer notre action sur le terrain.</p>
+                <a href="#don" class="cta-button">Je fais un don</a>
+            </div>
+            <div class="actions-column">
+                <h3>Nos actions</h3>
+                <ul>
+                    <li>Agir sur le terrain</li>
+                    <li>Former nos jeunes élus</li>
+                    <li>Organiser de grands rassemblements</li>
+                    <li>Mobiliser sur les réseaux sociaux</li>
+                    <li>Imprimer des tracts</li>
+                    <li>Organiser des conventions partout en Guinée</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Rejoignez le mouvement -->
+    <section class="join-section">
+        <div class="join-content">
+            <h2>Rejoignez le mouvement</h2>
+            <p>Adhérez à l'UNPG et faites partie de notre action pour un avenir meilleur.</p>
+            <a href="aderer.html" class="cta-button">Adhérez maintenant</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <img src="logo.png" width="150" height="150">
+            </div>
+            <div class="footer-column">
+                <h4>Nous contacter</h4>
+                <ul>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#legal">Mentions légales</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>QUI SOMMES-NOUS</h4>
+                <ul>
+                    <li><a href="#team">Notre équipe</a></li>
+                    <li><a href="#strategy">Conseil stratégique</a></li>
+                    <li><a href="#shadow">Shadow cabinet</a></li>
+                    <li><a href="#instances">Nos instances</a></li>
+                    <li><a href="#texts">Textes fondateurs</a></li>
+                    <li><a href="#federations">Fédérations</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>ACTUALITÉS</h4>
+                <ul>
+                    <li><a href="#latest">Dernières actualités</a></li>
+                    <li><a href="videos.html">Toutes les vidéos</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>NOS IDÉES</h4>
+                <ul>
+                    <li><a href="programme.html">Une Certaine Idée</a></li>
+                    <li><a href="#french">Guinéennes, Guinéens</a></li>
+                    <li><a href="#material">Matériel militant</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>NOUS AIDER</h4>
+                <ul>
+                    <li><a href="aderer.html">Adhérer</a></li>
+                    <li><a href="dons.html">Donner</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
 
+    <!-- Lien vers le script JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>

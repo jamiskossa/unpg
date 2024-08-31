@@ -1,0 +1,988 @@
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 10px;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Style de l'en-tête */
+.header {
+    background: linear-gradient(to right, #0000ff, #ffffff);
+    padding: 10px 20px;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%; /* Logo arrondi */
+    border: 2px solid #fff;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    position: relative;
+}
+
+.nav-list li a {
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.nav-list li:hover .dropdown {
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    color: #000;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    list-style: none;
+}
+
+.dropdown li a {
+    color: #000;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-futuristic {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.blue-btn {
+    background-color: #0000ff;
+    color: #fff;
+}
+
+.white-btn {
+    background-color: #fff;
+    color: #0000ff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(to right, #0000ff, #ffffff);
+        z-index: 1000;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-list li a {
+        text-align: left;
+        padding: 15px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+
+/* Style de la bannière */
+.hero-banner {
+    background-image: url('back2.png'); /* Remplace par l'URL de ton image de fond */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh; /* La hauteur de la bannière */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    overflow: hidden;
+
+}
+
+/* Effet de superposition futuriste */
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Couche de couleur pour l'effet d'ombre */
+    z-index: 1;
+}
+
+/* Contenu de la bannière */
+.banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.banner-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.banner-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+
+
+/* Animation de la bannière */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-banner {
+        height: 50vh;
+    }
+
+    .banner-content h1 {
+        font-size: 2em;
+    }
+
+    .banner-content p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+/* Style de la section Actualités */
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide all slides by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Responsive design */
+@media (max-width: 768px) {
+    .news-slide {
+        min-width: 100%; /* Une seule colonne sur les écrans mobiles */
+    }
+}
+
+@media (max-width: 480px) {
+    .news-section h2 {
+        font-size: 1.5em;
+    }
+
+    .news-content {
+        bottom: 10px;
+        left: 10px;
+        padding: 5px;
+    }
+
+    .news-title {
+        font-size: 1em;
+    }
+}
+
+/* Style de la section Slogan */
+.slogan-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; /* Hauteur de la section */
+    background: linear-gradient(to right, #78e994, #8d9beb); /* Dégradé de rouge pour le fond */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.slogan-content {
+    max-width: 600px;
+}
+
+.slogan-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .slogan-content h2 {
+        font-size: 2em;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .slogan-section {
+        height: auto;
+        padding: 30px 10px;
+    }
+
+    .slogan-content h2 {
+        font-size: 1.5em;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+
+/* Style de la section Newsletter */
+.newsletter-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; /* Hauteur de la section */
+    background: linear-gradient(to right, #2a2a72, #009ffd); /* Dégradé bleu futuriste */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.newsletter-content {
+    max-width: 600px;
+    width: 100%;
+}
+
+.newsletter-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.newsletter-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* Style du formulaire de newsletter */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 1em;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-form button {
+    padding: 15px 30px;
+    background-color: #daebf0;
+    color: #1c077c;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    outline: none;
+}
+
+.newsletter-form button:hover {
+    background-color: #0091e0;
+    transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .newsletter-content h2 {
+        font-size: 2em;
+    }
+
+    .newsletter-content p {
+        font-size: 1em;
+    }
+
+    .newsletter-form input[type="email"] {
+        max-width: 100%;
+    }
+
+    .newsletter-form button {
+        padding: 12px 25px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .newsletter-section {
+        height: auto;
+        padding: 30px 10px;
+    }
+
+    .newsletter-content h2 {
+        font-size: 1.5em;
+    }
+
+    .newsletter-content p {
+        font-size: 0.9em;
+    }
+
+    .newsletter-form input[type="email"] {
+        padding: 12px;
+    }
+
+    .newsletter-form button {
+        padding: 10px 20px;
+        font-size: 0.8em;
+    }
+}
+
+/* Style de la section Logement */
+.housing-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; /* Hauteur de la section */
+    background: linear-gradient(to right, #3a6b5a, #006d77); /* Dégradé vert et bleu */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.housing-content {
+    max-width: 600px;
+    width: 100%;
+}
+
+.housing-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre portée pour effet futuriste */
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #00bfae; /* Couleur turquoise moderne */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase; /* Texte en majuscules pour accentuer l'effet */
+}
+
+.cta-button:hover {
+    background-color: #009688;
+    transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .housing-content h2 {
+        font-size: 2em;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .housing-section {
+        height: auto;
+        padding: 30px 10px;
+    }
+
+    .housing-content h2 {
+        font-size: 1.5em;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+/* Style de la section Plateforme */
+.platform-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; /* Hauteur de la section */
+    background: linear-gradient(to right, #004d40, #00796b); /* Dégradé vert foncé et turquoise */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.platform-content {
+    max-width: 700px;
+    width: 100%;
+}
+
+.platform-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre portée pour effet futuriste */
+}
+
+.platform-content p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .platform-content h1 {
+        font-size: 2em;
+    }
+
+    .platform-content p {
+        font-size: 1.2em;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .platform-section {
+        height: auto;
+        padding: 30px 10px;
+    }
+
+    .platform-content h1 {
+        font-size: 1.5em;
+    }
+
+    .platform-content p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+/* Style de la section Réseaux sociaux */
+.social-media-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #1c1c1c, #2c2c2c); /* Dégradé sombre */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.social-media-content {
+    max-width: 600px;
+    width: 100%;
+}
+
+.social-media-content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #333;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+}
+
+.social-icon:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.social-icon.facebook { background: #3b5998; }
+.social-icon.twitter { background: #1da1f2; }
+.social-icon.instagram { background: #e4405f; }
+.social-icon.linkedin { background: #0077b5; }
+.social-icon.youtube { background: #ff0000; }
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .social-media-content h2 {
+        font-size: 1.5em;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-media-content h2 {
+        font-size: 1.2em;
+    }
+
+    .social-icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+
+/* Style de la section de soutien */
+.support-section {
+    background-color: #fff;
+    padding: 40px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.support-column,
+.actions-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.support-column {
+    background: linear-gradient(to right, #4a90e2, #50e3c2); /* Dégradé bleu et vert */
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.support-column h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.support-column p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+
+
+.actions-column {
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.actions-column h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.actions-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.actions-column li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.actions-column li::before {
+    content: '✓';
+    color: #4a90e2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.5em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .support-column h2 {
+        font-size: 1.8em;
+    }
+
+    .support-column p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .actions-column h3 {
+        font-size: 1.5em;
+    }
+
+    .actions-column li {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .support-column h2 {
+        font-size: 1.5em;
+    }
+
+    .support-column p {
+        font-size: 0.9em;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .actions-column h3 {
+        font-size: 1.2em;
+    }
+
+    .actions-column li {
+        font-size: 0.9em;
+    }
+}
+
+/* Style de la section Rejoignez le mouvement */
+.join-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh; /* Hauteur de la section */
+    background: linear-gradient(to right, #006d77, #83c5be); /* Dégradé turquoise */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.join-content {
+    max-width: 800px;
+    width: 100%;
+}
+
+.join-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.join-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .join-content h2 {
+        font-size: 2em;
+    }
+
+    .join-content p {
+        font-size: 1.2em;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .join-section {
+        height: auto;
+        padding: 30px 10px;
+    }
+
+    .join-content h2 {
+        font-size: 1.5em;
+    }
+
+    .join-content p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+
+/* Style du footer */
+.footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-logo {
+    display: block;
+    margin-bottom: 20px;
+    width: auto;
+    max-width: 100px;
+}
+
+.footer h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer li {
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #50e3c2; /* Couleur au survol */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .footer h4 {
+        font-size: 1.1em;
+    }
+
+    .footer-column {
+        flex: 1 1 100%;
+    }
+
+    .footer-logo {
+        max-width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer h4 {
+        font-size: 1em;
+    }
+
+    .footer-logo {
+        max-width: 60px;
+    }
+}
