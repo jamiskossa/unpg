@@ -1,0 +1,322 @@
+/* Styles généraux */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #121212;
+    color: #fff;
+}
+
+/* Header */
+.header-color-transition {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #ff0055, #00ff99);
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+.header-color-transition:hover {
+    background: linear-gradient(90deg, #00ff99, #ff0055);
+}
+
+.logo {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    color: #ffffff;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #ff0055;
+}
+
+/* Boutons dans le header */
+.header-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: transparent;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+}
+
+.btn:hover {
+    background: #ffffff;
+    color: #ff0055;
+    border-color: #ff0055;
+}
+
+@media (max-width: 768px) {
+    .header-color-transition {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: relative;
+        top: 10px;
+        width: 100%;
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-left: auto;
+    }
+
+    /* Afficher les boutons sous le menu en mode mobile */
+    .header-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .btn {
+        padding: 10px;
+        text-align: center;
+        width: 90%;
+        margin: 5px auto;
+    }
+}
+
+/* Banniere*/
+.banner-neon {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.banner-text h1 {
+    font-size: 3em;
+    color: #fff;
+    text-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99, 0 0 20px #00ff99;
+    animation: glitch 1s infinite alternate;
+}
+
+.banner-text p {
+    font-size: 1.5em;
+    color: #fff;
+    text-shadow: 0 0 5px #00ff99;
+}
+
+.btn {
+    padding: 15px 30px;
+    border: 2px solid #00ff99;
+    color: #00ff99;
+    background: transparent;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 30px;
+    transition: background 0.3s, color 0.3s;
+    margin: 10px;
+}
+
+.btn:hover {
+    background: #00ff99;
+    color: #121212;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 2px 2px #00ff99, -2px -2px #ff0055;
+    }
+    100% {
+        text-shadow: -2px -2px #00ff99, 2px 2px #ff0055;
+    }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .banner-text h1 {
+        font-size: 2em;
+    }
+    .banner-text p {
+        font-size: 1em;
+    }
+    .btn {
+        padding: 10px 20px;
+    }
+}
+
+/* Footer Holographique */
+.footer-holographic {
+    background: linear-gradient(135deg, #f51c27, #f1ee2a, #1bf726);
+    background-size: 200% 200%;
+    animation: gradient-animation 5s ease infinite;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    color: #fff;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.footer-holographic .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-holographic .social-links a {
+    color: #ffffff;
+    font-size: 24px;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-holographic .social-links a:hover {
+    color: #ffea00;
+}
+
+.footer-holographic p {
+    font-size: 14px;
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .footer-holographic {
+        padding: 15px 0;
+    }
+
+    .footer-holographic .social-links a {
+        font-size: 20px;
+        margin: 0 10px;
+    }
+
+    .footer-holographic p {
+        font-size: 12px;
+    }
+}
+
+/* Galerie Dynamique */
+.gallery-dynamic {
+    background: linear-gradient(135deg, rgba(255, 0, 85, 0.5), rgba(0, 255, 153, 0.5));
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-dynamic:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.gallery-dynamic h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    position: relative;
+    z-index: 2;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s, filter 0.3s;
+    object-fit: cover;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .gallery-dynamic h2 {
+        font-size: 2em;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+

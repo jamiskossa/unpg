@@ -1,0 +1,426 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNPG - Galerie Vidéo</title>
+<style>
+:root {
+  --primary-color: #00ffff;
+  --secondary-color: #ff00ff;
+  --background-color: #000033;
+  --text-color: #ffffff;
+  --font-family: 'Orbitron', sans-serif;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+
+nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--background-color);
+  text-shadow: 0 0 10px var(--primary-color);
+}
+
+main {
+  margin-top: 150px;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+  color: var(--primary-color);
+  text-shadow: 0 0 10px var(--secondary-color);
+}
+
+footer {
+  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer .social-links a {
+  color: var(--background-color);
+  font-size: 2em;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+footer .social-links a:hover {
+  color: var(--text-color);
+  transform: rotate(360deg) scale(1.2);
+}
+
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.video-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.video-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.video-thumbnail {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.video-thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-info {
+  padding: 15px;
+}
+
+.video-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.video-description {
+  font-size: 0.9em;
+  color: var(--text-color);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.close {
+  color: #fff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--primary-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modalVideo {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  nav ul li {
+    margin-bottom: 10px;
+  }
+
+  .video-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cyber-particle {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background-color: var(--primary-color);
+  pointer-events: none;
+  z-index: -1;
+}
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <svg class="logo" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" fill="url(#grad)" />
+        <text x="50" y="55" text-anchor="middle" fill="#000033" font-size="24" font-weight="bold">UNPG</text>
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:var(--primary-color);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:var(--secondary-color);stop-opacity:1" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="programme.html">Programme</a></li>
+          <li><a href="equipe.html">Équipe</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="events.html">Événements</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>Galerie Vidéo</h1>
+      <p>Découvrez les moments forts de l'UNPG à travers notre collection de vidéos.</p>
+      
+      <div class="video-gallery" id="videoGallery">
+        <!-- Les éléments vidéo seront ajoutés dynamiquement ici -->
+      </div>
+    </div>
+  </main>
+
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <video id="modalVideo" controls>
+        <source src="" type="video/mp4">
+        Votre navigateur ne supporte pas la lecture de vidéos.
+      </video>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="https://facebook.com/unpg" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/unpg" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/unpg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/unpg" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+      <p>&copy; 2023 UNPG. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const videoGallery = document.getElementById('videoGallery');
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const closeBtn = document.getElementsByClassName('close')[0];
+
+    // Données des vidéos (normalement, ces données viendraient d'une API ou d'une base de données)
+    const videos = [
+      {
+        id: 1,
+        title: "Discours du Président de l'UNPG",
+        description: "Discours inspirant sur l'avenir de la Guinée",
+        thumbnail: "https://example.com/thumbnails/discours-president.jpg",
+        videoUrl: "https://example.com/videos/discours-president.mp4"
+      },
+      {
+        id: 2,
+        title: "Meeting à Conakry",
+        description: "Retour sur notre grand meeting à Conakry",
+        thumbnail: "https://example.com/thumbnails/meeting-conakry.jpg",
+        videoUrl: "https://example.com/videos/meeting-conakry.mp4"
+      },
+      {
+        id: 3,
+        title: "Programme Économique de l'UNPG",
+        description: "Présentation détaillée de notre vision économique",
+        thumbnail: "https://example.com/thumbnails/programme-economique.jpg",
+        videoUrl: "https://example.com/videos/programme-economique.mp4"
+      },
+      {
+        id: 4,
+        title: "Visite dans les Régions",
+        description: "L'UNPG à la rencontre des Guinéens",
+        thumbnail: "https://example.com/thumbnails/visite-regions.jpg",
+        videoUrl: "https://example.com/videos/visite-regions.mp4"
+      },
+      {
+        id: 5,
+        title: "Débat sur l'Éducation",
+        description: "Nos propositions pour améliorer le système éducatif",
+        thumbnail: "https://example.com/thumbnails/debat-education.jpg",
+        videoUrl: "https://example.com/videos/debat-education.mp4"
+      },
+      {
+        id: 6,
+        title: "Célébration de la Journée de l'Indépendance",
+        description: "L'UNPG commémore l'indépendance de la Guinée",
+        thumbnail: "https://example.com/thumbnails/journee-independance.jpg",
+        videoUrl: "https://example.com/videos/journee-independance.mp4"
+      }
+    ];
+
+    // Fonction pour créer les éléments vidéo
+    function createVideoElement(video) {
+      const videoItem = document.createElement('div');
+      videoItem.className = 'video-item';
+      videoItem.innerHTML = `
+        <div class="video-thumbnail">
+          <img src="${video.thumbnail}" alt="${video.title}">
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">${video.title}</h3>
+          <p class="video-description">${video.description}</p>
+        </div>
+      `;
+      videoItem.addEventListener('click', () => openModal(video.videoUrl));
+      return videoItem;
+    }
+
+    // Ajouter les vidéos à la galerie
+    videos.forEach(video => {
+      videoGallery.appendChild(createVideoElement(video));
+    });
+
+    // Fonction pour ouvrir le modal
+    function openModal(videoUrl) {
+      modal.style.display = "block";
+      modalVideo.src = videoUrl;
+    }
+
+    // Fermer le modal
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+      modalVideo.pause();
+      modalVideo.src = "";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        modalVideo.pause();
+        modalVideo.src = "";
+      }
+    }
+
+    // Animation du logo
+    const logo = document.querySelector('.logo');
+    logo.addEventListener('mouseover', () => {
+      logo.style.animation = 'pulse 1s infinite';
+    });
+    logo.addEventListener('mouseout', () => {
+      logo.style.animation = 'none';
+    });
+
+    // Effet de parallaxe pour le fond
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      document.body.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
+    });
+
+    // Création de particules cyber
+    function createCyberParticle() {
+      const particle = document.createElement('div');
+      particle.classList.add('cyber-particle');
+      
+      const size = Math.random() * 3 + 1;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      
+      const startPositionX = Math.random() * window.innerWidth;
+      const startPositionY = Math.random() * window.innerHeight;
+      particle.style.left = `${startPositionX}px`;
+      particle.style.top = `${startPositionY}px`;
+      
+      document.body.appendChild(particle);
+      
+      const angle = Math.random() * Math.PI * 2;
+      const speed = Math.random() * 2 + 1;
+      const vx = Math.cos(angle) * speed;
+      const vy = Math.sin(angle) * speed;
+      
+      function animateParticle() {
+        const currentX = parseFloat(particle.style.left);
+        const currentY = parseFloat(particle.style.top);
+        
+        particle.style.left = `${currentX + vx}px`;
+        particle.style.top = `${currentY + vy}px`;
+        
+        if (currentX < 0 || currentX > window.innerWidth || currentY < 0 || currentY > window.innerHeight) {
+          particle.remove();
+        } else {
+          requestAnimationFrame(animateParticle);
+        }
+      }
+      
+      animateParticle();
+    }
+
+    setInterval(createCyberParticle, 200);
+  });
+  </script>
+</body>
+</html>

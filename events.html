@@ -1,0 +1,481 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNPG - Inscription aux Événements</title>
+<style>
+:root {
+  --primary-color: #00ffff;
+  --secondary-color: #ff00ff;
+  --background-color: #000033;
+  --text-color: #ffffff;
+  --font-family: 'Orbitron', sans-serif;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.header-color-transition {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #ff0055, #00ff99);
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+.header-color-transition:hover {
+    background: linear-gradient(90deg, #00ff99, #ff0055);
+}
+
+.logo {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    color: #ffffff;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #ff0055;
+}
+
+/* Boutons dans le header */
+.header-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: transparent;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+}
+
+.btn:hover {
+    background: #ffffff;
+    color: #ff0055;
+    border-color: #ff0055;
+}
+
+@media (max-width: 768px) {
+    .header-color-transition {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: relative;
+        top: 10px;
+        width: 100%;
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-left: auto;
+    }
+
+    /* Afficher les boutons sous le menu en mode mobile */
+    .header-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .btn {
+        padding: 10px;
+        text-align: center;
+        width: 90%;
+        margin: 5px auto;
+    }
+}
+
+main {
+  margin-top: 150px;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+  color: var(--primary-color);
+  text-shadow: 0 0 10px var(--secondary-color);
+}
+
+footer {
+  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer .social-links a {
+  color: var(--background-color);
+  font-size: 2em;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+footer .social-links a:hover {
+  color: var(--text-color);
+  transform: rotate(360deg) scale(1.2);
+}
+
+.event-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.event-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  width: calc(33.333% - 20px);
+  min-width: 300px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.event-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.event-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.event-card p {
+  margin-bottom: 10px;
+}
+
+.event-card .date {
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.event-card .location {
+  font-style: italic;
+}
+
+.register-btn {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: var(--background-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-family);
+  font-size: 1em;
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.register-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.registration-form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+.submit-btn {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: var(--background-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-family);
+  font-size: 1em;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+
+  .event-card {
+    width: 100%;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 2em;
+  cursor: pointer;
+}
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header-color-transition">
+    <div class="logo"><strong>UNPG</strong></div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <nav class="menu">
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="programme.html">Programme</a>
+        <a href="events.html">Événements</a>
+        <a href="blog.html">Blog</a>
+        <a href="videos.html">Vidéos</a>
+        <a href="aderer.html">Adhésion</a>
+        <a href="contact.html">Contact</a>
+        
+    </nav>
+    <div class="header-buttons">
+        <a href="dons.html" class="btn donate">Faire un Don</a>
+        <a href="rejoindreparti.html" class="btn join">Rejoindre le Parti</a>
+    </div>
+</header>
+
+  <main>
+    <div class="container">
+      <h1>Inscription aux Événements</h1>
+      
+      <section class="event-list">
+        <div class="event-card">
+          <img src="logo.png" alt="Réunion publique à Conakry" width="300" height="200">
+          <h3>Réunion publique à Conakry</h3>
+          <p class="date">15 juillet 2023, 18h00</p>
+          <p class="location">Palais du Peuple, Conakry</p>
+          <p>Venez échanger avec M. Lousseny Fall sur l'avenir de la Guinée et les projets de l'UNPG.</p>
+          <button class="register-btn" data-event="Réunion publique à Conakry">S'inscrire</button>
+        </div>
+        <div class="event-card">
+          <img src="logo.png" alt="Forum de la jeunesse" width="300" height="200">
+          <h3>Forum de la jeunesse</h3>
+          <p class="date">22 juillet 2023, 10h00</p>
+          <p class="location">Université Gamal Abdel Nasser, Conakry</p>
+          <p>Un forum dédié aux jeunes pour discuter de l'éducation et de l'emploi en Guinée.</p>
+          <button class="register-btn" data-event="Forum de la jeunesse">S'inscrire</button>
+        </div>
+        <div class="event-card">
+          <img src="logo.png" alt="Conférence économique" width="300" height="200">
+          <h3>Conférence économique</h3>
+          <p class="date">5 août 2023, 14h00</p>
+          <p class="location">Centre de conférences, Kindia</p>
+          <p>Discussion sur les perspectives économiques et les opportunités d'investissement en Guinée.</p>
+          <button class="register-btn" data-event="Conférence économique">S'inscrire</button>
+        </div>
+      </section>
+      
+      <section class="registration-form" style="display: none;">
+        <h2>Formulaire d'inscription</h2>
+        <form id="event-registration-form">
+          <div class="form-group">
+            <label for="event-name">Événement</label>
+            <input type="text" id="event-name" name="event-name" readonly>
+          </div>
+          <div class="form-group">
+            <label for="full-name">Nom complet</label>
+            <input type="text" id="full-name" name="full-name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Numéro de téléphone</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="occupation">Profession</label>
+            <input type="text" id="occupation" name="occupation">
+          </div>
+          <div class="form-group">
+            <label for="motivation">Motivation pour participer</label>
+            <textarea id="motivation" name="motivation" rows="4"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Confirmer l'inscription</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="https://facebook.com/unpg" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/unpg" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/unpg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/unpg" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+      <p>&copy; 2023 UNPG. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const registerButtons = document.querySelectorAll('.register-btn');
+    const registrationForm = document.querySelector('.registration-form');
+    const eventNameInput = document.getElementById('event-name');
+    const form = document.getElementById('event-registration-form');
+
+    registerButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        const eventName = e.target.getAttribute('data-event');
+        eventNameInput.value = eventName;
+        registrationForm.style.display = 'block';
+        registrationForm.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+      
+      // Ici, vous enverriez normalement les données à votre serveur
+      console.log('Données d\'inscription:', data);
+      
+      alert(`Merci pour votre inscription à l'événement "${data['event-name']}". Nous vous contacterons bientôt avec plus de détails.`);
+      
+      form.reset();
+      registrationForm.style.display = 'none';
+    });
+
+    // Animation du logo
+    const logo = document.querySelector('.logo');
+    logo.addEventListener('mouseover', () => {
+      logo.style.animation = 'pulse 1s infinite';
+    });
+    logo.addEventListener('mouseout', () => {
+      logo.style.animation = 'none';
+    });
+
+    // Effet de parallaxe pour le fond
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      document.body.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
+    });
+
+    // Menu mobile
+    const menuToggle = document.createElement('button');
+    menuToggle.textContent = '☰';
+    menuToggle.classList.add('menu-toggle');
+    document.querySelector('header .container').prepend(menuToggle);
+
+    menuToggle.addEventListener('click', () => {
+      document.querySelector('nav ul').classList.toggle('show');
+    });
+
+    // Animation des cartes d'événements
+    const eventCards = document.querySelectorAll('.event-card');
+    eventCards.forEach(card => {
+      card.addEventListener('mouseover', () => {
+        card.style.transform = 'scale(1.05) rotate(2deg)';
+      });
+      card.addEventListener('mouseout', () => {
+        card.style.transform = 'scale(1) rotate(0)';
+      });
+    });
+  });
+  </script>
+</body>
+</html>

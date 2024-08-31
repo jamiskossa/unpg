@@ -1,0 +1,448 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNPG - Contact</title>
+<style>
+:root {
+  --primary-color: #00ffff;
+  --secondary-color: #ff00ff;
+  --background-color: #000033;
+  --text-color: #ffffff;
+  --font-family: 'Orbitron', sans-serif;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.header-color-transition {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #ff0055, #00ff99);
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+.header-color-transition:hover {
+    background: linear-gradient(90deg, #00ff99, #ff0055);
+}
+
+.logo {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    color: #ffffff;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #ff0055;
+}
+
+/* Boutons dans le header */
+.header-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: transparent;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+}
+
+.btn:hover {
+    background: #ffffff;
+    color: #ff0055;
+    border-color: #ff0055;
+}
+
+@media (max-width: 768px) {
+    .header-color-transition {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: relative;
+        top: 10px;
+        width: 100%;
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-left: auto;
+    }
+
+    /* Afficher les boutons sous le menu en mode mobile */
+    .header-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .btn {
+        padding: 10px;
+        text-align: center;
+        width: 90%;
+        margin: 5px auto;
+    }
+}
+
+main {
+  margin-top: 150px;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+  color: var(--primary-color);
+  text-shadow: 0 0 10px var(--secondary-color);
+}
+
+footer {
+  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer .social-links a {
+  color: var(--background-color);
+  font-size: 2em;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+footer .social-links a:hover {
+  color: var(--text-color);
+  transform: rotate(360deg) scale(1.2);
+}
+
+.contact-form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button[type="submit"] {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: var(--background-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-family);
+  font-size: 1em;
+}
+
+button[type="submit"]:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.contact-info {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.contact-info p {
+  margin: 10px 0;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: var(--primary-color);
+}
+
+#map {
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  nav ul li {
+    margin-bottom: 10px;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 2em;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+</head>
+<body>
+  <header class="header-color-transition">
+    <div class="logo"><strong>UNPG</strong></div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <nav class="menu">
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="programme.html">Programme</a>
+        <a href="events.html">Événements</a>
+        <a href="blog.html">Blog</a>
+        <a href="videos.html">Vidéos</a>
+        <a href="aderer.html">Adhésion</a>
+        <a href="contact.html">Contact</a>
+        
+    </nav>
+    <div class="header-buttons">
+        <a href="dons.html" class="btn donate">Faire un Don</a>
+        <a href="rejoindreparti.html" class="btn join">Rejoindre le Parti</a>
+    </div>
+</header>
+
+  <main>
+    <div class="container">
+      <h1>Contactez-nous</h1>
+      <p>Nous sommes à votre écoute. N'hésitez pas à nous contacter pour toute question ou suggestion.</p>
+
+      <div class="contact-form">
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">Sujet</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <h2>Nos coordonnées</h2>
+        <p><i class="fas fa-map-marker-alt"></i> Siège de l'UNPG, Rue de la Démocratie, Conakry, Guinée</p>
+        <p><i class="fas fa-phone"></i> +224 12 345 6789</p>
+        <p><i class="fas fa-envelope"></i> contact@unpg.gn</p>
+      </div>
+
+      <div id="map"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="https://facebook.com/unpg" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/unpg" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/unpg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/unpg" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+      <p>&copy; 2023 UNPG. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contact-form');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const subjectInput = document.getElementById('subject');
+    const messageInput = document.getElementById('message');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Here you would typically send the form data to a server
+      // For this example, we'll just log it to the console
+      console.log({
+        name: nameInput.value,
+        email: emailInput.value,
+        subject: subjectInput.value,
+        message: messageInput.value
+      });
+
+      // Clear the form
+      contactForm.reset();
+
+      // Show a success message
+      alert('Votre message a été envoyé avec succès. Nous vous contacterons bientôt.');
+    });
+
+    // Initialize Google Maps
+    function initMap() {
+      const unpgLocation = { lat: 9.509167, lng: -13.712222 }; // Coordinates for Conakry, Guinea
+      const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: unpgLocation,
+        styles: [
+          {
+            elementType: 'geometry',
+            stylers: [{color: '#000033'}]
+          },
+          {
+            elementType: 'labels.text.stroke',
+            stylers: [{color: '#000033'}]
+          },
+          {
+            elementType: 'labels.text.fill',
+            stylers: [{color: '#00ffff'}]
+          },
+          {
+            featureType: 'road',
+            elementType: 'geometry',
+            stylers: [{color: '#ff00ff'}]
+          },
+          {
+            featureType: 'water',
+            elementType: 'geometry',
+            stylers: [{color: '#00ffff'}]
+          }
+        ]
+      });
+      const marker = new google.maps.Marker({
+        position: unpgLocation,
+        map: map,
+        title: 'UNPG Headquarters'
+      });
+    }
+
+    initMap();
+
+    // Animation du logo
+    const logo = document.querySelector('.logo');
+    logo.addEventListener('mouseover', () => {
+      logo.style.animation = 'pulse 1s infinite';
+    });
+    logo.addEventListener('mouseout', () => {
+      logo.style.animation = 'none';
+    });
+
+    // Effet de parallaxe pour le fond
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      document.body.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
+    });
+
+    // Menu mobile
+    const menuToggle = document.createElement('button');
+    menuToggle.textContent = '☰';
+    menuToggle.classList.add('menu-toggle');
+    document.querySelector('header .container').prepend(menuToggle);
+
+    menuToggle.addEventListener('click', () => {
+      document.querySelector('nav ul').classList.toggle('show');
+    });
+  });
+  </script>
+</body>
+</html>

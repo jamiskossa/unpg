@@ -1,0 +1,416 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNPG - Notre Équipe</title>
+<style>
+:root {
+  --primary-color: #00ffff;
+  --secondary-color: #ff00ff;
+  --background-color: #000033;
+  --text-color: #ffffff;
+  --font-family: 'Orbitron', sans-serif;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+/* Header */
+.header-color-transition {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #ff0055, #00ff99);
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+.header-color-transition:hover {
+    background: linear-gradient(90deg, #00ff99, #ff0055);
+}
+
+.logo {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    color: #ffffff;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #ff0055;
+}
+
+/* Boutons dans le header */
+.header-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: transparent;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+}
+
+.btn:hover {
+    background: #ffffff;
+    color: #ff0055;
+    border-color: #ff0055;
+}
+
+@media (max-width: 768px) {
+    .header-color-transition {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: relative;
+        top: 10px;
+        width: 100%;
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-left: auto;
+    }
+
+    /* Afficher les boutons sous le menu en mode mobile */
+    .header-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .btn {
+        padding: 10px;
+        text-align: center;
+        width: 90%;
+        margin: 5px auto;
+    }
+}
+
+main {
+  margin-top: 150px;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+  color: var(--primary-color);
+  text-shadow: 0 0 10px var(--secondary-color);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.team-member {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+}
+
+.member-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  overflow: hidden;
+  border: 3px solid var(--primary-color);
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-name {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.member-role {
+  font-size: 1em;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+}
+
+.member-bio {
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.social-links {
+  margin-top: 15px;
+}
+
+.social-links a {
+  color: var(--text-color);
+  font-size: 1.5em;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--primary-color);
+  transform: scale(1.2);
+}
+
+footer {
+  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer .social-links a {
+  color: var(--background-color);
+  font-size: 2em;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+footer .social-links a:hover {
+  color: var(--text-color);
+  transform: rotate(360deg) scale(1.2);
+}
+
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header-color-transition">
+    <div class="logo"><strong>UNPG</strong></div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <nav class="menu">
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="programme.html">Programme</a>
+        <a href="events.html">Événements</a>
+        <a href="blog.html">Blog</a>
+        <a href="videos.html">Vidéos</a>
+        <a href="aderer.html">Adhésion</a>
+        <a href="contact.html">Contact</a>
+        
+    </nav>
+    <div class="header-buttons">
+        <a href="dons.html" class="btn donate">Faire un Don</a>
+        <a href="rejoindreparti.html" class="btn join">Rejoindre le Parti</a>
+    </div>
+</header>
+
+  <main>
+    <div class="container">
+      <h1>Notre Équipe</h1>
+      <p>Découvrez les visages qui portent la vision de l'UNPG pour une Guinée nouvelle.</p>
+
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="member-image">
+            <img src="logo.png" alt="Portrait de M. Lousseny Fall" width="150" height="150">
+          </div>
+          <h3 class="member-name">M. Lousseny Fall</h3>
+          <p class="member-role">Président de l'UNPG</p>
+          <p class="member-bio">Visionnaire et leader charismatique, M. Fall a consacré sa vie à la construction d'une Guinée plus forte et plus prospère.</p>
+          <div class="social-links">
+            <a href="https://twitter.com/loussenyfall" aria-label="Twitter de Lousseny Fall"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/in/loussenyfall" aria-label="LinkedIn de Lousseny Fall"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="team-member">
+          <div class="member-image">
+            <img src="logo.png" alt="Portrait de Mme Aminata Diallo" width="150" height="150">
+          </div>
+          <h3 class="member-name">Mme Aminata Diallo</h3>
+          <p class="member-role">Vice-Présidente</p>
+          <p class="member-bio">Experte en politique économique, Mme Diallo apporte son expertise pour stimuler la croissance et le développement de la Guinée.</p>
+          <div class="social-links">
+            <a href="https://twitter.com/aminatadiallo" aria-label="Twitter de Aminata Diallo"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/in/aminatadiallo" aria-label="LinkedIn de Aminata Diallo"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="team-member">
+          <div class="member-image">
+            <img src="logo.png" alt="Portrait de M. Mamadou Bah" width="150" height="150">
+          </div>
+          <h3 class="member-name">M. Mamadou Bah</h3>
+          <p class="member-role">Secrétaire Général</p>
+          <p class="member-bio">Juriste de formation, M. Bah veille à l'intégrité et à la transparence des actions de l'UNPG.</p>
+          <div class="social-links">
+            <a href="https://twitter.com/mamadoubah" aria-label="Twitter de Mamadou Bah"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/in/mamadoubah" aria-label="LinkedIn de Mamadou Bah"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="team-member">
+          <div class="member-image">
+            <img src="logo.png" alt="Portrait de Mme Fatou Camara" width="150" height="150">
+          </div>
+          <h3 class="member-name">Mme Fatou Camara</h3>
+          <p class="member-role">Porte-parole</p>
+          <p class="member-bio">Ancienne journaliste, Mme Camara est la voix de l'UNPG, communiquant avec passion notre vision pour la Guinée.</p>
+          <div class="social-links">
+            <a href="https://twitter.com/fatoucamara" aria-label="Twitter de Fatou Camara"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/in/fatoucamara" aria-label="LinkedIn de Fatou Camara"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="https://facebook.com/unpg" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/unpg" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/unpg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/unpg" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+      <p>&copy; 2023 UNPG. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Animation du logo
+    const logo = document.querySelector('.logo');
+    logo.addEventListener('mouseover', () => {
+      logo.style.animation = 'pulse 1s infinite';
+    });
+    logo.addEventListener('mouseout', () => {
+      logo.style.animation = 'none';
+    });
+
+    // Effet de parallaxe pour le fond
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      document.body.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
+    });
+
+    // Menu mobile
+    const menuToggle = document.createElement('button');
+    menuToggle.textContent = '☰';
+    menuToggle.classList.add('menu-toggle');
+    document.querySelector('header .container').prepend(menuToggle);
+
+    menuToggle.addEventListener('click', () => {
+      document.querySelector('nav ul').classList.toggle('show');
+    });
+
+    // Animation des membres de l'équipe au défilement
+    const teamMembers = document.querySelectorAll('.team-member');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0) rotate(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    teamMembers.forEach(member => {
+      member.style.opacity = 0;
+      member.style.transform = 'translateY(50px) rotate(5deg)';
+      member.style.transition = 'opacity 0.5s, transform 0.5s';
+      observer.observe(member);
+    });
+
+    // Effet de hover sur les images des membres
+    teamMembers.forEach(member => {
+      const image = member.querySelector('.member-image');
+      member.addEventListener('mouseover', () => {
+        image.style.transform = 'scale(1.1) rotate(5deg)';
+      });
+      member.addEventListener('mouseout', () => {
+        image.style.transform = 'scale(1) rotate(0)';
+      });
+    });
+  });
+  </script>
+</body>
+</html>

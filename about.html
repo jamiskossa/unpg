@@ -1,0 +1,380 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNPG - À Propos de Louceny Fall</title>
+<style>
+:root {
+  --primary-color: #00ffff;
+  --secondary-color: #ff00ff;
+  --background-color: #000033;
+  --text-color: #ffffff;
+  --font-family: 'Roboto', sans-serif;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Header */
+.header-color-transition {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #ff0055, #00ff99);
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+.header-color-transition:hover {
+    background: linear-gradient(90deg, #00ff99, #ff0055);
+}
+
+.logo {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    color: #ffffff;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #ff0055;
+}
+
+/* Boutons dans le header */
+.header-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: transparent;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+}
+
+.btn:hover {
+    background: #ffffff;
+    color: #ff0055;
+    border-color: #ff0055;
+}
+
+@media (max-width: 768px) {
+    .header-color-transition {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: relative;
+        top: 10px;
+        width: 100%;
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-left: auto;
+    }
+
+    /* Afficher les boutons sous le menu en mode mobile */
+    .header-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .btn {
+        padding: 10px;
+        text-align: center;
+        width: 90%;
+        margin: 5px auto;
+    }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.profile-video {
+  width: 100%;
+  height: auto;
+}
+
+.profile-info {
+  text-align: center;
+  max-width: 800px;
+}
+
+.profile-name {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.profile-title {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.profile-description {
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 12px 24px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: var(--background-color);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .profile-name {
+    font-size: 1.8rem;
+  }
+  
+  .profile-title {
+    font-size: 1.1rem;
+  }
+  
+  .profile-description {
+    font-size: 1rem;
+  }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+  <header class="header-color-transition">
+    <div class="logo"><strong>UNPG</strong></div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <nav class="menu">
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="programme.html">Programme</a>
+        <a href="events.html">Événements</a>
+        <a href="blog.html">Blog</a>
+        <a href="videos.html">Vidéos</a>
+        <a href="aderer.html">Adhésion</a>
+        <a href="contact.html">Contact</a>
+        
+    </nav>
+    <div class="header-buttons">
+        <a href="dons.html" class="btn donate">Faire un Don</a>
+        <a href="rejoindreparti.html" class="btn join">Rejoindre le Parti</a>
+    </div>
+</header>
+  <div class="container">
+    <section class="about-section">
+      <h1>À Propos de Louceny Fall et l'UNPG</h1>
+      
+      <div class="profile-container">
+        <div class="video-container">
+          <video class="profile-video" controls poster="https://example.com/louceny-fall-video-thumbnail.jpg">
+            <source src="unpg.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture de vidéos HTML5.
+          </video>
+        </div>
+        
+        <div class="profile-info">
+          <h2 class="profile-name">Louceny Fall</h2>
+          <p class="profile-title">Président de l'Union Nationale pour le Progrès de la Guinée (UNPG)</p>
+          <p class="profile-description">
+            Louceny Fall est le visionnaire et le leader charismatique à la tête de l'Union Nationale pour le Progrès de la Guinée (UNPG). Né dans une famille modeste à Conakry, Louceny a gravi les échelons grâce à sa détermination et son engagement envers le développement de la Guinée.
+          </p>
+          <p class="profile-description">
+            En tant que Président de l'UNPG, Louceny Fall incarne les valeurs fondamentales de notre parti : intégrité, justice sociale et progrès économique. Son parcours impressionnant en tant qu'économiste et son expérience dans les organisations internationales lui donnent une perspective unique sur les défis et les opportunités qui attendent notre nation.
+          </p>
+          <p class="profile-description">
+            L'UNPG, sous la direction de Louceny Fall, s'engage à construire une Guinée plus forte, plus prospère et plus équitable. Notre vision englobe la modernisation de l'économie, le renforcement des institutions démocratiques et l'amélioration des conditions de vie de tous les Guinéens.
+          </p>
+          <a href="programme.html" class="cta-button">Découvrir Notre Programme</a>
+          
+          <div class="social-links">
+            <a href="https://twitter.com/LoucenyFall_UNPG" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/UNPGOfficiel" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/company/unpg-guinee" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const videoContainer = document.querySelector('.video-container');
+      const profileInfo = document.querySelector('.profile-info');
+
+      // Animation d'entrée pour le conteneur vidéo
+      videoContainer.style.opacity = '0';
+      videoContainer.style.transform = 'translateY(50px)';
+      setTimeout(() => {
+        videoContainer.style.transition = 'opacity 1s ease, transform 1s ease';
+        videoContainer.style.opacity = '1';
+        videoContainer.style.transform = 'translateY(0)';
+      }, 300);
+
+      // Animation d'entrée pour les informations du profil
+      profileInfo.style.opacity = '0';
+      profileInfo.style.transform = 'translateY(50px)';
+      setTimeout(() => {
+        profileInfo.style.transition = 'opacity 1s ease, transform 1s ease';
+        profileInfo.style.opacity = '1';
+        profileInfo.style.transform = 'translateY(0)';
+      }, 600);
+
+      // Animation du bouton CTA
+      const ctaButton = document.querySelector('.cta-button');
+      ctaButton.addEventListener('mouseover', () => {
+        ctaButton.style.transform = 'scale(1.1) rotate(2deg)';
+      });
+      ctaButton.addEventListener('mouseout', () => {
+        ctaButton.style.transform = 'scale(1) rotate(0deg)';
+      });
+
+      // Animation des icônes sociales
+      const socialIcons = document.querySelectorAll('.social-icon');
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', () => {
+          icon.style.transform = 'scale(1.2) rotate(10deg)';
+        });
+        icon.addEventListener('mouseout', () => {
+          icon.style.transform = 'scale(1) rotate(0deg)';
+        });
+      });
+
+      // Gestion de la lecture/pause de la vidéo
+      const video = document.querySelector('.profile-video');
+      video.addEventListener('click', () => {
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+
+      // Ajout d'un effet de pulsation sur la vidéo lorsqu'elle est en pause
+      setInterval(() => {
+        if (video.paused) {
+          videoContainer.style.boxShadow = '0 0 30px rgba(0, 255, 255, 0.5)';
+          setTimeout(() => {
+            videoContainer.style.boxShadow = '0 0 20px rgba(0, 255, 255, 0.3)';
+          }, 500);
+        }
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
