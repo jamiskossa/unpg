@@ -145,7 +145,7 @@ body {
 
 /* Style de la bannière */
 .hero-banner {
-    background-image: url('back2.png'); /* Remplace par l'URL de ton image de fond */
+    background-image: url('fall.png'); /* Remplace par l'URL de ton image de fond */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
