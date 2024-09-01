@@ -223,7 +223,14 @@
             
         </div>
     </footer>
-
+    <!-- Ajout du JavaScript -->
+    <script>
+        // JavaScript pour le menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        });
+    </script>
     <!-- Lien vers le script JavaScript -->
     <script src="script.js"></script>
 </body>
