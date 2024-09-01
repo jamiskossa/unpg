@@ -56,7 +56,7 @@ body {
 
 .nav-list li a {
     padding: 10px 20px;
-    color: #130d0d;
+    color: #07060c;
     text-decoration: none;
     display: block;
 }
@@ -69,7 +69,7 @@ body {
     display: none;
     position: absolute;
     background-color: #4d4545;
-    color: #000;
+    color: #faf5f5;
     top: 100%;
     left: 0;
     width: 200px;
@@ -261,6 +261,7 @@ body {
     margin: 0 auto;
     background-color: #f3f3f3;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
 }
 
 /* Styles pour chaque slide */
@@ -440,8 +441,8 @@ figcaption a:hover {
 .newsletter-form .cta-button {
     padding: 10px 20px;
     font-size: 16px;
-    color: #05040c;
-    background-color: #00ff99;
+    color: #fcfbff;
+    background-color: #04160f;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -517,7 +518,7 @@ figcaption a:hover {
 .cta-button {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #3817f1; /* Couleur turquoise moderne */
+    background-color: #111018; /* Couleur turquoise moderne */
     color: #fff;
     border: none;
     border-radius: 5px;
