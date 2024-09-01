@@ -10,7 +10,7 @@ body {
     margin: 10px;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: rgba(0, 0, 0, 0.6); /* Fond sombre pour un look futuriste */
+    background-color: rgba(0, 0, 0, 0.2); /* Fond sombre pour un look futuriste */
 }
 
 /* Style de l'en-tête */
@@ -56,7 +56,7 @@ body {
 
 .nav-list li a {
     padding: 10px 20px;
-    color: #fff;
+    color: #130d0d;
     text-decoration: none;
     display: block;
 }
@@ -68,7 +68,7 @@ body {
 .dropdown {
     display: none;
     position: absolute;
-    background-color: #fff;
+    background-color: #4d4545;
     color: #000;
     top: 100%;
     left: 0;
@@ -156,7 +156,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #fff;
+    color: #110a0a;
     padding: 0 20px;
     overflow: hidden;
 
@@ -184,12 +184,14 @@ body {
     font-size: 2.5em;
     margin-bottom: 10px;
     animation: fadeInDown 1s ease-out;
+    color: hsl(249, 91%, 50%);
 }
 
 .banner-content p {
     font-size: 1.2em;
     margin-bottom: 20px;
     animation: fadeInUp 1s ease-out;
+    color: #369201;
 }
 
 
@@ -338,8 +340,8 @@ figcaption a:hover {
     align-items: center;
     justify-content: center;
     height: 50vh; /* Hauteur de la section */
-    background: linear-gradient(to right, #78e994, #8d9beb); /* Dégradé de rouge pour le fond */
-    color: #fff;
+    background: linear-gradient(to right, #e2ebe4, #f3f3f7); /* Dégradé de rouge pour le fond */
+    color: #0a0808;
     text-align: center;
     padding: 20px;
 }
@@ -389,7 +391,8 @@ figcaption a:hover {
     width: 100%;
     max-width: 100%;
     padding: 20px;
-    background: linear-gradient(145deg, #1e1e1e, #2b2b2b);
+    background: linear-gradient(to right, #FFA726, #f7ad0e);
+
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     display: flex;
@@ -406,7 +409,7 @@ figcaption a:hover {
 .newsletter-content h2 {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #00ff99; /* Couleur vive pour un effet futuriste */
+    color: #111614; /* Couleur vive pour un effet futuriste */
 }
 
 /* Style pour le paragraphe */
@@ -429,15 +432,15 @@ figcaption a:hover {
     border: 1px solid #444;
     border-radius: 5px;
     width: 70%;
-    background-color: #2b2b2b;
-    color: #fff;
+    background-color: #a79fec;
+    color: #0c0707;
     margin-right: 10px;
 }
 
 .newsletter-form .cta-button {
     padding: 10px 20px;
     font-size: 16px;
-    color: #fff;
+    color: #05040c;
     background-color: #00ff99;
     border: none;
     border-radius: 5px;
@@ -447,7 +450,7 @@ figcaption a:hover {
 }
 
 .newsletter-form .cta-button:hover {
-    background-color: #00cc7a;
+    background-color: #879bf1;
 }
 
 /* Adapter aux mobiles et tablettes */
@@ -493,7 +496,7 @@ figcaption a:hover {
     align-items: center;
     justify-content: center;
     height: 50vh; /* Hauteur de la section */
-    background: linear-gradient(to right, #6ec0da, #da8b14); /* Dégradé vert et bleu */
+    background: linear-gradient(to right, #f37711, #f8a01b); /* Dégradé vert et bleu */
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -564,8 +567,8 @@ figcaption a:hover {
     align-items: center;
     justify-content: center;
     height: 50vh; /* Hauteur de la section */
-    background: linear-gradient(to right, #004d40, #15420f); /* Dégradé vert foncé et turquoise */
-    color: #fff;
+    background: linear-gradient(to right, #f0f3f3, #eff3ef); /* Dégradé vert foncé et turquoise */
+    color: #130e0e;
     text-align: center;
     padding: 20px;
 }
@@ -631,8 +634,9 @@ figcaption a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right, #1c2af1, #2c2c2c); /* Dégradé sombre */
-    color: #fff;
+    background: linear-gradient(to right, #FFA726, #f56506);
+ /* Dégradé sombre */
+    color: #161111;
     text-align: center;
     padding: 20px;
 }
@@ -735,8 +739,9 @@ figcaption a:hover {
 }
 
 .support-column {
-    background: linear-gradient(to right, #41c8e0, #3705ec); /* Dégradé bleu et vert */
-    color: #fff;
+    background: linear-gradient(to right, #FFA726, #0df02b);
+ /* Dégradé bleu et vert */
+    color: #0e0909;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
@@ -840,8 +845,9 @@ figcaption a:hover {
     align-items: center;
     justify-content: center;
     height: 60vh; /* Hauteur de la section */
-    background: linear-gradient(to right, #006d77, #83c5be); /* Dégradé turquoise */
-    color: #fff;
+    background: linear-gradient(to right, #f5e340, #f8b029);
+
+    color: #110a0a;
     text-align: center;
     padding: 20px;
 }
@@ -903,7 +909,7 @@ figcaption a:hover {
 
 /* Style du footer */
 .footer {
-    background: linear-gradient(to right, #f82d09, #f8fc10, #06f306 );
+    background: linear-gradient(to right, #f82d09, #e0a80d );
     color: #050303;
     padding: 40px 20px;
 }
