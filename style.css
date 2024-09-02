@@ -618,6 +618,7 @@ body {
     gap: 20px;
     max-width: 1200px;
     margin: auto;
+    width: auto;
 }
 
 .support-column,
@@ -633,6 +634,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
+    width: auto;
 }
 
 .support-column h2 {
@@ -651,6 +653,7 @@ body {
     background-color: #fafafa;
     padding: 20px;
     border-radius: 8px;
+    width: auto;
 }
 
 .actions-column h3 {
