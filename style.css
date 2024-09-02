@@ -17,7 +17,9 @@ body {
 }
 
 /* Logo Futuriste avec effet de clignotement */
-.logo {
+.logo img{
+    border-radius: 50%; /* Logo arrondi */
+    border: 2px solid #f6f7fa;
     font-size: 2em;
     font-weight: bold;
     color: #ffffff;
