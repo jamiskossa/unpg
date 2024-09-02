@@ -821,14 +821,18 @@ body {
     color: #50e3c2; /* Couleur au survol */
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-
-    .footer-logo {
-        max-width: 50px;
-}
+/* Adapter le footer pour les écrans plus petits */
+@media screen and (max-width: 768px) {
     .footer-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 colonnes par ligne pour les tablettes et mobiles */
+        grid-template-columns: repeat(2, 1fr); /* Utilise une grille de 2 colonnes égales pour les tablettes et mobiles */
+        width: calc(100% - 20px); /* Respecte les marges de 10px du body de chaque côté */
+        gap: 10px;                /* Réduit l'espace entre les colonnes pour les petits écrans */
+    }
+
+    .footer-column {
+        width: 100%; /* Chaque colonne occupe 100% de la largeur de la grille */
+        text-align: center; /* Centre le contenu des colonnes */
+        margin-bottom: 10px; /* Ajoute un espace entre les colonnes lorsqu'elles sont empilées */
     }
 }
 
