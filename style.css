@@ -63,12 +63,13 @@ body {
 
 .topnav .dropdown-content {
     display: none;
-    background-color: #333;
+    background-color: #ece7e7;
     position: absolute;
     top: 50px;
     left: 0;
     width: 200px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: #000;
 }
 
 .dropdown:hover .dropdown-content {
