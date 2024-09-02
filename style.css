@@ -57,7 +57,7 @@ body {
 }
 
 .topnav a:hover {
-    background-color: #323232;
+    background-color: #fcc121;
     transform: translateY(-5px);
 }
 
@@ -74,7 +74,7 @@ body {
 
 .dropdown:hover .dropdown-content {
     display: block;
-    background-color: #00bf8f;
+    
 }
 
 /* Boutons Futuristes */
