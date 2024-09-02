@@ -611,24 +611,24 @@ body {
 
 /* Style de la section de soutien */
 .support-section {
-    background-color: #fff;
-    padding: 40px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
-.container {
+.support-section .container {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 20px;
-    max-width: 1200px;
-    margin: auto;
-    width: auto;
+    flex-wrap: wrap; /* Permet aux colonnes de se réorganiser sur plusieurs lignes si nécessaire */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+    max-width: 100%; /* Assure que le conteneur ne dépasse pas la largeur du body */
+    box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
 }
 
+/* Styles pour les colonnes */
 .support-column,
 .actions-column {
-    flex: 1;
-    min-width: 300px;
+    flex: 1 1 48%; /* Chaque colonne prend environ 48% de l'espace disponible pour laisser un peu d'espace entre elles */
+    box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
 }
 
 .support-column {
@@ -638,7 +638,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    width: auto;
+    width: 100%;
 }
 
 .support-column h2 {
@@ -687,53 +687,21 @@ body {
     font-size: 1.5em;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .support-column h2 {
-        font-size: 1.8em;
+/* Adapter la section pour les écrans plus petits */
+
+@media screen and (max-width: 768px) {
+    .support-section .container {
+        flex-direction: column; /* Empile les colonnes verticalement sur les petits écrans */
+        align-items: stretch; /* Étend les colonnes pour remplir toute la largeur */
     }
 
-    .support-column p {
-        font-size: 1em;
-    }
-
-    .cta-button {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
-
-    .actions-column h3 {
-        font-size: 1.5em;
-    }
-
-    .actions-column li {
-        font-size: 1em;
+    .support-column,
+    .actions-column {
+        width: 100%; /* Chaque colonne occupe 100% de la largeur du conteneur */
+        text-align: center; /* Centre le texte pour une meilleure lisibilité */
+        margin-bottom: 20px; /* Ajoute un espace entre les colonnes */
     }
 }
-
-@media (max-width: 480px) {
-    .support-column h2 {
-        font-size: 1.5em;
-    }
-
-    .support-column p {
-        font-size: 0.9em;
-    }
-
-    .cta-button {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-
-    .actions-column h3 {
-        font-size: 1.2em;
-    }
-
-    .actions-column li {
-        font-size: 0.9em;
-    }
-}
-
 /* Style de la section Rejoignez le mouvement */
 .join-section {
     display: flex;
