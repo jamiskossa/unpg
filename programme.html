@@ -5,7 +5,7 @@
 :root {
   --primary-color: #00ffff;
   --secondary-color: #ff00ff;
-  --background-color: #000033;
+  
   --text-color: #ffffff;
   --font-family: 'Orbitron', sans-serif;
 }
@@ -14,162 +14,395 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: var(--font-family);
-  background-color: var(--background-color);
+  background-color: #c5b3b3;
   color: var(--text-color);
   overflow-x: hidden;
 }
 
 .container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center; /* Centrer le texte à l'intérieur du container */
 }
 
-header {
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  padding: 20px 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+/* Header avec background dégradé */
+.header {
+    background: linear-gradient(90deg, #ff6600, #ff3300);
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.logo {
-  width: 100px;
-  height: 100px;
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 5px #00bf8f, 0 0 10px #00bf8f;
+    }
+    100% {
+        opacity: 0.8;
+        text-shadow: 0 0 15px #00bf8f, 0 0 20px #00bf8f;
+    }
 }
 
-nav ul {
-  list-style-type: none;
-  display: flex;
-  justify-content: space-around;
-  padding: 0;
+/* Barre de navigation */
+.topnav {
+    display: flex;
+    background-color: #ffffff;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    transition: height 0.3s;
 }
 
-nav ul li a {
-  color: var(--text-color);
-  text-decoration: none;
-  font-size: 1.2em;
-  transition: all 0.3s ease;
+.topnav a {
+    padding: 10px 20px;
+    color: #0a0707;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 16px;
 }
 
-nav ul li a:hover {
-  color: var(--background-color);
-  text-shadow: 0 0 10px var(--primary-color);
+.topnav a:hover {
+    background-color: #fcc121;
+    transform: translateY(-5px);
+}
+
+.topnav .dropdown-content {
+    display: none;
+    background-color: #ece7e7;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    
+}
+
+/* Boutons Futuristes */
+.btn-futuristic {
+    background: linear-gradient(90deg, #0a0908, #503b36);
+    border: none;
+    border-radius: 50px;
+    color: #faf5f5;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.5s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 191, 143, 0.5);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.btn-futuristic:hover {
+    background: linear-gradient(45deg, #001510, #00bf8f);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 191, 143, 0.7);
+}
+
+.icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    color: #ffffff;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .topnav {
+        flex-direction: column;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .topnav.responsive {
+        height: 100%;
+        transition: height 0.3s;
+    }
+
+    .icon {
+        display: block;
+    }
+
+    .topnav a {
+        text-align: left;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
 
 main {
-  margin-top: 150px;
+  margin-top: 30px;
   padding: 20px;
 }
 
-h1, h2 {
+h1 {
   text-align: center;
-  color: var(--primary-color);
+  color: rgb(245, 238, 238);
   text-shadow: 0 0 10px var(--secondary-color);
+  padding: 20px;
+  background: linear-gradient(90deg, #1d0c00, #ff3300);
+  margin-bottom: 20px;
+  
 }
 
+p {
+  text-align: center;
+  color: rgb(5, 2, 2);
+  text-shadow: 0 0 10px var(--secondary-color);
+  padding: 0px;
+  margin-bottom: 30px;
+}
+
+/* Style général */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center; /* Centrer le texte à l'intérieur du container */
+}
+
+
 .program-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrer les items horizontalement */
+    gap: 20px;
 }
 
 .program-item {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 20px;
-  text-align: center;
-  transition: all 0.3s ease;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    color: #000;
 }
 
 .program-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+    transform: translateY(-5px);
 }
 
 .program-icon {
-  font-size: 3em;
-  margin-bottom: 15px;
-  color: var(--secondary-color);
+    font-size: 2.5em;
+    color: #ff7f50;
+    margin-bottom: 15px;
 }
 
 .program-title {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-  color: var(--primary-color);
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
 .program-description {
-  font-size: 1em;
-  line-height: 1.5;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #000;
 }
 
-footer {
-  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
-  padding: 20px 0;
-  text-align: center;
-  margin-top: 50px;
-}
-
-.social-links a {
-  color: var(--background-color);
-  font-size: 2em;
-  margin: 0 10px;
-  transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-  color: var(--text-color);
-  transform: rotate(360deg) scale(1.2);
+/* Styles Responsives */
+@media (max-width: 1024px) {
+    .program-grid {
+        justify-content: center; /* Centre les items horizontalement sur tablettes */
+        gap: 20px;
+    }
 }
 
 @media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  nav ul li {
-    margin-bottom: 10px;
-  }
-  
-  .program-grid {
-    grid-template-columns: 1fr;
-  }
+    .program-grid {
+        flex-direction: column;
+        align-items: center;
+        margin-right: 30px; /* Centrer les items verticalement sur les petits écrans */
+    }
+
+    .program-item {
+        width: 90%;
+        max-width: 100%; /* Pourcentage pour mieux s'adapter aux petits écrans */
+        margin:  0;
+    }
+
+    h1 {
+      margin-right: 30px;
 }
+}
+
+/* Style du footer */
+.footer {
+    background: linear-gradient(90deg, #ff6600, #ff3300);
+    color: #050303;
+    padding: 40px 20px;
+}
+
+/* Footer styles */
+.footer {
+    background: linear-gradient(135deg, #FF7F50, #FF4500);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px 0;
+}
+
+.footer-column h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin: 5px 0;
+}
+
+.footer-column ul li a {
+    color: #0e0808;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #ffebcd;
+}
+
+.social-media ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.social-media ul li {
+    margin: 0 10px;
+}
+
+.social-media ul li a {
+    color: #0d0ad3;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-media ul li a:hover {
+    color: #e9e7f3;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        text-align: center;
+        min-width: 100%;
+    }
+}
+
+/* Adapter le footer pour les écrans plus petits */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr); /* Utilise une grille de 2 colonnes égales pour les tablettes et mobiles */
+        width: calc(100% - 20px); /* Respecte les marges de 10px du body de chaque côté */
+        gap: 10px;                /* Réduit l'espace entre les colonnes pour les petits écrans */
+    }
+
+    .footer-column {
+        width: 100%; /* Chaque colonne occupe 100% de la largeur de la grille */
+        text-align: center; /* Centre le contenu des colonnes */
+        margin-bottom: 10px; /* Ajoute un espace entre les colonnes lorsqu'elles sont empilées */
+    }
+}
+
+
+/* Logo Futuriste avec effet de clignotement */
+.logo img{
+    border-radius: 50%; /* Logo arrondi */
+    border: 2px solid #f6f7fa;
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: flicker 1.5s infinite alternate;
+}
+
+
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <svg class="logo" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="45" fill="url(#grad)" />
-        <text x="50" y="55" text-anchor="middle" fill="#000033" font-size="24" font-weight="bold">UNPG</text>
-        <defs>
-          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:var(--primary-color);stop-opacity:1" />
-            <stop offset="100%" style="stop-color:var(--secondary-color);stop-opacity:1" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <nav>
-        <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="about.html">A propos</a></li>
-          <li><a href="programme.html">Programmes</a></li>
-          <li><a href="equipe.html">Équipe</a></li>
-          <li><a href="blog.html">Actualités</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+  <header class="header">
+    <div class="logo">
+        <img src="logo.png" width="100" height="100" alt="Logo des Républicains">
     </div>
-  </header>
+    <i class="fas fa-bars icon" onclick="toggleMenu()"></i>
+</header>
+
+<div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Accueil</a>
+        <a href="about.html">Qui sommes-nous</a>
+        <a href="programme.html">Programme</a>
+        <a href="events.html">Événements</a>
+        <a href="blog">Blog</a>
+        <a href="videos.html">Vidéos</a>
+    <div class="dropdown">
+        <a href="#">Plus<i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-content">
+            <a href="#">Logement</a>
+                    <a href="#">Redonner la parole aux Guinéens</a>
+                    <a href="#">Le contre-budget de l'UNDP</a>
+                    <a href="#">Textes fondateurs</a>
+        </div>
+    </div>
+    <a href="#">Contact</a>
+</div>
+
+<div class="btn-container">
+    <a href="#" class="btn-futuristic">Adhérer</a>
+    <a href="#" class="btn-futuristic">Faire un don</a>
+</div>
 
   <main>
     <div class="container">
@@ -215,18 +448,55 @@ footer {
       </div>
     </div>
   </main>
-
-  <footer>
-    <div class="container">
-      <div class="social-links">
-        <a href="https://facebook.com/unpg" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-        <a href="https://twitter.com/unpg" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="https://instagram.com/unpg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com/unpg" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+      <div class="footer-column">
+          <h4>Nous contacter</h4>
+          <ul>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#legal">Mentions légales</a></li>
+          </ul>
       </div>
-      <p>&copy; 2023 UNPG. Tous droits réservés.</p>
-    </div>
-  </footer>
+      <div class="footer-column">
+          <h4>QUI SOMMES-NOUS</h4>
+          <ul>
+              <li><a href="#team">Notre équipe</a></li>
+              <li><a href="#strategy">Conseil stratégique</a></li>
+              <li><a href="#instances">Nos instances</a></li>
+              <li><a href="#texts">Textes fondateurs</a></li>
+              <li><a href="#federations">Fédérations</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>ACTUALITÉS</h4>
+          <ul>
+              <li><a href="#latest">Dernières actualités</a></li>
+              <li><a href="videos.html">Toutes les vidéos</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>NOS IDÉES</h4>
+          <ul>
+              <li><a href="programme.html">Une Certaine Idée</a></li>
+              <li><a href="#french">Guinéennes, Guinéens</a></li>
+              <li><a href="#material">Matériel militant</a></li>
+          </ul>
+      </div>
+      <div class="footer-column social-media">
+          <h4>Suivez-nous</h4>
+          <ul>
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>&copy; 2024 Yattara Ousmane. Tous droits réservés.</p>
+  </div>
+</footer>
 
   <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -264,5 +534,16 @@ footer {
     });
   });
   </script>
+
+<script>
+  function toggleMenu() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+          x.className += " responsive";
+      } else {
+          x.className = "topnav";
+      }
+  }
+</script>
 </body>
 </html>
