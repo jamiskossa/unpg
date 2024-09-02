@@ -779,7 +779,7 @@ body {
 
 .footer-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 colonnes par défaut pour les grands écrans */
+    grid-template-columns: repeat(4, 1fr); /* 5 colonnes par défaut pour les grands écrans */
     gap: 20px;
     padding: 20px;
 }
