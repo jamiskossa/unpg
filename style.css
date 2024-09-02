@@ -96,13 +96,13 @@ body {
     box-shadow: 0 6px 12px rgba(0, 191, 143, 0.7);
 }
 
-/* Icône de menu pour mobile */
 .icon {
     font-size: 24px;
     cursor: pointer;
     display: none;
     color: #ffffff;
 }
+
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
