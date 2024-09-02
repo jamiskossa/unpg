@@ -839,20 +839,6 @@ body {
     }
 }
 
-@media (max-width: 480px) {
-    .footer h4 {
-        font-size: 1em;
-    }
-
-    .footer-logo {
-        max-width: 60px;
-    }
-
-    .footer-container {
-        display: flex;
-        margin: auto;
-    }
-}
 
 .cta-button {
     display: inline-block;
