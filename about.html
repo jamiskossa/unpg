@@ -15,8 +15,8 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: var(--font-family);
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background: linear-gradient(to right, #e2ebe4, #bbbbc2);
+  color: black;
   line-height: 1.6;
 }
 
@@ -26,7 +26,7 @@ body, html {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: linear-gradient(90deg, #ff0055, #00ff99);
+    background: linear-gradient(90deg, #ff6600, #ff3300);
     transition: background 0.5s ease;
     position: relative;
 }
@@ -58,7 +58,7 @@ body, html {
 
 .menu a {
     text-decoration: none;
-    color: #ffffff;
+    color: #030202;
     font-weight: bold;
     transition: color 0.3s;
 }
@@ -76,7 +76,7 @@ body, html {
 .btn {
     padding: 10px 20px;
     border: 2px solid #ffffff;
-    color: #ffffff;
+    color: #0e0909;
     text-decoration: none;
     text-transform: uppercase;
     background: transparent;
@@ -152,6 +152,7 @@ h1 {
   margin-bottom: 1rem;
   color: var(--primary-color);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(90deg, #ff6600, #7dfa43);
 }
 
 .profile-container {
@@ -159,6 +160,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  background: linear-gradient(90deg, #ff6600, #8fff4f);
 }
 
 .video-container {
@@ -251,13 +253,139 @@ h1 {
     font-size: 1rem;
   }
 }
+
+/* Style du footer */
+.footer {
+    background: linear-gradient(90deg, #ff6600, #ff3300);
+    color: #050303;
+    padding: 40px 20px;
+}
+
+/* Footer styles */
+.footer {
+    background: linear-gradient(135deg, #FF7F50, #FF4500);
+    color: #0f0909;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px 0;
+}
+
+.footer-column h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin: 5px 0;
+}
+
+.footer-column ul li a {
+    color: #0e0a0a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #ffebcd;
+}
+
+.social-media ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.social-media ul li {
+    margin: 0 10px;
+}
+
+.social-media ul li a {
+    color: #1c0699;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-media ul li a:hover {
+    color: #ffebcd;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        text-align: center;
+        min-width: 100%;
+    }
+}
+
+/* Adapter le footer pour les écrans plus petits */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr); /* Utilise une grille de 2 colonnes égales pour les tablettes et mobiles */
+        width: calc(100% - 20px); /* Respecte les marges de 10px du body de chaque côté */
+        gap: 10px;                /* Réduit l'espace entre les colonnes pour les petits écrans */
+    }
+
+    .footer-column {
+        width: 100%; /* Chaque colonne occupe 100% de la largeur de la grille */
+        text-align: center; /* Centre le contenu des colonnes */
+        margin-bottom: 10px; /* Ajoute un espace entre les colonnes lorsqu'elles sont empilées */
+    }
+}
+
+/* Logo Futuriste avec effet de clignotement */
+.logo img{
+    border-radius: 50%; /* Logo arrondi */
+    border: 2px solid #f6f7fa;
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: flicker 1.5s infinite alternate;
+}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>
   <header class="header-color-transition">
-    <div class="logo"><strong>UNPG</strong></div>
+    <div class="logo">
+      <img src="logo.png" width="100" height="100" alt="Logo des Républicains">
+  </div>
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
     <nav class="menu">
@@ -311,6 +439,57 @@ h1 {
       </div>
     </section>
   </div>
+
+  
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+      <div class="footer-column">
+          <h4>Nous contacter</h4>
+          <ul>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#legal">Mentions légales</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>QUI SOMMES-NOUS</h4>
+          <ul>
+              <li><a href="#team">Notre équipe</a></li>
+              <li><a href="#strategy">Conseil stratégique</a></li>
+              <li><a href="#instances">Nos instances</a></li>
+              <li><a href="#texts">Textes fondateurs</a></li>
+              <li><a href="#federations">Fédérations</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>ACTUALITÉS</h4>
+          <ul>
+              <li><a href="#latest">Dernières actualités</a></li>
+              <li><a href="videos.html">Toutes les vidéos</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>NOS IDÉES</h4>
+          <ul>
+              <li><a href="programme.html">Une Certaine Idée</a></li>
+              <li><a href="#french">Guinéennes, Guinéens</a></li>
+              <li><a href="#material">Matériel militant</a></li>
+          </ul>
+      </div>
+      <div class="footer-column social-media">
+          <h4>Suivez-nous</h4>
+          <ul>
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>&copy; 2024 Yattara Ousmane. Tous droits réservés.</p>
+  </div>
+</footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', (event) => {
