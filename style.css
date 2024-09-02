@@ -1,145 +1,131 @@
-/* Global reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
-
 body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ddd9d9;
+    color: #c0bcbc;
     margin: 10px;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: rgba(0, 0, 0, 0.2); /* Fond sombre pour un look futuriste */
 }
 
-/* Style de l'en-tête */
+/* Header avec background dégradé */
 .header {
-    background: linear-gradient(to right, #E65100, #f3b52f);
-
-    padding: 10px 20px;
-    position: relative;
-}
-
-.container {
+    background: linear-gradient(90deg, #ff6600, #ff3300);
+    padding: 20px 10px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-}
-
-.logo img {
-    height: 120px;
-    width: 120px;
-    border-radius: 50%; /* Logo arrondi */
-    border: 2px solid #f6f7fa;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-.navbar {
-    display: flex;
     align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.nav-list {
-    list-style: none;
+/* Logo Futuriste avec effet de clignotement */
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 5px #00bf8f, 0 0 10px #00bf8f;
+    }
+    100% {
+        opacity: 0.8;
+        text-shadow: 0 0 15px #00bf8f, 0 0 20px #00bf8f;
+    }
+}
+
+/* Barre de navigation */
+.topnav {
     display: flex;
+    background-color: #ffffff;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    transition: height 0.3s;
 }
 
-.nav-list li {
-    position: relative;
-}
-
-.nav-list li a {
+.topnav a {
     padding: 10px 20px;
-    color: #07060c;
+    color: #0a0707;
     text-decoration: none;
     display: block;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 16px;
 }
 
-.nav-list li:hover .dropdown {
-    display: block;
+.topnav a:hover {
+    background-color: #323232;
+    transform: translateY(-5px);
 }
 
-.dropdown {
+.topnav .dropdown-content {
     display: none;
+    background-color: #333;
     position: absolute;
-    background-color: #4d4545;
-    color: #faf5f5;
-    top: 100%;
+    top: 50px;
     left: 0;
     width: 200px;
-    list-style: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.dropdown li a {
-    color: #000;
-    padding: 10px;
-    text-decoration: none;
+.dropdown:hover .dropdown-content {
     display: block;
 }
 
-.buttons {
-    display: flex;
-    gap: 10px;
-}
-
+/* Boutons Futuristes */
 .btn-futuristic {
-    padding: 10px 20px;
+    background: linear-gradient(90deg, #0a0908, #503b36);
     border: none;
+    border-radius: 50px;
+    color: #faf5f5;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background 0.5s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 191, 143, 0.5);
+    text-decoration: none;
+    margin-left: 10px;
 }
 
-.blue-btn {
-    background-color: #333;
-    color: #fff;
+.btn-futuristic:hover {
+    background: linear-gradient(45deg, #001510, #00bf8f);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 191, 143, 0.7);
 }
 
-.white-btn {
-    background-color: #333;
-    color: #e2e2e7;
+/* Icône de menu pour mobile */
+.icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    color: #ffffff;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .menu-toggle {
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .topnav {
+        flex-direction: column;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .topnav.responsive {
+        height: 100%;
+        transition: height 0.3s;
+    }
+
+    .icon {
         display: block;
     }
 
-    .navbar {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: linear-gradient(to right, #bebed3, #f55120);
-        z-index: 1000;
-    }
-
-    .navbar.active {
-        display: flex;
-    }
-
-    .nav-list {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .nav-list li a {
+    .topnav a {
         text-align: left;
-        padding: 15px;
-    }
-
-    .buttons {
-        flex-direction: column;
+        padding: 10px;
         width: 100%;
+        box-sizing: border-box;
     }
 }
 
@@ -159,6 +145,7 @@ body {
     color: #110a0a;
     padding: 0 20px;
     overflow: hidden;
+    margin: 10px;
 
 }
 
@@ -195,145 +182,74 @@ body {
 }
 
 
-
-/* Animation de la bannière */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Styles pour le conteneur du diaporama avec dégradé futuriste */
+.slides {
+    background: linear-gradient(90deg, #ff6600, #ff3300);
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.slideshow-container {
+    max-width: 1000px; /* Largeur du conteneur */
+    position: relative;
+    margin: auto;
+    background: linear-gradient(90deg, #ff6600, #ff3300); /* Dégradé orange futuriste */
+    padding: 10px; /* Un peu de padding pour l'espacement intérieur */
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+/* Styles pour les images du diaporama */
+.mySlides img {
+    width: 100%; /* L'image remplit la largeur du conteneur */
+    height: auto; /* Conserve les proportions de l'image */
+    display: block; /* Supprime les marges de la ligne */
+    margin: 0 auto; /* Centre l'image horizontalement */
 }
 
-/* Responsive */
+/* Masquer les images par défaut */
+.mySlides {
+    display: none;
+}
+
+
+  .active:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+
+  /* Responsiveness */
 @media (max-width: 768px) {
-    .hero-banner {
-        height: 50vh;
-    }
-
-    .banner-content h1 {
+    .banner-text h1 {
         font-size: 2em;
     }
-
-    .banner-content p {
+    .banner-text p {
         font-size: 1em;
     }
-
-    .cta-button {
+    .btn {
         padding: 10px 20px;
-        font-size: 0.9em;
     }
-}
-
-/* Styles de base pour le conteneur du diaporama */
-.slideshow-container {
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    width: 100%;
-    height: 500px;
-    margin: 0 auto;
-    background-color: #f3f3f3;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 10px;
-}
-
-/* Styles pour chaque slide */
-.mySlides {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.mySlides img {
-    width: 98%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Styles pour les titres (figcaption) */
-figcaption {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 24px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-figcaption a {
-    color: #fff;
-    text-decoration: none;
-}
-
-figcaption a:hover {
-    text-decoration: underline;
 }
 
 /* Adapter aux mobiles et tablettes */
 @media (max-width: 768px) {
     .slideshow-container {
-        width: 100%;
+        width: auto;
         height: auto;
     }
 
     .mySlides {
         height: auto;
-    }
-}
-/* Responsive design */
-@media (max-width: 768px) {
-    .news-slide {
-        min-width: 100%; /* Une seule colonne sur les écrans mobiles */
+        width: auto;
     }
 }
 
-@media (max-width: 480px) {
-    .news-section h2 {
-        font-size: 1.5em;
-    }
-
-    .news-content {
-        bottom: 10px;
-        left: 10px;
-        padding: 5px;
-    }
-
-    .news-title {
-        font-size: 1em;
-    }
-}
 
 /* Style de la section Slogan */
 .slogan-section {
@@ -364,10 +280,6 @@ figcaption a:hover {
         font-size: 2em;
     }
 
-    .cta-button {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
 }
 
 @media (max-width: 480px) {
@@ -386,14 +298,12 @@ figcaption a:hover {
     }
 }
 
-
 /* Section de la newsletter */
 .newsletter-section {
-    width: 100%;
+    width: auto;
     max-width: 100%;
     padding: 20px;
-    background: linear-gradient(to right, #FFA726, #f7ad0e);
-
+    background: linear-gradient(90deg, #ff6600, #ff3300);
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     display: flex;
@@ -497,8 +407,8 @@ figcaption a:hover {
     align-items: center;
     justify-content: center;
     height: 50vh; /* Hauteur de la section */
-    background: linear-gradient(to right, #f37711, #f8a01b); /* Dégradé vert et bleu */
-    color: #fff;
+    background: linear-gradient(90deg, #ff6600, #ff3300); /* Dégradé vert et bleu */
+    color: #1a1313;
     text-align: center;
     padding: 20px;
 }
@@ -515,35 +425,12 @@ figcaption a:hover {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre portée pour effet futuriste */
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #111018; /* Couleur turquoise moderne */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-transform: uppercase; /* Texte en majuscules pour accentuer l'effet */
-}
-
-.cta-button:hover {
-    background-color: #009688;
-    transform: scale(1.05);
-}
-
 /* Responsive design */
 @media (max-width: 768px) {
     .housing-content h2 {
         font-size: 2em;
     }
 
-    .cta-button {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
 }
 
 @media (max-width: 480px) {
@@ -635,7 +522,7 @@ figcaption a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right, #FFA726, #f56506);
+    background: linear-gradient(90deg, #ff6600, #ff3300);
  /* Dégradé sombre */
     color: #161111;
     text-align: center;
@@ -846,7 +733,7 @@ figcaption a:hover {
     align-items: center;
     justify-content: center;
     height: 60vh; /* Hauteur de la section */
-    background: linear-gradient(to right, #f5e340, #f8b029);
+    background: linear-gradient(90deg, #ff6600, #ff3300);
 
     color: #110a0a;
     text-align: center;
@@ -910,7 +797,7 @@ figcaption a:hover {
 
 /* Style du footer */
 .footer {
-    background: linear-gradient(to right, #f82d09, #e0a80d );
+    background: linear-gradient(90deg, #ff6600, #ff3300);
     color: #050303;
     padding: 40px 20px;
 }
@@ -988,4 +875,23 @@ figcaption a:hover {
         display: flex;
         margin: auto;
     }
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #111018; /* Couleur turquoise moderne */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase; /* Texte en majuscules pour accentuer l'effet */
+}
+
+.cta-button:hover {
+    background-color: #009688;
+    transform: scale(1.05);
 }
