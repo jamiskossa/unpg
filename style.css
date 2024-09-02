@@ -74,6 +74,7 @@ body {
 
 .dropdown:hover .dropdown-content {
     display: block;
+    background-color: #00bf8f;
 }
 
 /* Boutons Futuristes */
