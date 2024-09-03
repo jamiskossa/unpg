@@ -15,7 +15,7 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: var(--font-family);
-  background-color: var(--background-color);
+  background: linear-gradient(to right, #e2ebe4, #bbbbc2);
   color: var(--text-color);
   overflow-x: hidden;
 }
@@ -33,7 +33,7 @@ body, html {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: linear-gradient(90deg, #ff0055, #00ff99);
+    background: linear-gradient(90deg, #ff6600, #ff3300);
     transition: background 0.5s ease;
     position: relative;
 }
@@ -42,10 +42,6 @@ body, html {
     background: linear-gradient(90deg, #00ff99, #ff0055);
 }
 
-.logo {
-    font-size: 24px;
-    color: #ffffff;
-}
 
 .menu-icon {
     font-size: 30px;
@@ -65,7 +61,7 @@ body, html {
 
 .menu a {
     text-decoration: none;
-    color: #ffffff;
+    color: #0c0808;
     font-weight: bold;
     transition: color 0.3s;
 }
@@ -147,27 +143,8 @@ main {
 
 h1, h2 {
   text-align: center;
-  color: var(--primary-color);
+  color: black;
   text-shadow: 0 0 10px var(--secondary-color);
-}
-
-footer {
-  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
-  padding: 20px 0;
-  text-align: center;
-  margin-top: 50px;
-}
-
-footer .social-links a {
-  color: var(--background-color);
-  font-size: 2em;
-  margin: 0 10px;
-  transition: all 0.3s ease;
-}
-
-footer .social-links a:hover {
-  color: var(--text-color);
-  transform: rotate(360deg) scale(1.2);
 }
 
 .event-list {
@@ -179,7 +156,7 @@ footer .social-links a:hover {
 }
 
 .event-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(90deg, #ff6600, #ff3300);
   border-radius: 15px;
   padding: 20px;
   width: calc(33.333% - 20px);
@@ -202,17 +179,18 @@ footer .social-links a:hover {
 }
 
 .event-card h3 {
-  color: var(--primary-color);
+  color: black;
   margin-bottom: 10px;
 }
 
 .event-card p {
   margin-bottom: 10px;
+  color: black;
 }
 
 .event-card .date {
   font-weight: bold;
-  color: var(--secondary-color);
+  color: rgb(2, 1, 1);
 }
 
 .event-card .location {
@@ -240,7 +218,7 @@ footer .social-links a:hover {
 }
 
 .registration-form {
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(90deg, #ff6600, #ff3300);
   padding: 30px;
   border-radius: 15px;
   max-width: 600px;
@@ -262,8 +240,8 @@ footer .social-links a:hover {
   padding: 10px;
   border-radius: 5px;
   border: none;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: var(--text-color);
+  background-color: rgba(245, 240, 240, 0.2);
+  color: black;
   font-family: var(--font-family);
 }
 
@@ -308,13 +286,132 @@ footer .social-links a:hover {
   cursor: pointer;
 }
 
+/* Logo Futuriste avec effet de clignotement */
+.logo img{
+    border-radius: 50%; /* Logo arrondi */
+    border: 2px solid #f6f7fa;
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: flicker 1.5s infinite alternate;
+}
+
+/* Footer styles */
+.footer {
+    background: linear-gradient(135deg, #FF7F50, #FF4500);
+    color: #0f0909;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px 0;
+}
+
+.footer-column h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin: 5px 0;
+}
+
+.footer-column ul li a {
+    color: #0e0a0a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #ffebcd;
+}
+
+.social-media ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.social-media ul li {
+    margin: 0 10px;
+}
+
+.social-media ul li a {
+    color: #1c0699;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-media ul li a:hover {
+    color: #ffebcd;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        text-align: center;
+        min-width: 100%;
+    }
+}
+
+/* Adapter le footer pour les écrans plus petits */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr); /* Utilise une grille de 2 colonnes égales pour les tablettes et mobiles */
+        width: calc(100% - 20px); /* Respecte les marges de 10px du body de chaque côté */
+        gap: 10px;                /* Réduit l'espace entre les colonnes pour les petits écrans */
+    }
+
+    .footer-column {
+        width: 100%; /* Chaque colonne occupe 100% de la largeur de la grille */
+        text-align: center; /* Centre le contenu des colonnes */
+        margin-bottom: 10px; /* Ajoute un espace entre les colonnes lorsqu'elles sont empilées */
+    }
+}
+
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="header-color-transition">
-    <div class="logo"><strong>UNPG</strong></div>
+    <div class="logo">
+      <img src="logo.png" width="100" height="100" alt="Logo des Républicains">
+  </div>
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
     <nav class="menu">
@@ -398,17 +495,55 @@ footer .social-links a:hover {
     </div>
   </main>
 
-  <footer>
-    <div class="container">
-      <div class="social-links">
-        <a href="https://facebook.com/unpg" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-        <a href="https://twitter.com/unpg" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="https://instagram.com/unpg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com/unpg" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+  <!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+      <div class="footer-column">
+          <h4>Nous contacter</h4>
+          <ul>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#legal">Mentions légales</a></li>
+          </ul>
       </div>
-      <p>&copy; 2023 UNPG. Tous droits réservés.</p>
-    </div>
-  </footer>
+      <div class="footer-column">
+          <h4>QUI SOMMES-NOUS</h4>
+          <ul>
+              <li><a href="#team">Notre équipe</a></li>
+              <li><a href="#strategy">Conseil stratégique</a></li>
+              <li><a href="#instances">Nos instances</a></li>
+              <li><a href="#texts">Textes fondateurs</a></li>
+              <li><a href="#federations">Fédérations</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>ACTUALITÉS</h4>
+          <ul>
+              <li><a href="#latest">Dernières actualités</a></li>
+              <li><a href="videos.html">Toutes les vidéos</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>NOS IDÉES</h4>
+          <ul>
+              <li><a href="programme.html">Une Certaine Idée</a></li>
+              <li><a href="#french">Guinéennes, Guinéens</a></li>
+              <li><a href="#material">Matériel militant</a></li>
+          </ul>
+      </div>
+      <div class="footer-column social-media">
+          <h4>Suivez-nous</h4>
+          <ul>
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>&copy; 2024 Yattara Ousmane. Tous droits réservés.</p>
+  </div>
+</footer>
 
   <script>
   document.addEventListener('DOMContentLoaded', () => {
