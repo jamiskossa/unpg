@@ -15,9 +15,10 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: var(--font-family);
-  background-color: var(--background-color);
+  background-color: #e7dede;
   color: var(--text-color);
   line-height: 1.6;
+  height: 100%;
 }
 
 .container {
@@ -27,127 +28,139 @@ body, html {
   padding: 0 20px;
 }
 
-/* Header */
-.header-color-transition {
+/* Header avec background dégradé */
+.header {
+    background: linear-gradient(90deg, #ff6600, #ff3300);
+    padding: 20px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background: linear-gradient(90deg, #ff0055, #00ff99);
-    transition: background 0.5s ease;
-    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.header-color-transition:hover {
-    background: linear-gradient(90deg, #00ff99, #ff0055);
+
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 5px #00bf8f, 0 0 10px #00bf8f;
+    }
+    100% {
+        opacity: 0.8;
+        text-shadow: 0 0 15px #00bf8f, 0 0 20px #00bf8f;
+    }
 }
 
-.logo {
+/* Barre de navigation */
+.topnav {
+    display: flex;
+    background-color: #ffffff;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    transition: height 0.3s;
+}
+
+.topnav a {
+    padding: 10px 20px;
+    color: #0a0707;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 16px;
+}
+
+.topnav a:hover {
+    background-color: #fcc121;
+    transform: translateY(-5px);
+}
+
+.topnav .dropdown-content {
+    display: none;
+    background-color: #f8f8f8;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    
+}
+
+/* Boutons Futuristes */
+.btn-futuristic {
+    background: linear-gradient(90deg, #0a0908, #503b36);
+    border: none;
+    border-radius: 50px;
+    color: #faf5f5;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.5s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 191, 143, 0.5);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.btn-futuristic:hover {
+    background: linear-gradient(45deg, #001510, #00bf8f);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 191, 143, 0.7);
+}
+
+.icon {
     font-size: 24px;
-    color: #ffffff;
-}
-
-.menu-icon {
-    font-size: 30px;
     cursor: pointer;
     display: none;
     color: #ffffff;
 }
 
-#menu-toggle {
-    display: none;
-}
 
-.menu {
-    display: flex;
-    gap: 20px;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.menu a:hover {
-    color: #ff0055;
-}
-
-/* Boutons dans le header */
-.header-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-.btn {
-    padding: 10px 20px;
-    border: 2px solid #ffffff;
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
-    background: transparent;
-    transition: all 0.3s ease;
-    border-radius: 20px;
-}
-
-.btn:hover {
-    background: #ffffff;
-    color: #ff0055;
-    border-color: #ff0055;
-}
-
-@media (max-width: 768px) {
-    .header-color-transition {
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .topnav {
         flex-direction: column;
-        align-items: flex-start;
+        height: 0;
+        overflow: hidden;
     }
 
-    .menu {
-        display: none;
-        flex-direction: column;
-        background: rgba(0, 0, 0, 0.9);
-        position: relative;
-        top: 10px;
-        width: 100%;
-        padding: 10px 0;
-        border-radius: 5px;
+    .topnav.responsive {
+        height: 100%;
+        transition: height 0.3s;
     }
 
-    #menu-toggle:checked + .menu-icon + .menu {
-        display: flex;
-    }
-
-    .menu-icon {
+    .icon {
         display: block;
-        margin-left: auto;
     }
 
-    /* Afficher les boutons sous le menu en mode mobile */
-    .header-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    .btn {
+    .topnav a {
+        text-align: left;
         padding: 10px;
-        text-align: center;
-        width: 90%;
-        margin: 5px auto;
+        width: 100%;
+        box-sizing: border-box;
     }
+
+    .container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 }
 
 main {
-  margin-top: 120px;
+  margin-top: 100px;
   padding: 20px 0;
 }
 
-h1, h2, h3 {
+h1, h2, h3, p{
   color: var(--primary-color);
   text-shadow: 0 0 10px var(--secondary-color);
+  text-align: center;
 }
 
 .blog-grid {
@@ -162,6 +175,7 @@ h1, h2, h3 {
   border-radius: 15px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(90deg, #ff6600, #ff3300);
 }
 
 .blog-card:hover {
@@ -203,23 +217,128 @@ h1, h2, h3 {
   background-color: var(--secondary-color);
 }
 
-footer {
-  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
-  padding: 20px 0;
-  text-align: center;
-  margin-top: 50px;
+/* Style du footer */
+.footer {
+    background: linear-gradient(90deg, #ff6600, #ff3300);
+    color: #050303;
+    padding: 40px 20px;
 }
 
-.social-links a {
-  color: var(--background-color);
-  font-size: 1.5em;
-  margin: 0 10px;
-  transition: all 0.3s ease;
+/* Footer styles */
+.footer {
+    background: linear-gradient(135deg, #FF7F50, #FF4500);
+    color: #0f0909;
+    padding: 20px 0;
+    text-align: center;
 }
 
-.social-links a:hover {
-  color: var(--text-color);
-  transform: scale(1.2);
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px 0;
+}
+
+.footer-column h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin: 5px 0;
+}
+
+.footer-column ul li a {
+    color: #0e0a0a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #ffebcd;
+}
+
+.social-media ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.social-media ul li {
+    margin: 0 10px;
+}
+
+.social-media ul li a {
+    color: #1c0699;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-media ul li a:hover {
+    color: #ffebcd;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        text-align: center;
+        min-width: 100%;
+    }
+}
+
+/* Adapter le footer pour les écrans plus petits */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr); /* Utilise une grille de 2 colonnes égales pour les tablettes et mobiles */
+        width: calc(100% - 20px); /* Respecte les marges de 10px du body de chaque côté */
+        gap: 10px;                /* Réduit l'espace entre les colonnes pour les petits écrans */
+    }
+
+    .footer-column {
+        width: 100%; /* Chaque colonne occupe 100% de la largeur de la grille */
+        text-align: center; /* Centre le contenu des colonnes */
+        margin-bottom: 10px; /* Ajoute un espace entre les colonnes lorsqu'elles sont empilées */
+    }
+}
+
+/* Logo Futuriste avec effet de clignotement */
+.logo img{
+    border-radius: 50%; /* Logo arrondi */
+    border: 2px solid #f6f7fa;
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: flicker 1.5s infinite alternate;
 }
 
 @media (max-width: 768px) {
@@ -251,25 +370,36 @@ footer {
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header-color-transition">
-    <div class="logo"><strong>UNPG</strong></div>
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="menu-icon">&#9776;</label>
-    <nav class="menu">
-        <a href="index.html">Accueil</a>
-        <a href="about.html">À propos</a>
+  <header class="header">
+    <div class="logo">
+        <img src="logo.png" width="100" height="100" alt="Logo des Républicains">
+    </div>
+    <i class="fas fa-bars icon" onclick="toggleMenu()"></i>
+</header>
+
+<div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Accueil</a>
+        <a href="about.html">Qui sommes-nous</a>
         <a href="programme.html">Programme</a>
         <a href="events.html">Événements</a>
-        <a href="blog.html">Blog</a>
+        <a href="blog">Blog</a>
         <a href="videos.html">Vidéos</a>
-        <a href="aderer.html">Adhésion</a>
-        <a href="contact.html">Contact</a>
-        
-    </nav>
-    <div class="header-buttons">
-        <a href="dons.html" class="btn donate">Faire un Don</a>
-        <a href="rejoindreparti.html" class="btn join">Rejoindre le Parti</a>
+    <div class="dropdown">
+        <a href="#">Plus<i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-content">
+            <a href="#">Logement</a>
+                    <a href="#">Redonner la parole aux Guinéens</a>
+                    <a href="#">Le contre-budget de l'UNDP</a>
+                    <a href="#">Textes fondateurs</a>
+        </div>
     </div>
+    <a href="contact.html">Contact</a>
+</div>
+
+<div class="btn-container">
+    <a href="aderer.html" class="btn-futuristic">Adhérer</a>
+    <a href="dons.html" class="btn-futuristic">Faire un don</a>
+</div>
 </header>
 
   <main>
@@ -284,17 +414,55 @@ footer {
     </div>
   </main>
 
-  <footer>
-    <div class="container">
-      <div class="social-links">
-        <a href="https://facebook.com/unpg" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-        <a href="https://twitter.com/unpg" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="https://instagram.com/unpg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com/unpg" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+   <!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+      <div class="footer-column">
+          <h4>Nous contacter</h4>
+          <ul>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#legal">Mentions légales</a></li>
+          </ul>
       </div>
-      <p>&copy; 2023 UNPG. Tous droits réservés.</p>
-    </div>
-  </footer>
+      <div class="footer-column">
+          <h4>QUI SOMMES-NOUS</h4>
+          <ul>
+              <li><a href="#team">Notre équipe</a></li>
+              <li><a href="#strategy">Conseil stratégique</a></li>
+              <li><a href="#instances">Nos instances</a></li>
+              <li><a href="#texts">Textes fondateurs</a></li>
+              <li><a href="#federations">Fédérations</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>ACTUALITÉS</h4>
+          <ul>
+              <li><a href="#latest">Dernières actualités</a></li>
+              <li><a href="videos.html">Toutes les vidéos</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>NOS IDÉES</h4>
+          <ul>
+              <li><a href="programme.html">Une Certaine Idée</a></li>
+              <li><a href="#french">Guinéennes, Guinéens</a></li>
+              <li><a href="#material">Matériel militant</a></li>
+          </ul>
+      </div>
+      <div class="footer-column social-media">
+          <h4>Suivez-nous</h4>
+          <ul>
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>&copy; 2024 Yattara Ousmane. Tous droits réservés.</p>
+  </div>
+</footer>
 
   <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -435,5 +603,16 @@ footer {
     setInterval(createCyberParticle, 200);
   });
   </script>
+
+<script>
+  function toggleMenu() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+          x.className += " responsive";
+      } else {
+          x.className = "topnav";
+      }
+  }
+</script>
 </body>
 </html>
