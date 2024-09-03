@@ -15,7 +15,7 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: var(--font-family);
-  background-color: var(--background-color);
+  background: linear-gradient(to right, #71a37c, #5a5a86);
   color: var(--text-color);
   overflow-x: hidden;
 }
@@ -25,6 +25,7 @@ body, html {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  
 }
 
 /* Header */
@@ -33,7 +34,7 @@ body, html {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: linear-gradient(90deg, #ff0055, #00ff99);
+    background: linear-gradient(90deg, #ff6600, #ff3300);
     transition: background 0.5s ease;
     position: relative;
 }
@@ -42,9 +43,16 @@ body, html {
     background: linear-gradient(90deg, #00ff99, #ff0055);
 }
 
-.logo {
-    font-size: 24px;
+/* Logo Futuriste avec effet de clignotement */
+.logo img{
+    border-radius: 50%; /* Logo arrondi */
+    border: 2px solid #f6f7fa;
+    font-size: 2em;
+    font-weight: bold;
     color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: flicker 1.5s infinite alternate;
 }
 
 .menu-icon {
@@ -143,6 +151,7 @@ body, html {
 main {
   margin-top: 150px;
   padding: 20px;
+  color: black;
 }
 
 h1, h2 {
@@ -302,6 +311,12 @@ footer .social-links a:hover {
   .donation-option {
     flex-basis: calc(50% - 5px);
   }
+  .container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  
+}
 }
 
 @keyframes pulse {
@@ -322,7 +337,9 @@ footer .social-links a:hover {
 </head>
 <body>
   <header class="header-color-transition">
-    <div class="logo"><strong>UNPG</strong></div>
+    <div class="logo">
+      <img src="logo.png" width="100" height="100" alt="Logo des Républicains">
+  </div>
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
     <nav class="menu">
@@ -429,7 +446,7 @@ footer .social-links a:hover {
         <a href="https://instagram.com/unpg" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://youtube.com/unpg" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
       </div>
-      <p>&copy; 2023 UNPG. Tous droits réservés.</p>
+      <p>&copy; 2024 Yattara Ousmane. Tous droits réservés.</p>
     </div>
   </footer>
 
