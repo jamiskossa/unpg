@@ -1,22 +1,24 @@
-<html><head><base href="https://avis-personel.com/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Donnez Votre Avis</title>
+<html><head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>UNPG Donnez Votre Avis</title>
 <style>
   body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background: linear-gradient(90deg, #ff6600, #ff3300);
     margin: 0;
     padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    
   }
   .container {
+  
     background-color: white;
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     max-width: 500px;
-    width: 100%;
+    width: 100vh;
+    margin: 0 auto;
   }
   h1 {
     color: #333;
@@ -59,9 +61,174 @@
   button:hover {
     background-color: #45a049;
   }
+
+  /* Header avec background dégradé */
+.header {
+    background: linear-gradient(90deg, #ff6600, #ff3300);
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo Futuriste avec effet de clignotement */
+.logo img{
+    border-radius: 50%; /* Logo arrondi */
+    border: 2px solid #f6f7fa;
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 5px #00bf8f, 0 0 10px #00bf8f;
+    }
+    100% {
+        opacity: 0.8;
+        text-shadow: 0 0 15px #00bf8f, 0 0 20px #00bf8f;
+    }
+}
+
+/* Barre de navigation */
+.topnav {
+    display: flex;
+    background-color: #ffffff;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    transition: height 0.3s;
+}
+
+.topnav a {
+    padding: 10px 20px;
+    color: #0a0707;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 16px;
+}
+
+.topnav a:hover {
+    background-color: #fcc121;
+    transform: translateY(-5px);
+}
+
+.topnav .dropdown-content {
+    display: none;
+    background-color: #ece7e7;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    
+}
+
+/* Boutons Futuristes */
+.btn-futuristic {
+    background: linear-gradient(90deg, #0a0908, #503b36);
+    border: none;
+    border-radius: 50px;
+    color: #faf5f5;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.5s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 191, 143, 0.5);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.btn-futuristic:hover {
+    background: linear-gradient(45deg, #001510, #00bf8f);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 191, 143, 0.7);
+}
+
+.icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    color: #ffffff;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .topnav {
+        flex-direction: column;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .topnav.responsive {
+        height: 100%;
+        transition: height 0.3s;
+    }
+
+    .icon {
+        display: block;
+    }
+
+    .topnav a {
+        text-align: left;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .container {
+  
+  background-color: white;
+  width: 50vh;
+  margin: 0 auto;
+}
+}
 </style>
 </head>
 <body>
+
+  <header class="header">
+    <div class="logo">
+        <img src="logo.png" width="100" height="100" alt="Logo des Républicains">
+    </div>
+    <i class="fas fa-bars icon" onclick="toggleMenu()"></i>
+</header>
+
+<div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Accueil</a>
+        <a href="about.html">Qui sommes-nous</a>
+        <a href="programme.html">Programme</a>
+        <a href="events.html">Événements</a>
+        <a href="blog">Blog</a>
+        <a href="videos.html">Vidéos</a>
+    <div class="dropdown">
+        <a href="#">Plus<i class="fa fa-caret-down"></i></a>
+        <div class="dropdown-content">
+            <a href="#">Logement</a>
+                    <a href="#">Redonner la parole aux Guinéens</a>
+                    <a href="#">Le contre-budget de l'UNDP</a>
+                    <a href="#">Textes fondateurs</a>
+        </div>
+    </div>
+    <a href="#">Contact</a>
+</div>
+
+<div class="btn-container">
+    <a href="#" class="btn-futuristic">Adhérer</a>
+    <a href="#" class="btn-futuristic">Faire un don</a>
+</div>
   <div class="container">
     <h1>Donnez Votre Avis</h1>
     <div class="rating">
