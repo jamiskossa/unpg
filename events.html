@@ -271,6 +271,8 @@ h1, h2 {
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
 
+
+
 .menu-toggle {
   display: none;
   background: none;
@@ -397,28 +399,98 @@ h1, h2 {
     }
 }
 
-@media (max-width: 768px) {
-    .event-list {
-        flex-direction: column;
-        align-items: center; /* Centre les cartes verticalement sur les petits écrans */
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 10px; /* Réduire la marge pour les tablettes */
+    }
+
+    .header-color-transition {
+        padding: 15px; /* Réduire l'espace du header */
     }
 
     .event-card {
-        max-width: 90%; /* Adapte la taille des cartes sur les petits écrans */
-        margin: 10px 0;
+        width: calc(50% - 20px); /* Utiliser la moitié de la largeur sur les tablettes */
+    }
+}
+
+@media (max-width: 768px) {
+    .header-color-transition {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.9);
+        top: 100%;
+        left: 0;
+        padding: 10px 0;
+        border-radius: 0;
+    }
+
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 24px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .header-buttons {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .btn {
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .event-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .event-card {
+        width: 90%;
+        margin: 0 auto;
     }
 
     .registration-form {
-        max-width: 100%; /* Utilise toute la largeur disponible sur les mobiles */
-        padding: 20px;
+        width: 90%;
+        padding: 15px;
+        margin: 20px auto;
     }
 
     h1, h2 {
-        font-size: 1.5em; /* Ajuste la taille des titres sur les petits écrans */
+        font-size: 1.5em;
+        text-align: center;
     }
 
-    p {
-        font-size: 1em; /* Ajuste la taille du texte sur les petits écrans */
+}
+
+@media (max-width: 480px) {
+    .event-card {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .header-buttons .btn {
+        padding: 8px;
+        width: 100%;
     }
 }
 
