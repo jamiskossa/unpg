@@ -1,7 +1,7 @@
 <html><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Événements - UNPG</title>
+    <title>Programme Détaillé - UNPG</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -110,65 +110,47 @@
             margin: 0 auto;
         }
 
-        .event-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+        .program-section {
+            margin-bottom: 40px;
         }
 
-        .event-card {
+        .program-section h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .program-item {
             background-color: #f9f9f9;
             border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .event-card:hover {
+        .program-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .event-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .event-details {
-            padding: 20px;
-        }
-
-        .event-title {
-            font-size: 1.2em;
-            color: var(--primary-color);
+        .program-item h3 {
+            color: var(--secondary-color);
             margin-bottom: 10px;
         }
 
-        .event-date, .event-location {
-            font-size: 0.9em;
-            color: #666;
-            margin-bottom: 5px;
+        .program-item ul {
+            list-style-type: none;
+            padding-left: 20px;
         }
 
-        .event-description {
-            margin-top: 10px;
-            font-size: 0.95em;
-        }
-
-        .cta-button {
+        .program-item ul li:before {
+            content: "\2022";
+            color: var(--primary-color);
+            font-weight: bold;
             display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 15px;
-            transition: background-color 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: var(--primary-color);
+            width: 1em;
+            margin-left: -1em;
         }
 
         @media screen and (max-width: 600px) {
@@ -212,7 +194,7 @@
         <a href="index.html">Accueil</a>
         <a href="about.html">Qui sommes-nous</a>
         <a href="programme.html">Programme</a>
-        <a href="events.html" class="active">Événements</a>
+        <a href="events.html">Événements</a>
         <a href="blog.html">Blog</a>
         <a href="videos.html">Vidéos</a>
         <div class="dropdown">
@@ -230,53 +212,93 @@
     </nav>
 
     <main class="main-content">
-        <h1>Événements à venir</h1>
+        <h1>Programme Détaillé de l'UNPG</h1>
         
-        <div class="event-list">
-            <div class="event-card">
-                <img src="3.JPG" alt="Grande réunion publique à Conakry" class="event-image">
-                <div class="event-details">
-                    <h2 class="event-title">Grande réunion publique à Conakry</h2>
-                    <p class="event-date"><i class="far fa-calendar-alt"></i> 15 juillet 2023</p>
-                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> Palais du Peuple, Conakry</p>
-                    <p class="event-description">Rejoignez-nous pour une grande réunion publique où M. François Louceny Fall présentera les points clés du programme de l'UNPG pour l'avenir de la Guinée.</p>
-                    <a href="events2.html" class="cta-button">En savoir plus</a>
-                </div>
-            </div>
+        <p>L'UNPG s'engage à mettre en œuvre un programme ambitieux et réaliste pour répondre aux défis auxquels la Guinée fait face. Voici les détails de nos propositions dans les domaines clés :</p>
 
-            <div class="event-card">
-                <img src="6.JPG" alt="Forum de la jeunesse à Kankan" class="event-image">
-                <div class="event-details">
-                    <h2 class="event-title">Forum de la jeunesse à Kankan</h2>
-                    <p class="event-date"><i class="far fa-calendar-alt"></i> 5 août 2023</p>
-                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> Université Julius Nyerere de Kankan</p>
-                    <p class="event-description">Un forum dédié aux jeunes pour discuter de l'éducation, de l'emploi et de l'innovation en Guinée. Venez partager vos idées et vos aspirations !</p>
-                    <a href="youth-forum.html" class="cta-button">En savoir plus</a>
-                </div>
+        <section class="program-section">
+            <h2>Éducation</h2>
+            <div class="program-item">
+                <h3>Réforme du système éducatif</h3>
+                <ul>
+                    <li>Augmentation du budget de l'éducation à 20% du budget national</li>
+                    <li>Construction de 1000 nouvelles écoles dans les zones rurales</li>
+                    <li>Mise en place d'un programme de formation continue pour les enseignants</li>
+                    <li>Développement de programmes d'alphabétisation pour adultes</li>
+                    <li>Intégration des technologies numériques dans l'enseignement</li>
+                </ul>
             </div>
+        </section>
 
-            <div class="event-card">
-                <img src="7.JPG" alt="Conférence économique à Nzérékoré" class="event-image">
-                <div class="event-details">
-                    <h2 class="event-title">Conférence économique à Nzérékoré</h2>
-                    <p class="event-date"><i class="far fa-calendar-alt"></i> 20 septembre 2023</p>
-                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> Chambre de Commerce de Nzérékoré</p>
-                    <p class="event-description">Une conférence sur le développement économique de la région forestière, avec un focus sur l'agriculture durable et l'industrie locale.</p>
-                    <a href="events3.html" class="cta-button">En savoir plus</a>
-                </div>
+        <section class="program-section">
+            <h2>Santé</h2>
+            <div class="program-item">
+                <h3>Amélioration du système de santé</h3>
+                <ul>
+                    <li>Construction de 5 nouveaux hôpitaux régionaux</li>
+                    <li>Mise en place d'un système de couverture santé universelle</li>
+                    <li>Renforcement des programmes de vaccination et de lutte contre les maladies infectieuses</li>
+                    <li>Formation de 2000 nouveaux professionnels de santé</li>
+                    <li>Développement de la télémédecine pour les zones rurales</li>
+                </ul>
             </div>
+        </section>
 
-            <div class="event-card">
-                <img src="10.JPG" alt="Atelier sur l'autonomisation des femmes à Labé" class="event-image">
-                <div class="event-details">
-                    <h2 class="event-title">Atelier sur l'autonomisation des femmes à Labé</h2>
-                    <p class="event-date"><i class="far fa-calendar-alt"></i> 10 octobre 2023</p>
-                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> Centre culturel de Labé</p>
-                    <p class="event-description">Un atelier dédié à l'autonomisation des femmes, abordant les thèmes de l'entrepreneuriat féminin et de la participation politique des femmes.</p>
-                    <a href="atelier-femmes-labe.html" class="cta-button">En savoir plus</a>
-                </div>
+        <section class="program-section">
+            <h2>Économie</h2>
+            <div class="program-item">
+                <h3>Stimulation de la croissance économique</h3>
+                <ul>
+                    <li>Création d'un fonds d'investissement pour les start-ups</li>
+                    <li>Simplification des procédures administratives pour la création d'entreprises</li>
+                    <li>Développement des infrastructures (routes, ports, aéroports)</li>
+                    <li>Promotion du tourisme durable</li>
+                    <li>Soutien à l'agriculture et à l'industrie agroalimentaire</li>
+                </ul>
             </div>
-        </div>
+        </section>
+
+        <section class="program-section">
+            <h2>Environnement</h2>
+            <div class="program-item">
+                <h3>Protection de l'environnement et développement durable</h3>
+                <ul>
+                    <li>Mise en place d'un plan national de reboisement</li>
+                    <li>Développement des énergies renouvelables (solaire, hydraulique)</li>
+                    <li>Gestion durable des ressources naturelles</li>
+                    <li>Amélioration de la gestion des déchets et promotion du recyclage</li>
+                    <li>Sensibilisation à l'écocitoyenneté dans les écoles</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="program-section">
+            <h2>Justice et Sécurité</h2>
+            <div class="program-item">
+                <h3>Renforcement de l'État de droit</h3>
+                <ul>
+                    <li>Réforme du système judiciaire pour garantir son indépendance</li>
+                    <li>Lutte contre la corruption à tous les niveaux de l'État</li>
+                    <li>Modernisation des forces de sécurité et de défense</li>
+                    <li>Promotion des droits de l'homme et des libertés fondamentales</li>
+                    <li>Renforcement de la sécurité dans les zones frontalières</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="program-section">
+            <h2>Relations Internationales</h2>
+            <div class="program-item">
+                <h3>Renforcement de la position de la Guinée sur la scène internationale</h3>
+                <ul>
+                    <li>Promotion de la coopération régionale au sein de la CEDEAO</li>
+                    <li>Développement des partenariats économiques avec les pays émergents</li>
+                    <li>Renforcement de la diplomatie économique</li>
+                    <li>Participation active aux initiatives de paix et de sécurité en Afrique</li>
+                    <li>Promotion de la culture guinéenne à l'international</li>
+                </ul>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">

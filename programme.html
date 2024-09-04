@@ -1,558 +1,277 @@
 <html><head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UNPG - Programmes</title>
-<style>
-:root {
-  --primary-color: #00ffff;
-  --secondary-color: #ff00ff;
-  
-  --text-color: #ffffff;
-  --font-family: 'Orbitron', sans-serif;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programme - UNPG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #FFA500;
+            --secondary-color: #FF4500;
+            --text-color: #000000;
+            --background-color: #FFFFFF;
+        }
 
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-family);
-  background-color: #c5b3b3;
-  color: var(--text-color);
-  overflow-x: hidden;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center; /* Centrer le texte à l'intérieur du container */
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-/* Header avec background dégradé */
-.header {
-    background: linear-gradient(90deg, #ff6600, #ff3300);
-    padding: 20px 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
+        .header, .footer {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
 
-@keyframes flicker {
-    0% {
-        opacity: 1;
-        text-shadow: 0 0 5px #00bf8f, 0 0 10px #00bf8f;
-    }
-    100% {
-        opacity: 0.8;
-        text-shadow: 0 0 15px #00bf8f, 0 0 20px #00bf8f;
-    }
-}
+        .topnav {
+            background-color: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
 
-/* Barre de navigation */
-.topnav {
-    display: flex;
-    background-color: #ffffff;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
-    transition: height 0.3s;
-}
+        .topnav a {
+            float: left;
+            display: block;
+            color: var(--text-color);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: background-color 0.3s;
+        }
 
-.topnav a {
-    padding: 10px 20px;
-    color: #0a0707;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.3s, transform 0.3s;
-    font-size: 16px;
-}
+        .topnav a:hover, .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
 
-.topnav a:hover {
-    background-color: #fcc121;
-    transform: translateY(-5px);
-}
+        .topnav .icon {
+            display: none;
+        }
 
-.topnav .dropdown-content {
-    display: none;
-    background-color: #ece7e7;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 200px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    color: #000;
-}
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-    
-}
+        .dropdown .dropbtn {
+            font-size: 17px;
+            border: none;
+            outline: none;
+            color: var(--text-color);
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
 
-/* Boutons Futuristes */
-.btn-futuristic {
-    background: linear-gradient(90deg, #0a0908, #503b36);
-    border: none;
-    border-radius: 50px;
-    color: #faf5f5;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.5s, transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 191, 143, 0.5);
-    text-decoration: none;
-    margin-left: 10px;
-}
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
 
-.btn-futuristic:hover {
-    background: linear-gradient(45deg, #001510, #00bf8f);
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 191, 143, 0.7);
-}
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
 
-.icon {
-    font-size: 24px;
-    cursor: pointer;
-    display: none;
-    color: #ffffff;
-}
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
 
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .topnav {
-        flex-direction: column;
-        height: 0;
-        overflow: hidden;
-    }
+        .main-content {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    .topnav.responsive {
-        height: 100%;
-        transition: height 0.3s;
-    }
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
 
-    .icon {
-        display: block;
-    }
+        .program-item {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-    .topnav a {
-        text-align: left;
-        padding: 10px;
-        width: 100%;
-        box-sizing: border-box;
-    }
+        .program-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
 
-    .container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 10px;
-    text-align: center; /* Centrer le texte à l'intérieur du container */
-}
-}
+        .program-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
 
-main {
-  margin-top: 30px;
-  padding: 20px;
-}
+        .program-item i {
+            font-size: 2em;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
 
-h1 {
-  text-align: center;
-  color: rgb(245, 238, 238);
-  text-shadow: 0 0 10px var(--secondary-color);
-  padding: 20px;
-  background: linear-gradient(90deg, #1d0c00, #ff3300);
-  margin-bottom: 20px;
-  
-}
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
 
-p {
-  text-align: center;
-  color: rgb(5, 2, 2);
-  text-shadow: 0 0 10px var(--secondary-color);
-  padding: 0px;
-  margin-bottom: 30px;
-}
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
 
-/* Style général */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center; /* Centrer le texte à l'intérieur du container */
-}
-
-
-.program-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centrer les items horizontalement */
-    gap: 20px;
-}
-
-.program-item {
-    background-color: #f8f8f8;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 300px;
-    padding: 20px;
-    margin: 10px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    color: #000;
-}
-
-.program-item:hover {
-    transform: translateY(-5px);
-}
-
-.program-icon {
-    font-size: 2.5em;
-    color: #ff7f50;
-    margin-bottom: 15px;
-}
-
-.program-title {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.program-description {
-    font-size: 1em;
-    line-height: 1.5;
-    color: #000;
-}
-
-/* Styles Responsives */
-@media (max-width: 1024px) {
-    .program-grid {
-        justify-content: center; /* Centre les items horizontalement sur tablettes */
-        gap: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .program-grid {
-        flex-direction: column;
-        align-items: center; /* Centrer les items verticalement sur les petits écrans */
-    }
-
-    .program-item {
-        width: 90%;
-        max-width: 100%; /* Pourcentage pour mieux s'adapter aux petits écrans */
-        margin:  0 auto;
-    }
-
-    .container {
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center; /* Centrer le texte à l'intérieur du container */
-}
-
-}
-
-/* Style du footer */
-.footer {
-    background: linear-gradient(90deg, #ff6600, #ff3300);
-    color: #050303;
-    padding: 40px 20px;
-}
-
-/* Footer styles */
-.footer {
-    background: linear-gradient(135deg, #FF7F50, #FF4500);
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.footer-column {
-    flex: 1;
-    min-width: 200px;
-    margin: 10px 0;
-}
-
-.footer-column h4 {
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #000;
-}
-
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-column ul li {
-    margin: 5px 0;
-}
-
-.footer-column ul li a {
-    color: #0e0808;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-column ul li a:hover {
-    color: #ffebcd;
-}
-
-.social-media ul {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-}
-
-.social-media ul li {
-    margin: 0 10px;
-}
-
-.social-media ul li a {
-    color: #0d0ad3;
-    font-size: 20px;
-    transition: color 0.3s ease;
-}
-
-.social-media ul li a:hover {
-    color: #e9e7f3;
-}
-
-.footer-bottom {
-    margin-top: 20px;
-}
-
-.footer-bottom p {
-    margin: 0;
-    font-size: 14px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-column {
-        text-align: center;
-        min-width: 100%;
-    }
-}
-
-/* Adapter le footer pour les écrans plus petits */
-@media screen and (max-width: 768px) {
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr); /* Utilise une grille de 2 colonnes égales pour les tablettes et mobiles */
-        width: calc(100% - 20px); /* Respecte les marges de 10px du body de chaque côté */
-        gap: 10px;                /* Réduit l'espace entre les colonnes pour les petits écrans */
-    }
-
-    .footer-column {
-        width: 100%; /* Chaque colonne occupe 100% de la largeur de la grille */
-        text-align: center; /* Centre le contenu des colonnes */
-        margin-bottom: 10px; /* Ajoute un espace entre les colonnes lorsqu'elles sont empilées */
-    }
-}
-
-
-/* Logo Futuriste avec effet de clignotement */
-.logo img{
-    border-radius: 50%; /* Logo arrondi */
-    border: 2px solid #f6f7fa;
-    font-size: 2em;
-    font-weight: bold;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    animation: flicker 1.5s infinite alternate;
-}
-
-
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child), .dropdown .dropbtn {
+                display: none;
+            }
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+            .topnav.responsive {position: relative;}
+            .topnav.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+            .topnav.responsive .dropdown {float: none;}
+            .topnav.responsive .dropdown-content {position: relative;}
+            .topnav.responsive .dropdown .dropbtn {
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <div class="logo">
-        <img src="logo.png" width="100" height="100" alt="Logo des Républicains">
-    </div>
-    <i class="fas fa-bars icon" onclick="toggleMenu()"></i>
-</header>
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" width="100" height="100" alt="Logo de l'UNPG">
+        </div>
+        <i class="fas fa-bars icon" onclick="toggleMenu()"></i>
+    </header>
 
-<div class="topnav" id="myTopnav">
-        <a href="index.html" class="active">Accueil</a>
+    <nav class="topnav" id="myTopnav">
+        <a href="index.html">Accueil</a>
         <a href="about.html">Qui sommes-nous</a>
-        <a href="programme.html">Programme</a>
+        <a href="programme.html" class="active">Programme</a>
         <a href="events.html">Événements</a>
-        <a href="blog">Blog</a>
+        <a href="blog.html">Blog</a>
         <a href="videos.html">Vidéos</a>
-    <div class="dropdown">
-        <a href="#">Plus<i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-content">
-            <a href="#">Logement</a>
-                    <a href="#">Redonner la parole aux Guinéens</a>
-                    <a href="#">Le contre-budget de l'UNDP</a>
-                    <a href="#">Textes fondateurs</a>
+        <div class="dropdown">
+            <button class="dropbtn">Plus 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/logement.html">Logement</a>
+                <a href="/parole-guineens.html">Redonner la parole aux Guinéens</a>
+                <a href="/contre-budget.html">Le contre-budget de l'UNPG</a>
+                <a href="/textes-fondateurs.html">Textes fondateurs</a>
+            </div>
         </div>
-    </div>
-    <a href="#">Contact</a>
-</div>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-<div class="btn-container">
-    <a href="#" class="btn-futuristic">Adhérer</a>
-    <a href="#" class="btn-futuristic">Faire un don</a>
-</div>
+    <main class="main-content">
+        <h1>Notre Programme</h1>
+        
+        <p>L'UNPG s'engage à construire une Guinée plus forte, plus prospère et plus juste. Notre programme est basé sur des solutions concrètes pour répondre aux défis actuels et futurs de notre nation.</p>
 
-  <main>
-    <div class="container">
-      <h1>Notre Programme</h1>
-      <p>L'UNPG s'engage à construire une Guinée prospère, équitable et moderne. Voici les piliers de notre programme :</p>
-
-      <div class="program-grid">
-        <div class="program-item">
-          <div class="program-icon"><i class="fas fa-graduation-cap"></i></div>
-          <h3 class="program-title">Éducation</h3>
-          <p class="program-description">Réformer le système éducatif pour offrir une éducation de qualité à tous les Guinéens, en mettant l'accent sur l'innovation et les compétences du 21e siècle.</p>
+        <div class="program-grid">
+            <div class="program-item">
+                <i class="fas fa-book"></i>
+                <h3>Éducation</h3>
+                <p>Nous nous engageons à améliorer l'accès à une éducation de qualité pour tous les Guinéens, de l'école primaire à l'université. Nous investirons dans la formation des enseignants et dans les infrastructures scolaires.</p>
+            </div>
+            <div class="program-item">
+                <i class="fas fa-heartbeat"></i>
+                <h3>Santé</h3>
+                <p>Notre objectif est de renforcer le système de santé guinéen en améliorant l'accès aux soins, en modernisant les hôpitaux et en formant plus de personnel médical qualifié.</p>
+            </div>
+            <div class="program-item">
+                <i class="fas fa-industry"></i>
+                <h3>Économie</h3>
+                <p>Nous proposons des mesures pour stimuler la croissance économique, créer des emplois et attirer les investissements étrangers, tout en soutenant les petites et moyennes entreprises locales.</p>
+            </div>
+            <div class="program-item">
+                <i class="fas fa-leaf"></i>
+                <h3>Environnement</h3>
+                <p>Notre programme inclut des initiatives pour protéger l'environnement, lutter contre le changement climatique et promouvoir le développement durable en Guinée.</p>
+            </div>
+            <div class="program-item">
+                <i class="fas fa-gavel"></i>
+                <h3>Justice et Sécurité</h3>
+                <p>Nous nous engageons à renforcer l'État de droit, à lutter contre la corruption et à améliorer la sécurité pour tous les citoyens guinéens.</p>
+            </div>
+            <div class="program-item">
+                <i class="fas fa-globe-africa"></i>
+                <h3>Relations Internationales</h3>
+                <p>Notre politique étrangère vise à renforcer la position de la Guinée sur la scène internationale et à promouvoir la coopération régionale et mondiale.</p>
+            </div>
         </div>
 
-        <div class="program-item">
-          <div class="program-icon"><i class="fas fa-heartbeat"></i></div>
-          <h3 class="program-title">Santé</h3>
-          <p class="program-description">Améliorer l'accès aux soins de santé en modernisant les infrastructures et en formant davantage de professionnels de santé qualifiés.</p>
+        <a href="programme-detaille.html" class="cta-button">Découvrez notre programme détaillé</a>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 UNPG - Par YATTARA Ousmane Tous droits réservés</p>
+        <div class="social-icons">
+            <a href="https://facebook.com/UNPG" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/UNPG" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/UNPG" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
+    </footer>
 
-        <div class="program-item">
-          <div class="program-icon"><i class="fas fa-industry"></i></div>
-          <h3 class="program-title">Économie</h3>
-          <p class="program-description">Stimuler la croissance économique en encourageant l'entrepreneuriat, l'innovation et les investissements étrangers responsables.</p>
-        </div>
-
-        <div class="program-item">
-          <div class="program-icon"><i class="fas fa-leaf"></i></div>
-          <h3 class="program-title">Environnement</h3>
-          <p class="program-description">Promouvoir le développement durable et la protection de l'environnement pour préserver les ressources naturelles de la Guinée.</p>
-        </div>
-
-        <div class="program-item">
-          <div class="program-icon"><i class="fas fa-balance-scale"></i></div>
-          <h3 class="program-title">Justice et Droits Humains</h3>
-          <p class="program-description">Renforcer l'État de droit, lutter contre la corruption et garantir le respect des droits humains pour tous les citoyens.</p>
-        </div>
-
-        <div class="program-item">
-          <div class="program-icon"><i class="fas fa-globe-africa"></i></div>
-          <h3 class="program-title">Relations Internationales</h3>
-          <p class="program-description">Renforcer la position de la Guinée sur la scène internationale et promouvoir la coopération régionale et mondiale.</p>
-        </div>
-      </div>
-    </div>
-  </main>
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-container">
-      <div class="footer-column">
-          <h4>Nous contacter</h4>
-          <ul>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="#legal">Mentions légales</a></li>
-          </ul>
-      </div>
-      <div class="footer-column">
-          <h4>QUI SOMMES-NOUS</h4>
-          <ul>
-              <li><a href="#team">Notre équipe</a></li>
-              <li><a href="#strategy">Conseil stratégique</a></li>
-              <li><a href="#instances">Nos instances</a></li>
-              <li><a href="#texts">Textes fondateurs</a></li>
-              <li><a href="#federations">Fédérations</a></li>
-          </ul>
-      </div>
-      <div class="footer-column">
-          <h4>ACTUALITÉS</h4>
-          <ul>
-              <li><a href="#latest">Dernières actualités</a></li>
-              <li><a href="videos.html">Toutes les vidéos</a></li>
-          </ul>
-      </div>
-      <div class="footer-column">
-          <h4>NOS IDÉES</h4>
-          <ul>
-              <li><a href="programme.html">Une Certaine Idée</a></li>
-              <li><a href="#french">Guinéennes, Guinéens</a></li>
-              <li><a href="#material">Matériel militant</a></li>
-          </ul>
-      </div>
-      <div class="footer-column social-media">
-          <h4>Suivez-nous</h4>
-          <ul>
-              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-              <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-          </ul>
-      </div>
-  </div>
-  <div class="footer-bottom">
-      <p>&copy; 2024 Yattara Ousmane. Tous droits réservés.</p>
-  </div>
-</footer>
-
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Animation du logo
-    const logo = document.querySelector('.logo');
-    logo.addEventListener('mouseover', () => {
-      logo.style.animation = 'pulse 1s infinite';
-    });
-    logo.addEventListener('mouseout', () => {
-      logo.style.animation = 'none';
-    });
-
-    // Effet de parallaxe pour le fond
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      document.body.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
-    });
-
-    // Animation des éléments du programme au défilement
-    const programItems = document.querySelectorAll('.program-item');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = 'translateY(0)';
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
         }
-      });
-    }, { threshold: 0.1 });
-
-    programItems.forEach(item => {
-      item.style.opacity = 0;
-      item.style.transform = 'translateY(50px)';
-      item.style.transition = 'opacity 0.5s, transform 0.5s';
-      observer.observe(item);
-    });
-  });
-  </script>
-
-<script>
-  function toggleMenu() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-          x.className += " responsive";
-      } else {
-          x.className = "topnav";
-      }
-  }
-</script>
+    </script>
 </body>
 </html>

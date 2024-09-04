@@ -1,0 +1,250 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription au Programme Jeunesse - UNPG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #FFA500;
+            --secondary-color: #FF4500;
+            --background-color: #F5F5F5;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .header, .footer {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+
+        .form-container {
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 2rem;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>UNPG - Union Nationale pour le Progrès de la Guinée</h1>
+    </header>
+
+    <nav class="navbar">
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="programme.html">Programme</a>
+        <a href="events.html">Événements</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="form-container">
+            <h1>Inscription au Programme Jeunesse</h1>
+            <form id="youth-program-form">
+                <div class="form-group">
+                    <label for="name">Nom complet:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Téléphone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="birthdate">Date de naissance:</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+                <div class="form-group">
+                    <label for="education">Niveau d'éducation:</label>
+                    <select id="education" name="education" required>
+                        <option value="">Choisir...</option>
+                        <option value="secondary">Secondaire</option>
+                        <option value="high-school">Lycée</option>
+                        <option value="university">Université</option>
+                        <option value="other">Autre</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="interests">Centres d'intérêt:</label>
+                    <textarea id="interests" name="interests" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="motivation">Pourquoi voulez-vous rejoindre notre programme? (max 500 caractères)</label>
+                    <textarea id="motivation" name="motivation" rows="4" maxlength="500" required></textarea>
+                </div>
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 UNPG - Par YATTARA Ousmane Tous droits réservés</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('youth-program-form');
+            const constraints = {
+                name: {
+                    presence: { allowEmpty: false },
+                    length: { minimum: 3 }
+                },
+                email: {
+                    presence: { allowEmpty: false },
+                    email: true
+                },
+                phone: {
+                    presence: { allowEmpty: false },
+                    format: {
+                        pattern: /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/,
+                        message: "n'est pas un numéro de téléphone valide"
+                    }
+                },
+                birthdate: {
+                    presence: { allowEmpty: false },
+                    date: {
+                        latest: moment().subtract(16, 'years'),
+                        message: "Vous devez avoir au moins 16 ans pour vous inscrire"
+                    }
+                },
+                education: {
+                    presence: { allowEmpty: false }
+                },
+                interests: {
+                    presence: { allowEmpty: false },
+                    length: { minimum: 10 }
+                },
+                motivation: {
+                    presence: { allowEmpty: false },
+                    length: { minimum: 50, maximum: 500 }
+                }
+            };
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const formValues = validate.collectFormValues(form);
+                const errors = validate(formValues, constraints);
+
+                // Remove any existing error messages
+                form.querySelectorAll('.error').forEach(el => el.remove());
+
+                if (errors) {
+                    Object.keys(errors).forEach(function(key) {
+                        const input = form.querySelector(`[name="${key}"]`);
+                        const error = document.createElement('div');
+                        error.className = 'error';
+                        error.textContent = errors[key][0];
+                        input.parentNode.insertBefore(error, input.nextSibling);
+                    });
+                } else {
+                    // Form is valid, you can submit it or process the data
+                    alert('Merci pour votre inscription! Nous vous contacterons bientôt.');
+                    form.reset();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

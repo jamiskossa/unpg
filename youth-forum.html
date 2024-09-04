@@ -1,7 +1,7 @@
 <html><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Événements - UNPG</title>
+    <title>Forum de la jeunesse à Kankan - UNPG</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -110,60 +110,72 @@
             margin: 0 auto;
         }
 
-        .event-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .event-card {
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .event-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .event-image {
+        .event-banner {
             width: 100%;
-            height: 200px;
+            height: 300px;
             object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
         }
 
         .event-details {
-            padding: 20px;
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .event-title {
-            font-size: 1.2em;
             color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .event-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
             margin-bottom: 10px;
         }
 
-        .event-date, .event-location {
-            font-size: 0.9em;
-            color: #666;
-            margin-bottom: 5px;
+        .info-item i {
+            color: var(--secondary-color);
+            margin-right: 10px;
         }
 
         .event-description {
-            margin-top: 10px;
-            font-size: 0.95em;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .event-schedule {
+            margin-bottom: 30px;
+        }
+
+        .schedule-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .schedule-time {
+            width: 100px;
+            font-weight: bold;
         }
 
         .cta-button {
             display: inline-block;
             background-color: var(--secondary-color);
             color: white;
-            padding: 10px 20px;
+            padding: 15px 30px;
             border-radius: 5px;
             text-decoration: none;
-            margin-top: 15px;
+            font-size: 1.2em;
             transition: background-color 0.3s;
         }
 
@@ -230,52 +242,68 @@
     </nav>
 
     <main class="main-content">
-        <h1>Événements à venir</h1>
+        <img src="petits.jpg" alt="Bannière du Forum de la jeunesse à Kankan" class="event-banner">
         
-        <div class="event-list">
-            <div class="event-card">
-                <img src="3.JPG" alt="Grande réunion publique à Conakry" class="event-image">
-                <div class="event-details">
-                    <h2 class="event-title">Grande réunion publique à Conakry</h2>
-                    <p class="event-date"><i class="far fa-calendar-alt"></i> 15 juillet 2023</p>
-                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> Palais du Peuple, Conakry</p>
-                    <p class="event-description">Rejoignez-nous pour une grande réunion publique où M. François Louceny Fall présentera les points clés du programme de l'UNPG pour l'avenir de la Guinée.</p>
-                    <a href="events2.html" class="cta-button">En savoir plus</a>
+        <div class="event-details">
+            <h1 class="event-title">Forum de la jeunesse à Kankan</h1>
+            
+            <div class="event-info">
+                <div class="info-item">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>5 août 2023</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <span>9h00 - 17h00</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Université Julius Nyerere de Kankan</span>
                 </div>
             </div>
-
-            <div class="event-card">
-                <img src="6.JPG" alt="Forum de la jeunesse à Kankan" class="event-image">
-                <div class="event-details">
-                    <h2 class="event-title">Forum de la jeunesse à Kankan</h2>
-                    <p class="event-date"><i class="far fa-calendar-alt"></i> 5 août 2023</p>
-                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> Université Julius Nyerere de Kankan</p>
-                    <p class="event-description">Un forum dédié aux jeunes pour discuter de l'éducation, de l'emploi et de l'innovation en Guinée. Venez partager vos idées et vos aspirations !</p>
-                    <a href="youth-forum.html" class="cta-button">En savoir plus</a>
+            
+            <div class="event-description">
+                <p>L'UNPG est fière d'organiser le Forum de la jeunesse à Kankan, un événement crucial pour l'avenir de notre pays. Ce forum est dédié aux jeunes Guinéens pour discuter des enjeux majeurs qui les concernent : l'éducation, l'emploi et l'innovation en Guinée.</p>
+                <p>Nous croyons fermement que la jeunesse est le moteur du changement et le pilier sur lequel nous devons construire l'avenir de la Guinée. Ce forum offre une plateforme unique pour échanger des idées, partager des expériences et proposer des solutions innovantes pour relever les défis auxquels notre pays est confronté.</p>
+            </div>
+            
+            <div class="event-schedule">
+                <h2>Programme de la journée</h2>
+                <div class="schedule-item">
+                    <span class="schedule-time">09h00</span>
+                    <span class="schedule-activity">Accueil et inscription des participants</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="schedule-time">10h00</span>
+                    <span class="schedule-activity">Discours d'ouverture par M. François Louceny Fall</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="schedule-time">10h30</span>
+                    <span class="schedule-activity">Table ronde : "L'éducation, clé du développement de la Guinée"</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="schedule-time">12h00</span>
+                    <span class="schedule-activity">Pause déjeuner et networking</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="schedule-time">13h30</span>
+                    <span class="schedule-activity">Ateliers participatifs sur l'emploi et l'entrepreneuriat</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="schedule-time">15h30</span>
+                    <span class="schedule-activity">Présentation des projets innovants par les jeunes participants</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="schedule-time">16h30</span>
+                    <span class="schedule-activity">Session de questions-réponses avec les leaders de l'UNPG</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="schedule-time">17h00</span>
+                    <span class="schedule-activity">Clôture du forum et cocktail de networking</span>
                 </div>
             </div>
-
-            <div class="event-card">
-                <img src="7.JPG" alt="Conférence économique à Nzérékoré" class="event-image">
-                <div class="event-details">
-                    <h2 class="event-title">Conférence économique à Nzérékoré</h2>
-                    <p class="event-date"><i class="far fa-calendar-alt"></i> 20 septembre 2023</p>
-                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> Chambre de Commerce de Nzérékoré</p>
-                    <p class="event-description">Une conférence sur le développement économique de la région forestière, avec un focus sur l'agriculture durable et l'industrie locale.</p>
-                    <a href="events3.html" class="cta-button">En savoir plus</a>
-                </div>
-            </div>
-
-            <div class="event-card">
-                <img src="10.JPG" alt="Atelier sur l'autonomisation des femmes à Labé" class="event-image">
-                <div class="event-details">
-                    <h2 class="event-title">Atelier sur l'autonomisation des femmes à Labé</h2>
-                    <p class="event-date"><i class="far fa-calendar-alt"></i> 10 octobre 2023</p>
-                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> Centre culturel de Labé</p>
-                    <p class="event-description">Un atelier dédié à l'autonomisation des femmes, abordant les thèmes de l'entrepreneuriat féminin et de la participation politique des femmes.</p>
-                    <a href="atelier-femmes-labe.html" class="cta-button">En savoir plus</a>
-                </div>
-            </div>
+            
+            <a href="inscription.html" class="cta-button">S'inscrire au forum</a>
         </div>
     </main>
 
