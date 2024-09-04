@@ -265,6 +265,84 @@ function showSlides() {
 
 </script>
 
+<script>
+    function toggleMenu() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+
+    // Add smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Add a futuristic chat system
+    function initChat() {
+        const chatButton = document.createElement('button');
+        chatButton.innerText = 'Chat';
+        chatButton.classList.add('chat-button');
+        document.body.appendChild(chatButton);
+
+        const chatContainer = document.createElement('div');
+        chatContainer.classList.add('chat-container');
+        chatContainer.innerHTML = `
+            <div class="chat-header">
+                <h3>Chat UNPG</h3>
+                <button class="close-chat">&times;</button>
+            </div>
+            <div class="chat-messages"></div>
+            <input type="text" class="chat-input" placeholder="Tapez votre message...">
+        `;
+        document.body.appendChild(chatContainer);
+
+        chatButton.addEventListener('click', () => {
+            chatContainer.classList.toggle('active');
+        });
+
+        const closeChat = chatContainer.querySelector('.close-chat');
+        closeChat.addEventListener('click', () => {
+            chatContainer.classList.remove('active');
+        });
+
+        const chatInput = chatContainer.querySelector('.chat-input');
+        const chatMessages = chatContainer.querySelector('.chat-messages');
+
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const message = chatInput.value.trim();
+                if (message) {
+                    addMessage('Vous', message);
+                    chatInput.value = '';
+                    // Here you would typically send the message to a server
+                    // and wait for a response. For this example, we'll just
+                    // simulate a response after a short delay.
+                    setTimeout(() => {
+                        addMessage('UNPG', 'Merci pour votre message. Un représentant vous répondra bientôt.');
+                    }, 1000);
+                }
+            }
+        });
+
+        function addMessage(sender, text) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('chat-message');
+            messageElement.innerHTML = `<strong>${sender}:</strong> ${text}`;
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    }
+
+    window.addEventListener('load', initChat);
+</script>
 </body>
 </html>
 
