@@ -1,577 +1,290 @@
 <html><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UNPG - À Propos de Louceny Fall</title>
-<style>
-:root {
-  --primary-color: #00ffff;
-  --secondary-color: #ff00ff;
-  --background-color: #000033;
-  --text-color: #ffffff;
-  --font-family: 'Roboto', sans-serif;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui sommes-nous - UNPG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #FFA500;
+            --secondary-color: #FF4500;
+            --text-color: #000000;
+            --background-color: #FFFFFF;
+        }
 
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-family);
-  background: linear-gradient(to right, #e2ebe4, #bbbbc2);
-  color: black;
-  line-height: 1.6;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* Header */
-.header-color-transition {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: linear-gradient(90deg, #ff6600, #ff3300);
-    transition: background 0.5s ease;
-    position: relative;
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-.header-color-transition:hover {
-    background: linear-gradient(90deg, #00ff99, #ff0055);
-}
+        .header, .footer {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.logo {
-    font-size: 24px;
-    color: #ffffff;
-}
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
 
-.menu-icon {
-    font-size: 30px;
-    cursor: pointer;
-    display: none;
-    color: #ffffff;
-}
+        .topnav {
+            background-color: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
 
-#menu-toggle {
-    display: none;
-}
+        .topnav a {
+            float: left;
+            display: block;
+            color: var(--text-color);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: background-color 0.3s;
+        }
 
-.menu {
-    display: flex;
-    gap: 20px;
-}
+        .topnav a:hover, .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
 
-.menu a {
-    text-decoration: none;
-    color: #070505;
-    font-weight: bold;
-    transition: color 0.3s;
-}
+        .topnav .icon {
+            display: none;
+        }
 
-.menu a:hover {
-    color: #ff0055;
-}
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
 
-/* Boutons dans le header */
-.header-buttons {
-    display: flex;
-    gap: 15px;
-}
+        .dropdown .dropbtn {
+            font-size: 17px;
+            border: none;
+            outline: none;
+            color: var(--text-color);
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
 
-.btn {
-    padding: 10px 20px;
-    border: 2px solid #ffffff;
-    color: #0e0909;
-    text-decoration: none;
-    text-transform: uppercase;
-    background: transparent;
-    transition: all 0.3s ease;
-    border-radius: 20px;
-}
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
 
-.btn:hover {
-    background: #ffffff;
-    color: #ff0055;
-    border-color: #ff0055;
-}
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
 
-@media (max-width: 768px) {
-    .header-color-transition {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
 
-    .menu {
-        display: none;
-        flex-direction: column;
-        background: rgba(0, 0, 0, 0.9);
-        position: relative;
-        top: 10px;
-        width: 100%;
-        padding: 10px 0;
-        border-radius: 5px;
-    }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
-    #menu-toggle:checked + .menu-icon + .menu {
-        display: flex;
-    }
+        .main-content {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    .menu-icon {
-        display: block;
-        margin-left: auto;
-    }
+        .video-banner {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 40px;
+        }
 
-    /* Afficher les boutons sous le menu en mode mobile */
-    .header-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        padding: 10px 0;
-    }
+        .video-banner iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
-    .btn {
-        padding: 10px;
-        text-align: center;
-        width: 90%;
-        margin: 5px auto;
-    }
-}
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
+        .team-member {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-.about-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
 
-h1 {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: var(--primary-color);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(90deg, #ff6600, #7dfa43);
-}
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
 
-.profile-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  background: linear-gradient(90deg, #ff6600, #8fff4f);
-}
-
-.video-container {
-  width: 100%;
-  max-width: 800px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-  background: linear-gradient(90deg, #351c0c, #223b14);
-}
-
-.profile-video {
-  width: 100%;
-  height: auto;
-}
-
-.profile-info {
-  text-align: center;
-  max-width: 900px;
-}
-
-.profile-name {
-  font-size: 2rem;
-  color: var(--secondary-color);
-  margin-bottom: 1rem;
-}
-
-.profile-title {
-  font-size: 1.2rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-.profile-description {
-  font-size: 1.1rem;
-  text-align: justify;
-}
-
-.cta-button {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 12px 24px;
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  color: var(--background-color);
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.social-icon {
-  font-size: 1.5rem;
-  color: var(--primary-color);
-  transition: color 0.3s ease;
-}
-
-.social-icon:hover {
-  color: var(--secondary-color);
-}
-
-@media (max-width: 768px) {
-  .container {
-    margin: 0 auto;
-    max-width: 400px;
-
-  }
-  
-  h1 {
-    font-size: 1rem;
-  }
-
-  .menu a {
-    text-decoration: none;
-    color: #e7dfdf;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-  
-  .profile-name {
-    font-size: 1.8rem;
-  }
-  
-  .profile-title {
-    font-size: 1rem;
-  }
-  
-  .profile-description {
-    font-size: 1rem;
-  }
-
-  .profile-info {
-  text-align: center;
-  max-width: 400px;
-}
-}
-
-
-
-/* Style du footer */
-.footer {
-    background: linear-gradient(90deg, #ff6600, #ff3300);
-    color: #050303;
-    padding: 40px 20px;
-}
-
-/* Footer styles */
-.footer {
-    background: linear-gradient(135deg, #FF7F50, #FF4500);
-    color: #0f0909;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.footer-column {
-    flex: 1;
-    min-width: 200px;
-    margin: 10px 0;
-}
-
-.footer-column h4 {
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-column ul li {
-    margin: 5px 0;
-}
-
-.footer-column ul li a {
-    color: #0e0a0a;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-column ul li a:hover {
-    color: #ffebcd;
-}
-
-.social-media ul {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-}
-
-.social-media ul li {
-    margin: 0 10px;
-}
-
-.social-media ul li a {
-    color: #1c0699;
-    font-size: 20px;
-    transition: color 0.3s ease;
-}
-
-.social-media ul li a:hover {
-    color: #ffebcd;
-}
-
-.footer-bottom {
-    margin-top: 20px;
-}
-
-.footer-bottom p {
-    margin: 0;
-    font-size: 14px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-column {
-        text-align: center;
-        min-width: 100%;
-    }
-}
-
-/* Adapter le footer pour les écrans plus petits */
-@media screen and (max-width: 768px) {
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr); /* Utilise une grille de 2 colonnes égales pour les tablettes et mobiles */
-        width: calc(100% - 20px); /* Respecte les marges de 10px du body de chaque côté */
-        gap: 10px;                /* Réduit l'espace entre les colonnes pour les petits écrans */
-    }
-
-    .footer-column {
-        width: 100%; /* Chaque colonne occupe 100% de la largeur de la grille */
-        text-align: center; /* Centre le contenu des colonnes */
-        margin-bottom: 10px; /* Ajoute un espace entre les colonnes lorsqu'elles sont empilées */
-    }
-}
-
-/* Logo Futuriste avec effet de clignotement */
-.logo img{
-    border-radius: 50%; /* Logo arrondi */
-    border: 2px solid #f6f7fa;
-    font-size: 2em;
-    font-weight: bold;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    animation: flicker 1.5s infinite alternate;
-}
-
-</style>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child), .dropdown .dropbtn {
+                display: none;
+            }
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+            .topnav.responsive {position: relative;}
+            .topnav.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+            .topnav.responsive .dropdown {float: none;}
+            .topnav.responsive .dropdown-content {position: relative;}
+            .topnav.responsive .dropdown .dropbtn {
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+            .video-banner {
+                height: 200px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="header-color-transition">
-    <div class="logo">
-      <img src="logo.png" width="100" height="100" alt="Logo des Républicains">
-  </div>
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="menu-icon">&#9776;</label>
-    <nav class="menu">
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" width="100" height="100" alt="Logo de l'UNPG">
+        </div>
+        <i class="fas fa-bars icon" onclick="toggleMenu()"></i>
+    </header>
+
+    <nav class="topnav" id="myTopnav">
         <a href="index.html">Accueil</a>
-        <a href="about.html">À propos</a>
+        <a href="about.html" class="active">Qui sommes-nous</a>
         <a href="programme.html">Programme</a>
         <a href="events.html">Événements</a>
         <a href="blog.html">Blog</a>
         <a href="videos.html">Vidéos</a>
-        <a href="aderer.html">Adhésion</a>
+        <div class="dropdown">
+            <button class="dropbtn">Plus 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="logement.html">Logement</a>
+                <a href="parole-guineens.html">Redonner la parole aux Guinéens</a>
+                <a href="contre-budget.html">Le contre-budget de l'UNPG</a>
+                <a href="textes-fondateurs.html">Textes fondateurs</a>
+            </div>
+        </div>
         <a href="contact.html">Contact</a>
-        
     </nav>
-    <div class="header-buttons">
-        <a href="dons.html" class="btn donate">Faire un Don</a>
-        <a href="rejoindreparti.html" class="btn join">Rejoindre le Parti</a>
-    </div>
-</header>
-  <div class="container">
-    <section class="about-section">
-      <h1>À Propos de Louceny Fall et l'UNPG</h1>
-      
-      <div class="profile-container">
-        <div class="video-container">
-          <video class="profile-video" controls poster="https://example.com/louceny-fall-video-thumbnail.jpg">
-            <source src="unpg.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la lecture de vidéos HTML5.
-          </video>
-        </div>
+
+    <main class="main-content">
+        <h1>Qui sommes-nous</h1>
         
-        <div class="profile-info">
-          <h2 class="profile-name">Louceny Fall</h2>
-          <p class="profile-title">Président de l'Union Nationale pour le Progrès de la Guinée (UNPG)</p>
-          <p class="profile-description">
-            Louceny Fall est le visionnaire et le leader charismatique à la tête de l'Union Nationale pour le Progrès de la Guinée (UNPG). Né dans une famille modeste à Conakry, Louceny a gravi les échelons grâce à sa détermination et son engagement envers le développement de la Guinée.
-          </p>
-          <p class="profile-description">
-            En tant que Président de l'UNPG, Louceny Fall incarne les valeurs fondamentales de notre parti : intégrité, justice sociale et progrès économique. Son parcours impressionnant en tant qu'économiste et son expérience dans les organisations internationales lui donnent une perspective unique sur les défis et les opportunités qui attendent notre nation.
-          </p>
-          <p class="profile-description">
-            L'UNPG, sous la direction de Louceny Fall, s'engage à construire une Guinée plus forte, plus prospère et plus équitable. Notre vision englobe la modernisation de l'économie, le renforcement des institutions démocratiques et l'amélioration des conditions de vie de tous les Guinéens.
-          </p>
-          <a href="programme.html" class="cta-button">Découvrir Notre Programme</a>
-          
-          <div class="social-links">
-            <a href="https://twitter.com/LoucenyFall_UNPG" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.facebook.com/UNPGOfficiel" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.linkedin.com/company/unpg-guinee" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-          </div>
+        <div class="video-banner">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-      </div>
-    </section>
-  </div>
 
-  
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-container">
-      <div class="footer-column">
-          <h4>Nous contacter</h4>
-          <ul>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="#legal">Mentions légales</a></li>
-          </ul>
-      </div>
-      <div class="footer-column">
-          <h4>QUI SOMMES-NOUS</h4>
-          <ul>
-              <li><a href="#team">Notre équipe</a></li>
-              <li><a href="#strategy">Conseil stratégique</a></li>
-              <li><a href="#instances">Nos instances</a></li>
-              <li><a href="#texts">Textes fondateurs</a></li>
-              <li><a href="#federations">Fédérations</a></li>
-          </ul>
-      </div>
-      <div class="footer-column">
-          <h4>ACTUALITÉS</h4>
-          <ul>
-              <li><a href="#latest">Dernières actualités</a></li>
-              <li><a href="videos.html">Toutes les vidéos</a></li>
-          </ul>
-      </div>
-      <div class="footer-column">
-          <h4>NOS IDÉES</h4>
-          <ul>
-              <li><a href="programme.html">Une Certaine Idée</a></li>
-              <li><a href="#french">Guinéennes, Guinéens</a></li>
-              <li><a href="#material">Matériel militant</a></li>
-          </ul>
-      </div>
-      <div class="footer-column social-media">
-          <h4>Suivez-nous</h4>
-          <ul>
-              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-              <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-          </ul>
-      </div>
-  </div>
-  <div class="footer-bottom">
-      <p>&copy; 2024 Yattara Ousmane. Tous droits réservés.</p>
-  </div>
-</footer>
+        <section>
+            <h2>Notre Histoire</h2>
+            <p>L'Union Nationale pour le Progrès de la Guinée (UNPG) est un parti politique fondé par M. François Louceny Fall avec la vision de construire une Guinée prospère, démocratique et inclusive. Depuis notre création, nous nous sommes engagés à apporter des changements positifs et durables pour tous les Guinéens.</p>
+        </section>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-      const videoContainer = document.querySelector('.video-container');
-      const profileInfo = document.querySelector('.profile-info');
+        <section>
+            <h2>Notre Mission</h2>
+            <p>Notre mission est de promouvoir le développement économique, social et culturel de la Guinée. Nous croyons en une gouvernance transparente, une économie dynamique et une société équitable où chaque citoyen a la possibilité de réaliser son plein potentiel.</p>
+        </section>
 
-      // Animation d'entrée pour le conteneur vidéo
-      videoContainer.style.opacity = '0';
-      videoContainer.style.transform = 'translateY(50px)';
-      setTimeout(() => {
-        videoContainer.style.transition = 'opacity 1s ease, transform 1s ease';
-        videoContainer.style.opacity = '1';
-        videoContainer.style.transform = 'translateY(0)';
-      }, 300);
+        <section>
+            <h2>Nos Valeurs</h2>
+            <ul>
+                <li>Intégrité</li>
+                <li>Transparence</li>
+                <li>Inclusivité</li>
+                <li>Innovation</li>
+                <li>Responsabilité</li>
+            </ul>
+        </section>
 
-      // Animation d'entrée pour les informations du profil
-      profileInfo.style.opacity = '0';
-      profileInfo.style.transform = 'translateY(50px)';
-      setTimeout(() => {
-        profileInfo.style.transition = 'opacity 1s ease, transform 1s ease';
-        profileInfo.style.opacity = '1';
-        profileInfo.style.transform = 'translateY(0)';
-      }, 600);
+        <section>
+            <h2>Notre Équipe</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="d.png" alt="Photo de François Louceny Fall" width="150" height="150">
+                    <h3>François Louceny Fall</h3>
+                    <p>Président de l'UNPG</p>
+                </div>
+                <!-- Add more team members as needed -->
+                <div class="team-member">
+                    <img src="f.png" alt="Photo d'un membre de l'équipe" width="150" height="150">
+                    <h3>Nom du Membre</h3>
+                    <p>Poste du Membre</p>
+                </div>
+                <div class="team-member">
+                    <img src="e.png" alt="Photo d'un membre de l'équipe" width="150" height="150">
+                    <h3>Nom du Membre</h3>
+                    <p>Poste du Membre</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-      // Animation du bouton CTA
-      const ctaButton = document.querySelector('.cta-button');
-      ctaButton.addEventListener('mouseover', () => {
-        ctaButton.style.transform = 'scale(1.1) rotate(2deg)';
-      });
-      ctaButton.addEventListener('mouseout', () => {
-        ctaButton.style.transform = 'scale(1) rotate(0deg)';
-      });
+    <footer class="footer">
+        <p>&copy; 2024 UNPG - Par YATTARA Ousmane Tous droits réservés</p>
+        <div class="social-icons">
+            <a href="https://facebook.com/UNPG" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/UNPG" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/UNPG" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
 
-      // Animation des icônes sociales
-      const socialIcons = document.querySelectorAll('.social-icon');
-      socialIcons.forEach(icon => {
-        icon.addEventListener('mouseover', () => {
-          icon.style.transform = 'scale(1.2) rotate(10deg)';
-        });
-        icon.addEventListener('mouseout', () => {
-          icon.style.transform = 'scale(1) rotate(0deg)';
-        });
-      });
-
-      // Gestion de la lecture/pause de la vidéo
-      const video = document.querySelector('.profile-video');
-      video.addEventListener('click', () => {
-        if (video.paused) {
-          video.play();
-        } else {
-          video.pause();
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
         }
-      });
-
-      // Ajout d'un effet de pulsation sur la vidéo lorsqu'elle est en pause
-      setInterval(() => {
-        if (video.paused) {
-          videoContainer.style.boxShadow = '0 0 30px rgba(0, 255, 255, 0.5)';
-          setTimeout(() => {
-            videoContainer.style.boxShadow = '0 0 20px rgba(0, 255, 255, 0.3)';
-          }, 500);
-        }
-      }, 1000);
-    });
-  </script>
+    </script>
 </body>
 </html>
