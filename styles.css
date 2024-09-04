@@ -1,14 +1,14 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #c5b3b3;
-    color: #c0bcbc;
+    background-color: #eee4e4;
+    color: #070404;
     margin: 10px;
 }
 
 /* Header avec background dégradé */
 .header {
-    background: linear-gradient(90deg, #ff6600, #ff3300);
+    background:  #FFA500;
     padding: 20px 10px;
     display: flex;
     justify-content: space-between;
@@ -18,25 +18,13 @@ body {
 
 /* Logo Futuriste avec effet de clignotement */
 .logo img{
-    border-radius: 50%; /* Logo arrondi */
     border: 2px solid #f6f7fa;
     font-size: 2em;
     font-weight: bold;
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 2px;
-    animation: flicker 1.5s infinite alternate;
-}
-
-@keyframes flicker {
-    0% {
-        opacity: 1;
-        text-shadow: 0 0 5px #00bf8f, 0 0 10px #00bf8f;
-    }
-    100% {
-        opacity: 0.8;
-        text-shadow: 0 0 15px #00bf8f, 0 0 20px #00bf8f;
-    }
+    
 }
 
 /* Barre de navigation */
@@ -59,7 +47,7 @@ body {
 }
 
 .topnav a:hover {
-    background-color: #fcc121;
+    background-color: #bba361;
     transform: translateY(-5px);
 }
 
@@ -214,15 +202,11 @@ body {
     }
 }
 /* Styles pour le conteneur du diaporama avec dégradé futuriste */
-.slides {
-    background: linear-gradient(90deg, #ff6600, #ff3300);
-}
 
 .slideshow-container {
     max-width: 1000px; /* Largeur du conteneur */
     position: relative;
-    margin: auto;
-    background: linear-gradient(90deg, #ff6600, #ff3300); /* Dégradé orange futuriste */
+    margin: auto; /* Dégradé orange futuriste */
     padding: 10px; /* Un peu de padding pour l'espacement intérieur */
 }
 
@@ -334,7 +318,7 @@ body {
     width: auto;
     max-width: 100%;
     padding: 20px;
-    background: linear-gradient(90deg, #ff6600, #ff3300);
+    background:  #FFA500;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     display: flex;
@@ -438,7 +422,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 50vh; /* Hauteur de la section */
-    background: linear-gradient(90deg, #ff6600, #ff3300); /* Dégradé vert et bleu */
+    background:  #FFA500; /* Dégradé vert et bleu */
     color: #1a1313;
     text-align: center;
     padding: 20px;
@@ -553,7 +537,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(90deg, #ff6600, #ff3300);
+    background:  #FFA500;
  /* Dégradé sombre */
     color: #161111;
     text-align: center;
@@ -735,7 +719,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 60vh; /* Hauteur de la section */
-    background: linear-gradient(90deg, #ff6600, #ff3300);
+    background:  #FFA500;
 
     color: #110a0a;
     text-align: center;
@@ -797,19 +781,12 @@ body {
 }
 
 
-/* Style du footer */
-.footer {
-    background: linear-gradient(90deg, #ff6600, #ff3300);
-    color: #050303;
-    padding: 10px 10px;
-}
-
 /* Footer styles */
 .footer {
-    background: linear-gradient(135deg, #FF7F50, #FF4500);
-    color: #fff;
+    background:  #FFA500;
     padding:  0;
     text-align: center;
+    color: #050303;
 }
 
 .footer-container {
