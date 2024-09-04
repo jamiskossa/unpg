@@ -149,7 +149,7 @@ body {
     color: #110a0a;
     padding: 0 20px;
     overflow: hidden;
-    margin: 10px;
+    margin: 20px;
 
 }
 
@@ -185,7 +185,34 @@ body {
     color: #369201;
 }
 
+/* Styles pour les tablettes */
+@media only screen and (max-width: 768px) {
+    .hero-banner {
+        height: 70vh; /* Réduire la hauteur de la bannière pour les tablettes */
+        background-size: contain; /* Contenir l'image dans la bannière sans couper */
+    }
 
+    .hero-banner .cta-button {
+        font-size: 14px; /* Réduire la taille de la police du bouton */
+        padding: 10px 20px; 
+        margin-top: 40px;/* Réduire les paddings du bouton */
+    }
+}
+
+/* Styles pour les mobiles */
+@media only screen and (max-width: 480px) {
+    .hero-banner {
+        height: 50vh; /* Réduire encore la hauteur de la bannière pour les mobiles */
+        margin-top: 20px;
+        background-size: cover; /* Ajuster l'image de fond */
+    }
+
+    .hero-banner .cta-button {
+        font-size: 12px; /* Réduire davantage la taille de la police du bouton */
+        padding: 10px 16px;
+        margin-top: 40px; /* Réduire encore les paddings du bouton */
+    }
+}
 /* Styles pour le conteneur du diaporama avec dégradé futuriste */
 .slides {
     background: linear-gradient(90deg, #ff6600, #ff3300);
