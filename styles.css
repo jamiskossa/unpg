@@ -18,12 +18,11 @@ body {
 
 /* Logo Futuriste avec effet de clignotement */
 .logo img{
-    border: 2px solid #f6f7fa;
-    font-size: 2em;
-    font-weight: bold;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+
+    width: 120px;
+    height: auto;
+
+border-radius: 20px;
     
 }
 
