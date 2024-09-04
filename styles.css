@@ -801,14 +801,14 @@ body {
 .footer {
     background: linear-gradient(90deg, #ff6600, #ff3300);
     color: #050303;
-    padding: 40px 20px;
+    padding: 10px 10px;
 }
 
 /* Footer styles */
 .footer {
     background: linear-gradient(135deg, #FF7F50, #FF4500);
     color: #fff;
-    padding: 20px 0;
+    padding:  0;
     text-align: center;
 }
 
@@ -824,7 +824,7 @@ body {
 .footer-column {
     flex: 1;
     min-width: 200px;
-    margin: 10px 0;
+    margin:  0;
 }
 
 .footer-column h4 {
@@ -898,7 +898,7 @@ body {
 @media screen and (max-width: 768px) {
     .footer-container {
         grid-template-columns: repeat(2, 1fr); /* Utilise une grille de 2 colonnes égales pour les tablettes et mobiles */
-        width: calc(100% - 20px); /* Respecte les marges de 10px du body de chaque côté */
+        width: calc(100% - 10px); /* Respecte les marges de 10px du body de chaque côté */
         gap: 10px;                /* Réduit l'espace entre les colonnes pour les petits écrans */
     }
 
