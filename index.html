@@ -6,28 +6,7 @@
     <link rel="stylesheet" href="styles.css">
     <title>UNPG</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        .lang-switch {
-            margin-top: 20px;
-        }
-        .hidden {
-            display: none;
-        }
-
-        .lang-switch button {
-    padding: 10px 10px;
-    margin: 5px;
-    cursor: pointer;
-    background-color: #070a0c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-}
-
-.lang-switch button:hover {
-    background-color: #043683;
-}
-    </style>
+    
 </head>
 <body>
 
@@ -37,11 +16,6 @@
     </div>
     <i class="fas fa-bars icon" onclick="toggleMenu()"></i>
 
-    <!-- Boutons pour basculer entre les langues -->
-<div class="lang-switch">
-    <button onclick="changerLangue('fr')">Français</button>
-    <button onclick="changerLangue('en')">English</button>
-</div>
 </header>
 
 <div class="topnav" id="myTopnav">
@@ -87,7 +61,7 @@
       <div class="mySlides fade">
         <img src="c.png" style="width:100%">
       </div>
-      
+
       <div class="mySlides fade">
         <img src="boss6.JPG" style="width:100%">
       </div>
@@ -355,44 +329,6 @@ function showSlides() {
     }
 
     window.addEventListener('load', initChat);
-
-    // Les contenus en différentes langues
-    const translations = {
-        fr: {
-            title: "Bienvenue sur ma page",
-            description: "Ceci est un exemple de site multilingue."
-        },
-        en: {
-            title: "Welcome to my page",
-            description: "This is a multilingual website example."
-        }
-    };
-
-    // Fonction pour changer la langue
-    function changerLangue(langue) {
-        // Modifier l'attribut `lang` de la balise <html>
-        document.documentElement.lang = langue;
-
-        // Modifier les textes en fonction de la langue choisie
-        document.getElementById('title').textContent = translations[langue].title;
-        document.getElementById('description').textContent = translations[langue].description;
-    };
-
-    // Vérifier si une langue est déjà enregistrée dans le localStorage
-window.onload = function() {
-    const savedLang = localStorage.getItem('lang') || 'fr';
-    changerLangue(savedLang);
-}
-
-// Enregistrer la langue sélectionnée dans le localStorage
-function changerLangue(langue) {
-    document.documentElement.lang = langue;
-    document.getElementById('title').textContent = translations[langue].title;
-    document.getElementById('description').textContent = translations[langue].description;
-
-    // Enregistrer la langue dans le localStorage
-    localStorage.setItem('lang', langue);
-}
 </script>
 <script>
 
