@@ -1036,6 +1036,8 @@ button.downloadBtn:hover {
 @media (max-width: 768px) {
     section.pdf-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+        
     }
 }
 
@@ -1043,6 +1045,7 @@ button.downloadBtn:hover {
 @media (max-width: 480px) {
     section.pdf-grid {
         grid-template-columns: 1fr;
+        gap: 5px;
     }
 
     button.downloadBtn {
