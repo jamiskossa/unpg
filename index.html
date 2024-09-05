@@ -173,6 +173,30 @@
     </div>
 </section>
 
+<section class="pdf-grid">
+    <figure class="pdf-item">
+        <img src="1.png" alt="PDF 1" class="pdf-image">
+        <figcaption>Document PDF 1</figcaption>
+        <button class="downloadBtn" data-pdf="1.png">Télécharger le PDF</button>
+    </figure>
+    <figure class="pdf-item">
+        <img src="1.png" alt="PDF 2" class="pdf-image">
+        <figcaption>Document PDF 2</figcaption>
+        <button class="downloadBtn" data-pdf="2.png">Télécharger le PDF</button>
+    </figure>
+    <figure class="pdf-item">
+        <img src="1.png" alt="PDF 3" class="pdf-image">
+        <figcaption>Document PDF 3</figcaption>
+        <button class="downloadBtn" data-pdf="3.png">Télécharger le PDF</button>
+    </figure>
+    <figure class="pdf-item">
+        <img src="1.png" alt="PDF 4" class="pdf-image">
+        <figcaption>Document PDF 4</figcaption>
+        <button class="downloadBtn" data-pdf="4.png">Télécharger le PDF</button>
+    </figure>
+</section>
+
+
 <!-- Footer -->
 <footer class="footer">
     <div class="footer-container">
@@ -331,7 +355,15 @@ function showSlides() {
     window.addEventListener('load', initChat);
 </script>
 <script>
+    // Ajout d'événements pour les boutons de téléchargement
+    const buttons = document.querySelectorAll(".downloadBtn");
 
+    buttons.forEach(button => {
+        button.addEventListener("click", function() {
+            const pdfUrl = button.getAttribute("data-pdf");
+            window.location.href = pdfUrl;
+        });
+    });
 </script>
 </body>
 </html>
