@@ -2,7 +2,9 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #eee4e4;
-    color: #070404
+    color: #070404;
+    max-width: 100%;
+    overflow-x: hidden; /* Empêche les défilements horizontaux indésirables */
 }
 
 /* Header avec background dégradé */
@@ -205,8 +207,8 @@ border-radius: 20px;
     }
 
     body {
-        margin: 0;
-        width: auto;
+        max-width: 100%;
+        overflow-x: hidden; /* Empêche les défilements horizontaux indésirables */
     }
 }
 /* Styles pour le conteneur du diaporama avec dégradé futuriste */
