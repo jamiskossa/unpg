@@ -1052,3 +1052,104 @@ button.downloadBtn:hover {
         width: 100%;
     }
 }
+
+
+/* Styles pour les écrans de tablettes (≥768px) */
+@media screen and (max-width: 768px) {
+    .header .logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .banner-content .cta-button {
+        font-size: 18px;
+    }
+
+    .slideshow-container img {
+        width: 100%;
+    }
+
+    .slogan-section h2, .newsletter-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .pdf-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .pdf-item {
+        flex: 1 1 45%;
+        margin: 10px;
+    }
+}
+
+/* Styles pour les petits écrans de mobile (≤480px) */
+@media screen and (max-width: 480px) {
+    .header .logo img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .icon {
+        font-size: 24px;
+    }
+
+    .topnav a {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-banner .cta-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .slideshow-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .slogan-section, .newsletter-section, .housing-section, .platform-section {
+        padding: 10px;
+    }
+
+    .social-media-icons a {
+        font-size: 20px;
+    }
+
+    .pdf-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .pdf-item {
+        margin: 5px 0;
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    footer ul {
+        padding-left: 0;
+    }
+
+    .footer-column {
+        margin-bottom: 20px;
+    }
+}
