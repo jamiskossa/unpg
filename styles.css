@@ -1,11 +1,17 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #eee4e4;
-    color: #070404;
-    max-width: 100%;
-    overflow-x: hidden; /* Empêche les défilements horizontaux indésirables */
+      padding: 0;
+      font-family: Arial, sans-serif;
+      max-width: 100%; /* Empêcher le dépassement horizontal */
+      overflow-x: hidden; /* Empêcher le défilement horizontal */
 }
+
+.container {
+    width: 100%; /* Occupe toute la largeur disponible */
+    max-width: 1200px; /* Largeur maximale sur les grands écrans */
+    margin: 0 auto; /* Centrer le contenu sur les grands écrans */
+    padding: 20px;
+  }
 
 /* Header avec background dégradé */
 .header {
@@ -122,7 +128,10 @@ border-radius: 20px;
 
     body {
         margin: 0;
-        width: auto;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        max-width: 100%; /* Empêcher le dépassement horizontal */
+        overflow-x: hidden; /* Empêcher le défilement horizontal */
     }
 }
 
@@ -207,8 +216,11 @@ border-radius: 20px;
     }
 
     body {
-        max-width: 100%;
-        overflow-x: hidden; /* Empêche les défilements horizontaux indésirables */
+        margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      max-width: 100%; /* Empêcher le dépassement horizontal */
+      overflow-x: hidden; /* Empêcher le défilement horizontal */
     }
 }
 /* Styles pour le conteneur du diaporama avec dégradé futuriste */
