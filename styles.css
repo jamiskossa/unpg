@@ -6,12 +6,11 @@ body {
       overflow-x: hidden; /* Empêcher le défilement horizontal */
 }
 
- .container {
-      width: 100%; /* Occupe toute la largeur disponible */
-      max-width: 1200px; /* Largeur maximale sur les grands écrans */
-      margin: 0 auto; /* Centrer le contenu sur les grands écrans */
-      padding: 20px;
-    }
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
 /* Header avec background dégradé */
 .header {
