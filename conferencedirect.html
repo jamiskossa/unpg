@@ -1,0 +1,302 @@
+<html><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conférence en Direct - Parti Politique du Futur</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --primary-color: #FFA500;
+    --secondary-color: #FF4500;
+    --text-color: #000000;
+    --background-color: #afa8a8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  padding: 40px 0;
+  background:  var(--primary-color);
+  margin-bottom: 0px;
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.live-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+.chat-container {
+  height: 400px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+}
+
+.username {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.chat-input {
+  display: flex;
+  margin-top: 20px;
+}
+
+.chat-input input {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  background-color: wheat;
+  color: var(--text-color);
+  border-radius: 5px 0 0 5px;
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  background-color: var(--text-color);
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chat-input button:hover {
+  background-color: var(--secondary-color);
+}
+
+@media (min-width: 768px) {
+  .live-container {
+    flex-direction: row;
+  }
+  
+  .video-container {
+    flex: 2;
+  }
+  
+  .chat-container {
+    flex: 1;
+  }
+}
+
+/* Animation futuriste */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px var(--primary-color);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--primary-color), 0 0 30px var(--secondary-color);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--primary-color);
+  }
+}
+
+.video-container, .chat-container {
+  animation: glow 4s infinite;
+}
+
+
+.topnav  a{
+    padding: 10px 10px;
+    color: #0a0707;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 16px;
+    background-color: #f1eeee;
+}
+</style>
+</head>
+<body>
+  <header>
+    <h1>Conférence en Direct</h1>
+    <p class="subtitle">UNPG - Façonnons l'avenir ensemble</p>
+    
+  </header>
+  <div class="topnav">
+    <a href="index.html" class="active">Accueil</a>
+  </div>
+
+  <div class="container">
+    <div class="live-container">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/zfodpP884cI" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="chat-container" id="chat">
+        <!-- Les messages du chat seront ajoutés ici dynamiquement -->
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="message-input" placeholder="Entrez votre message...">
+      <button id="send-button">Envoyer</button>
+    </div>
+  </div>
+
+  <script>
+    const chat = document.getElementById('chat');
+    const messageInput = document.getElementById('message-input');
+    const sendButton = document.getElementById('send-button');
+
+    // Simuler des messages de chat
+    const simulatedMessages = [
+      { username: "Citoyen_Futuriste", message: "Incroyable présentation sur l'énergie renouvelable !" },
+      { username: "EcoWarrior2050", message: "Totalement d'accord ! Comment pouvons-nous implémenter ces idées localement ?" },
+      { username: "TechnoProgressive", message: "J'aimerais en savoir plus sur les plans d'infrastructure intelligente." },
+      { username: "DemocracyEvolved", message: "La proposition sur la gouvernance participative est fascinante." },
+      { username: "GreenRevolution", message: "Quelle est la position du parti sur l'agriculture verticale urbaine ?" }
+    ];
+
+    function addMessage(username, message) {
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('message');
+      messageElement.innerHTML = `<span class="username">${username}:</span> ${message}`;
+      chat.appendChild(messageElement);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    // Ajouter les messages simulés
+    simulatedMessages.forEach(msg => {
+      addMessage(msg.username, msg.message);
+    });
+
+    // Gérer l'envoi de nouveaux messages
+    sendButton.addEventListener('click', () => {
+      const message = messageInput.value.trim();
+      if (message) {
+        addMessage("Vous", message);
+        messageInput.value = '';
+      }
+    });
+
+    messageInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        sendButton.click();
+      }
+    });
+
+    // Simuler l'arrivée de nouveaux messages
+    setInterval(() => {
+      const randomMessage = simulatedMessages[Math.floor(Math.random() * simulatedMessages.length)];
+      addMessage(randomMessage.username, randomMessage.message);
+    }, 10000);
+
+    // Animation futuriste pour le bouton d'envoi
+    sendButton.addEventListener('mouseover', () => {
+      sendButton.style.transform = 'scale(1.1)';
+      sendButton.style.boxShadow = '0 0 15px var(--primary-color)';
+    });
+
+    sendButton.addEventListener('mouseout', () => {
+      sendButton.style.transform = 'scale(1)';
+      sendButton.style.boxShadow = 'none';
+    });
+
+    // Effet de particules futuristes en arrière-plan
+    const canvas = document.createElement('canvas');
+    document.body.appendChild(canvas);
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '-1';
+
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    for (let i = 0; i < 50; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 2 + 1,
+        color: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.7)`,
+        velocity: { x: Math.random() * 0.5 - 0.25, y: Math.random() * 0.5 - 0.25 }
+      });
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach(particle => {
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+        ctx.fillStyle = particle.color;
+        ctx.fill();
+
+        particle.x += particle.velocity.x;
+        particle.y += particle.velocity.y;
+
+        if (particle.x < 0 || particle.x > canvas.width) particle.velocity.x *= -1;
+        if (particle.y < 0 || particle.y > canvas.height) particle.velocity.y *= -1;
+      });
+    }
+
+    animate();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>

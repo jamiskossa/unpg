@@ -1,0 +1,422 @@
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conférence UNPG</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --primary-color: #FFA500;
+    --secondary-color: #FF4500;
+    --text-color: #000000;
+    --background-color: #afa8a8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background:  var(--primary-color);
+  padding: 20px 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  background:  var(--primary-color);
+  padding: 20px 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Header avec background dégradé */
+.header {
+    background:  #FFA500;
+    padding: 20px 10px;
+}
+
+/* Logo Futuriste avec effet de clignotement */
+.logo img{
+
+    width: 120px;
+    height: auto;
+
+border-radius: 20px;
+    
+}
+
+/* Barre de navigation */
+.topnav {
+    display: flex;
+    background-color: #ffffff;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    transition: height 0.3s;
+}
+
+.topnav a {
+    padding: 10px 20px;
+    color: #0a0707;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 16px;
+}
+
+.topnav a:hover {
+    background-color: #bba361;
+    transform: translateY(-5px);
+}
+
+.topnav .dropdown-content {
+    display: none;
+    background-color: #ece7e7;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: #000;
+}
+
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  color: var(--text-color);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+.conference-info {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 40px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.speakers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.speaker {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.speaker:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 255, 213, 0.2);
+}
+
+.speaker img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid var(--primary-color);
+}
+
+.schedule {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.schedule-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.schedule-item:last-child {
+  border-bottom: none;
+}
+
+.schedule-time {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 50px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 213, 0.5);
+}
+
+@media (max-width: 768px) {
+  .speakers {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    
+
+    .topnav.responsive {
+        height: 100%;
+        transition: height 0.3s;
+    }
+
+    .topnav a {
+        text-align: left;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        color: #000;
+    }
+}
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="loga.jpg" width="100" height="100" alt="Logo UNPG">
+  </div>
+  <i class="fas fa-bars icon" onclick="toggleMenu()"></i>
+  </header>
+
+  <div class="topnav" id="myTopnav">
+    <a href="index.html" class="active">Accueil</a>
+    <a href="conferencedirect.html" class="active">Conférence en Direct</a>
+</div>
+
+  <main class="container">
+    <section class="conference-info">
+      <h1>Conférence de l'UNPG</h1>
+      <p>Façonner l'avenir ensemble</p>
+      <h2>À propos de la conférence</h2>
+      <p>Rejoignez-nous pour une journée exceptionnelle d'échanges, de débats et de visionnaires qui façonneront le futur de notre société. Cette conférence rassemblera les esprits les plus brillants et innovants de notre parti pour discuter des enjeux cruciaux de demain.</p>
+      <p>Date :</p>
+      <p>Lieu : Centre de Conférences </p>
+    </section>
+
+    <section class="speakers">
+      <div class="speaker">
+        <img src="#" alt="#" width="150" height="150">
+        <h3>Intervenant</h3>
+        <p>Experte en Intelligence Artificielle et Éthique</p>
+      </div>
+      <div class="speaker">
+        <img src="#" alt="#" height="150">
+        <h3>Intervenant</h3>
+        <p>Spécialiste en Écologie Urbaine</p>
+      </div>
+      <div class="speaker">
+        <img src="#" alt="#" width="150" height="150">
+        <h3>Intervenant</h3>
+        <p>Experte en Économie Circulaire</p>
+      </div>
+    </section>
+
+    <section class="schedule">
+      <h2>Programme</h2>
+      <div class="schedule-item">
+        <span class="schedule-time">09:00 - 10:00</span>
+        <span class="schedule-event">Ouverture et discours de bienvenue</span>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-time">10:00 - 11:30</span>
+        <span class="schedule-event">Panel : L'IA au service de la démocratie</span>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-time">11:45 - 13:00</span>
+        <span class="schedule-event">Conférence : Villes du futur et développement durable</span>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-time">14:00 - 15:30</span>
+        <span class="schedule-event">Atelier : Économie circulaire et emplois de demain</span>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-time">16:00 - 17:00</span>
+        <span class="schedule-event">Table ronde : L'avenir de la politique à l'ère numérique</span>
+      </div>
+      <div class="schedule-item">
+        <span class="schedule-time">17:15 - 18:00</span>
+        <span class="schedule-event">Clôture et perspectives d'avenir</span>
+      </div>
+    </section>
+
+    <section class="registration">
+      <h2>Inscrivez-vous maintenant</h2>
+      <p>Ne manquez pas cette opportunité unique de participer à la construction de notre avenir politique.</p>
+      <a href="conferenceinscript.html" class="btn">S'inscrire</a>
+    </section>
+
+    
+  </main>
+
+  <footer class="footer"></footer>
+    <p>&copy; 2024 UNPG - Par YATTARA Ousmane Tous droits réservés</p>
+    <div class="social-icons">
+        <a href="https://facebook.com/UNPG" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/UNPG" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/UNPG" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <script>
+       function toggleMenu() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+
+  <script>
+    // Animation des intervenants
+    const speakers = document.querySelectorAll('.speaker');
+    speakers.forEach((speaker, index) => {
+      speaker.style.opacity = '0';
+      speaker.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+        speaker.style.transition = 'all 0.5s ease';
+        speaker.style.opacity = '1';
+        speaker.style.transform = 'translateY(0)';
+      }, index * 200);
+    });
+
+    // Effet de particules futuristes
+    const canvas = document.createElement('canvas');
+    document.body.appendChild(canvas);
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '-1';
+
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    for (let i = 0; i < 50; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 2 + 1,
+        color: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.7)`,
+        velocity: { x: Math.random() * 0.5 - 0.25, y: Math.random() * 0.5 - 0.25 }
+      });
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach(particle => {
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+        ctx.fillStyle = particle.color;
+        ctx.fill();
+
+        particle.x += particle.velocity.x;
+        particle.y += particle.velocity.y;
+
+        if (particle.x < 0 || particle.x > canvas.width) particle.velocity.x *= -1;
+        if (particle.y < 0 || particle.y > canvas.height) particle.velocity.y *= -1;
+      });
+    }
+
+    animate();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    // Animation du bouton d'inscription
+    const registerBtn = document.querySelector('.btn');
+    registerBtn.addEventListener('mouseover', () => {
+      registerBtn.style.transform = 'scale(1.05) rotate(2deg)';
+    });
+    registerBtn.addEventListener('mouseout', () => {
+      registerBtn.style.transform = 'scale(1) rotate(0)';
+    });
+
+    // Effet de survol pour les éléments du programme
+    const scheduleItems = document.querySelectorAll('.schedule-item');
+    scheduleItems.forEach(item => {
+      item.addEventListener('mouseover', () => {
+        item.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+        item.style.transform = 'scale(1.02)';
+      });
+      item.addEventListener('mouseout', () => {
+        item.style.backgroundColor = 'transparent';
+        item.style.transform = 'scale(1)';
+      });
+    });
+  </script>
+</body>
+</html>
