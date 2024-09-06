@@ -2,8 +2,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #eee4e4;
-    color: #070404;
-    margin: 0px;
+    color: #070404
 }
 
 /* Header avec background dégradé */
@@ -118,6 +117,11 @@ border-radius: 20px;
         width: 100%;
         box-sizing: border-box;
     }
+
+    body {
+        margin: 0;
+        width: auto;
+    }
 }
 
 
@@ -198,6 +202,11 @@ border-radius: 20px;
         font-size: 12px; /* Réduire davantage la taille de la police du bouton */
         padding: 10px 16px;
         margin-top: 40px; /* Réduire encore les paddings du bouton */
+    }
+
+    body {
+        margin: 0;
+        width: auto;
     }
 }
 /* Styles pour le conteneur du diaporama avec dégradé futuriste */
@@ -908,9 +917,9 @@ border-radius: 20px;
 .chat-button {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 50px;
     background: black;
-    color: white;
+    color: rgb(242, 243, 247);
     border: none;
     padding: 10px 20px;
     border-radius: 25px;
@@ -1056,6 +1065,8 @@ button.downloadBtn:hover {
 
 /* Styles pour les écrans de tablettes (≥768px) */
 @media screen and (max-width: 768px) {
+
+    
     .header .logo img {
         width: 80px;
         height: 80px;
