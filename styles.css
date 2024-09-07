@@ -22,9 +22,7 @@ body, .container {
 
     width: 120px;
     height: auto;
-
-border-radius: 20px;
-    
+    border-radius: 10px;   
 }
 
 /* Barre de navigation */
@@ -97,33 +95,6 @@ border-radius: 20px;
 }
 
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .topnav {
-        flex-direction: column;
-        height: 0;
-        overflow: hidden;
-    }
-
-    .topnav.responsive {
-        height: 100%;
-        transition: height 0.3s;
-    }
-
-    .icon {
-        display: block;
-    }
-
-    .topnav a {
-        text-align: left;
-        padding: 10px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-}
-
-
 /* Style de la bannière */
 .hero-banner {
     background-image: url('falli.jpg'); /* Remplace par l'URL de ton image de fond */
@@ -160,17 +131,10 @@ border-radius: 20px;
     color: hsl(249, 91%, 50%);
 }
 
-.banner-content p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    animation: fadeInUp 1s ease-out;
-    color: #369201;
-}
-
 /* Animation futuriste de la bannière */
 @keyframes futuristicGlow {
     from {
-        box-shadow: 0 4px 20px rgba(236, 6, 25, 0.5), inset 0 0 50px rgba(236, 221, 7, 0.5);
+        box-shadow: 0 4px 20px rgba(247, 143, 7, 0.5), inset 0 0 50px rgba(236, 221, 7, 0.5);
     }
     to {
         box-shadow: 0 4px 50px rgba(37, 206, 4, 0.8), inset 0 0 70px rgba(236, 156, 7, 0.7);
@@ -178,49 +142,6 @@ border-radius: 20px;
 }
 
 
-/* Adaptation pour les écrans mobiles */
-@media (max-width: 600px) {
-    .hero-banner {
-        height: 50vh; /* Hauteur ajustée pour mobile */
-        background-size: cover;
-    }
-}
-
-@media (max-width: 900px) {
-    .hero-banner {
-        height: 70vh; /* Hauteur ajustée pour tablette */
-    }
-}
-
-/* Styles pour les tablettes */
-@media only screen and (max-width: 768px) {
-    .hero-banner {
-        height: 70vh; /* Réduire la hauteur de la bannière pour les tablettes */
-        background-size: contain; /* Contenir l'image dans la bannière sans couper */
-    }
-
-    .hero-banner .cta-button {
-        font-size: 14px; /* Réduire la taille de la police du bouton */
-        padding: 10px 20px; 
-        margin-top: 40px;/* Réduire les paddings du bouton */
-    }
-}
-
-/* Styles pour les mobiles */
-@media only screen and (max-width: 480px) {
-    .hero-banner {
-        height: 50vh; /* Réduire encore la hauteur de la bannière pour les mobiles */
-        margin-top: 20px;
-        background-size: cover; /* Ajuster l'image de fond */
-    }
-
-    .hero-banner .cta-button {
-        font-size: 12px; /* Réduire davantage la taille de la police du bouton */
-        padding: 10px 16px;
-        margin-top: 40px; /* Réduire encore les paddings du bouton */
-    }
-
-}
 /* Styles pour le conteneur du diaporama avec dégradé futuriste */
 
 .slideshow-container img {
@@ -257,33 +178,6 @@ border-radius: 20px;
     to {opacity: 1}
   }
 
-  /* Responsiveness */
-@media (max-width: 768px) {
-    .banner-text h1 {
-        font-size: 2em;
-    }
-    .banner-text p {
-        font-size: 1em;
-    }
-    .btn {
-        padding: 10px 20px;
-    }
-}
-
-/* Adapter aux mobiles et tablettes */
-@media (max-width: 768px) {
-    .slideshow-container {
-        width: 100%;
-        height: auto;
-    }
-
-    .mySlides {
-        height: auto;
-        width: auto;
-    }
-}
-
-
 /* Style de la section Slogan */
 .slogan-section {
     display: flex;
@@ -306,30 +200,6 @@ border-radius: 20px;
     font-weight: 700;
 }
 
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .slogan-content h2 {
-        font-size: 2em;
-    }
-
-}
-
-@media (max-width: 480px) {
-    .slogan-section {
-        height: auto;
-        padding: 30px 10px;
-    }
-
-    .slogan-content h2 {
-        font-size: 1.5em;
-    }
-
-    .cta-button {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-}
 
 /* Section de la newsletter */
 .newsletter-section {
@@ -397,43 +267,6 @@ border-radius: 20px;
     background-color: #879bf1;
 }
 
-/* Adapter aux mobiles et tablettes */
-@media (max-width: 768px) {
-    .newsletter-form {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .newsletter-form input[type="email"],
-    .newsletter-form .cta-button {
-        width: 100%;
-        margin: 5px 0;
-    }
-}
-@media (max-width: 480px) {
-    .newsletter-section {
-        height: auto;
-        padding: 30px 10px;
-    }
-
-    .newsletter-content h2 {
-        font-size: 1.5em;
-    }
-
-    .newsletter-content p {
-        font-size: 0.9em;
-    }
-
-    .newsletter-form input[type="email"] {
-        padding: 12px;
-    }
-
-    .newsletter-form button {
-        padding: 10px 20px;
-        font-size: 0.8em;
-    }
-}
-
 /* Style de la section Logement */
 .housing-section {
     display: flex;
@@ -458,29 +291,6 @@ border-radius: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre portée pour effet futuriste */
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .housing-content h2 {
-        font-size: 2em;
-    }
-
-}
-
-@media (max-width: 480px) {
-    .housing-section {
-        height: auto;
-        padding: 30px 10px;
-    }
-
-    .housing-content h2 {
-        font-size: 1.5em;
-    }
-
-    .cta-button {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-}
 
 /* Style de la section Plateforme */
 .platform-section {
@@ -512,43 +322,6 @@ border-radius: 20px;
     line-height: 1.4;
 }
 
-
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .platform-content h1 {
-        font-size: 2em;
-    }
-
-    .platform-content p {
-        font-size: 1.2em;
-    }
-
-    .cta-button {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
-}
-
-@media (max-width: 480px) {
-    .platform-section {
-        height: auto;
-        padding: 30px 10px;
-    }
-
-    .platform-content h1 {
-        font-size: 1.5em;
-    }
-
-    .platform-content p {
-        font-size: 1em;
-    }
-
-    .cta-button {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-}
 
 /* Style de la section Réseaux sociaux */
 .social-media-section {
@@ -613,29 +386,6 @@ border-radius: 20px;
 .social-icon.instagram { background: #e4405f; }
 .social-icon.linkedin { background: #0077b5; }
 .social-icon.youtube { background: #ff0000; }
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .social-media-content h2 {
-        font-size: 1.5em;
-    }
-
-    .social-icon {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-@media (max-width: 480px) {
-    .social-media-content h2 {
-        font-size: 1.2em;
-    }
-
-    .social-icon {
-        width: 35px;
-        height: 35px;
-    }
-}
 
 
 /* Style de la section de soutien */
@@ -716,21 +466,7 @@ border-radius: 20px;
     font-size: 1.5em;
 }
 
-/* Adapter la section pour les écrans plus petits */
 
-@media screen and (max-width: 768px) {
-    .support-section .container {
-        flex-direction: column; /* Empile les colonnes verticalement sur les petits écrans */
-        align-items: stretch; /* Étend les colonnes pour remplir toute la largeur */
-    }
-
-    .support-column,
-    .actions-column {
-        width: 100%; /* Chaque colonne occupe 100% de la largeur du conteneur */
-        text-align: center; /* Centre le texte pour une meilleure lisibilité */
-        margin-bottom: 20px; /* Ajoute un espace entre les colonnes */
-    }
-}
 /* Style de la section Rejoignez le mouvement */
 .join-section {
     display: flex;
@@ -759,43 +495,6 @@ border-radius: 20px;
     font-size: 1.5em;
     margin-bottom: 30px;
     line-height: 1.4;
-}
-
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .join-content h2 {
-        font-size: 2em;
-    }
-
-    .join-content p {
-        font-size: 1.2em;
-    }
-
-    .cta-button {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
-}
-
-@media (max-width: 480px) {
-    .join-section {
-        height: auto;
-        padding: 30px 10px;
-    }
-
-    .join-content h2 {
-        font-size: 1.5em;
-    }
-
-    .join-content p {
-        font-size: 1em;
-    }
-
-    .cta-button {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
 }
 
 
@@ -876,34 +575,6 @@ border-radius: 20px;
     font-size: 14px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-column {
-        text-align: center;
-        min-width: 100%;
-    }
-}
-
-/* Adapter le footer pour les écrans plus petits */
-@media screen and (max-width: 768px) {
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr); /* Utilise une grille de 2 colonnes égales pour les tablettes et mobiles */
-        width: calc(100% - 10px); /* Respecte les marges de 10px du body de chaque côté */
-        gap: 10px;                /* Réduit l'espace entre les colonnes pour les petits écrans */
-    }
-
-    .footer-column {
-        width: 100%; /* Chaque colonne occupe 100% de la largeur de la grille */
-        text-align: center; /* Centre le contenu des colonnes */
-        
-    }
-}
-
 
 .cta-button {
     display: inline-block;
@@ -917,24 +588,16 @@ border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     text-transform: uppercase; /* Texte en majuscules pour accentuer l'effet */
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
 }
 
 .cta-button:hover {
     background-color: #009688;
-    transform: scale(1.1);
-}
-
-.chat-button {
-    position: fixed;
-    bottom: 20px;
-    right: 50px;
-    background: black;
-    color: rgb(242, 243, 247);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    z-index: 1000;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(243, 139, 4, 0.6);
+    transform: scale(1.1); /* Zoom léger au hover */
 }
 
 
@@ -984,31 +647,131 @@ button.downloadBtn:hover {
     background-color: #0056b3;
 }
 
-/* Styles pour mobile */
-@media (max-width: 768px) {
+
+/* Adaptation pour les écrans mobiles */
+@media (max-width: 600px) {
+    .hero-banner {
+        height: 50vh; /* Hauteur ajustée pour mobile */
+        background-size: cover;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-banner {
+        height: 70vh; /* Hauteur ajustée pour tablette */
+    }
+}
+
+/* Styles pour les tablettes */
+@media only screen and (max-width: 768px) {
+    .hero-banner {
+        height: 70vh; /* Réduire la hauteur de la bannière pour les tablettes */
+        background-size: contain; /* Contenir l'image dans la bannière sans couper */
+    }
+
+    .hero-banner .cta-button {
+        font-size: 14px; /* Réduire la taille de la police du bouton */
+        padding: 10px 20px; 
+        margin-top: 40px;/* Réduire les paddings du bouton */
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .newsletter-form input[type="email"],
+    .newsletter-form .cta-button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .slogan-content h2 {
+        font-size: 2em;
+    }
+
+    .topnav {
+        flex-direction: column;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .topnav.responsive {
+        height: 100%;
+        transition: height 0.3s;
+    }
+
+    .icon {
+        display: block;
+    }
+
+    .topnav a {
+        text-align: left;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .housing-content h2 {
+        font-size: 2em;
+    }
+
+    .platform-content h1 {
+        font-size: 2em;
+    }
+
+    .platform-content p {
+        font-size: 1.2em;
+    }
+
+    .social-media-content h2 {
+        font-size: 1.5em;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .support-section .container {
+        flex-direction: column; /* Empile les colonnes verticalement sur les petits écrans */
+        align-items: stretch; /* Étend les colonnes pour remplir toute la largeur */
+    }
+
+    .support-column,
+    .actions-column {
+        width: 100%; /* Chaque colonne occupe 100% de la largeur du conteneur */
+        text-align: center; /* Centre le texte pour une meilleure lisibilité */
+        margin-bottom: 20px; /* Ajoute un espace entre les colonnes */
+    }
+
+    .join-content h2 {
+        font-size: 2em;
+    }
+
+    .join-content p {
+        font-size: 1.2em;
+    }
+
     section.pdf-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 5px;
         
     }
-}
 
-/* Styles pour petit écran (mobile) */
-@media (max-width: 480px) {
-    section.pdf-grid {
-        grid-template-columns: 1fr;
-        gap: 5px;
+    .banner-text h1 {
+        font-size: 2em;
     }
 
-    button.downloadBtn {
+    .slideshow-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .mySlides {
+        height: auto;
         width: 100%;
     }
-}
-
-
-/* Styles pour les écrans de tablettes (≥768px) */
-@media screen and (max-width: 768px) {
-
     
     .header .logo img {
         width: 80px;
@@ -1044,10 +807,127 @@ button.downloadBtn:hover {
         flex: 1 1 45%;
         margin: 10px;
     }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        text-align: center;
+        min-width: 100%;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr); /* Utilise une grille de 2 colonnes égales pour les tablettes et mobiles */
+        width: calc(100% - 10px); /* Respecte les marges de 10px du body de chaque côté */
+        gap: 10px;                /* Réduit l'espace entre les colonnes pour les petits écrans */
+    }
+
+    .footer-column {
+        width: 100%; /* Chaque colonne occupe 100% de la largeur de la grille */
+        text-align: center; /* Centre le contenu des colonnes */
+        
+    }
 }
 
-/* Styles pour les petits écrans de mobile (≤480px) */
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
+    .newsletter-section {
+        height: auto;
+        padding: 30px 10px;
+    }
+
+    .newsletter-content h2 {
+        font-size: 1.5em;
+    }
+
+    .newsletter-content p {
+        font-size: 0.9em;
+    }
+
+    .newsletter-form input[type="email"] {
+        padding: 12px;
+    }
+
+    .newsletter-form button {
+        padding: 10px 20px;
+        font-size: 0.8em;
+    }
+
+    .hero-banner {
+        height: 50vh; /* Réduire encore la hauteur de la bannière pour les mobiles */
+        margin-top: 20px;
+        background-size: cover; /* Ajuster l'image de fond */
+    }
+
+    .hero-banner .cta-button {
+        font-size: 12px; /* Réduire davantage la taille de la police du bouton */
+        padding: 10px 16px;
+        margin-top: 40px; /* Réduire encore les paddings du bouton */
+    }
+
+    .slogan-section {
+        height: auto;
+        padding: 30px 10px;
+    }
+
+    .slogan-content h2 {
+        font-size: 1.5em;
+    }
+
+    .housing-section {
+        height: auto;
+        padding: 30px 10px;
+    }
+
+    .housing-content h2 {
+        font-size: 1.5em;
+    }
+
+    .platform-section {
+        height: auto;
+        padding: 30px 10px;
+    }
+
+    .platform-content h1 {
+        font-size: 1.5em;
+    }
+
+    .platform-content p {
+        font-size: 1em;
+    }
+
+    .social-media-content h2 {
+        font-size: 1.2em;
+    }
+
+    .social-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .join-section {
+        height: auto;
+        padding: 30px 10px;
+    }
+
+    .join-content h2 {
+        font-size: 1.5em;
+    }
+
+    .join-content p {
+        font-size: 1em;
+    }
+
+    section.pdf-grid {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    button.downloadBtn {
+        width: 100%;
+    }
+
     .header .logo img {
         width: 60px;
         height: 60px;
@@ -1107,4 +987,9 @@ button.downloadBtn:hover {
     .footer-column {
         margin-bottom: 20px;
     }
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
 }
+
