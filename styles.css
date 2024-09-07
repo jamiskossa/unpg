@@ -18,7 +18,7 @@ body, .container {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     body {
         transform: scale(0.9); /* Réduction à 80% */
     }
