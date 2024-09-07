@@ -20,7 +20,7 @@ body, .container {
 
 @media (max-width: 480px) {
     body {
-        transform: scale(0.9); /* Réduction à 80% */
+        transform: scale(1.0); /* Réduction à 80% */
     }
 }
 /* Header avec background dégradé */
