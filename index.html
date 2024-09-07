@@ -310,6 +310,15 @@ function showSlides() {
             window.location.href = pdfUrl;
         });
     });
+
+    function adjustScale() {
+    let scale = Math.min(window.innerWidth / 1200, 1); // Ajuste le facteur de réduction
+    document.body.style.transform = `scale(${scale})`;
+}
+
+window.addEventListener('resize', adjustScale);
+window.addEventListener('load', adjustScale);
+
 </script>
 </body>
 </html>
