@@ -6,6 +6,22 @@ body, .container {
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
+    overflow-x: hidden; /* Empêche le débordement horizontal */
+    overflow-y: auto;
+    transform-origin: top left; /* Point d'origine pour la réduction */
+}
+
+/* Ajout du shrink pour les mobiles */
+@media (max-width: 600px) {
+    body {
+        transform: scale(1.0); /* Réduction à 90% */
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        transform: scale(0.8); /* Réduction à 80% */
+    }
 }
 /* Header avec background dégradé */
 .header {
