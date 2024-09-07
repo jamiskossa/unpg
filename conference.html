@@ -1,4 +1,6 @@
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   <title>Conférence UNPG</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
@@ -7,7 +9,7 @@
   --primary-color: #FFA500;
     --secondary-color: #FF4500;
     --text-color: #000000;
-    --background-color: #afa8a8;
+    --background-color: #f1efef;
 }
 
 * {
@@ -21,7 +23,13 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
 }
+
 
 .container {
   max-width: 1200px;
@@ -37,12 +45,65 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Nouveaux styles pour le footer */
 footer {
-  background:  var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--text-color);
   padding: 20px 0;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social-links {
+  margin-bottom: 15px;
+}
+
+.social-links a {
+  color: var(--text-color);
+  font-size: 24px;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--text-color);
+}
+
+.copyright {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+/* Animation pour les icônes de réseaux sociaux */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.social-links a:hover i {
+  animation: pulse 0.5s infinite;
+}
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+  .footer-content {
+    padding: 0 20px;
+  }
 }
 
 /* Header avec background dégradé */
@@ -128,7 +189,7 @@ h1 {
 }
 
 .conference-info {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(27, 26, 23, 0.1);
   border-radius: 15px;
   padding: 30px;
   margin-bottom: 40px;
@@ -144,7 +205,7 @@ h1 {
 }
 
 .speaker {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(7, 2, 2, 0.1);
   border-radius: 15px;
   padding: 20px;
   text-align: center;
@@ -166,7 +227,7 @@ h1 {
 }
 
 .schedule {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(27, 26, 23, 0.1);
   border-radius: 15px;
   padding: 30px;
   margin-bottom: 40px;
@@ -186,14 +247,18 @@ h1 {
 
 .schedule-time {
   font-weight: bold;
-  color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.registration {
+  background-color: rgba(27, 26, 23, 0.1);
 }
 
 .btn {
   display: inline-block;
   padding: 12px 24px;
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-  color: var(--text-color);
+  background: linear-gradient(45deg, var(--primary-color), var(--text-color));
+  color: white;
   text-decoration: none;
   border-radius: 50px;
   font-family: 'Orbitron', sans-serif;
@@ -239,7 +304,6 @@ h1 {
     <div class="logo">
       <img src="loga.jpg" width="100" height="100" alt="Logo UNPG">
   </div>
-  <i class="fas fa-bars icon" onclick="toggleMenu()"></i>
   </header>
 
   <div class="topnav" id="myTopnav">
@@ -259,17 +323,17 @@ h1 {
 
     <section class="speakers">
       <div class="speaker">
-        <img src="#" alt="#" width="150" height="150">
+        <img src="petit.JPG" alt="#" width="150" height="150">
         <h3>Intervenant</h3>
         <p>Experte en Intelligence Artificielle et Éthique</p>
       </div>
       <div class="speaker">
-        <img src="#" alt="#" height="150">
+        <img src="tree.webp" alt="#" height="150">
         <h3>Intervenant</h3>
         <p>Spécialiste en Écologie Urbaine</p>
       </div>
       <div class="speaker">
-        <img src="#" alt="#" width="150" height="150">
+        <img src="fist.JPG" alt="#" width="150" height="150">
         <h3>Intervenant</h3>
         <p>Experte en Économie Circulaire</p>
       </div>
@@ -312,25 +376,44 @@ h1 {
     
   </main>
 
-  <footer class="footer"></footer>
-    <p>&copy; 2024 UNPG - Par YATTARA Ousmane Tous droits réservés</p>
-    <div class="social-icons">
-        <a href="https://facebook.com/UNPG" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://twitter.com/UNPG" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://instagram.com/UNPG" target="_blank"><i class="fab fa-instagram"></i></a>
+  <footer>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="https://facebook.com/partipolitiquedufutur" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://twitter.com/PPFutur" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://instagram.com/partipolitiquedufutur" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com/company/parti-politique-du-futur" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://youtube.com/c/PartipolitiqueduFutur" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+      <div class="copyright">
+        &copy; 2024 UNPG. Tous droits réservés. Créé par YATTARA Ousmane.
+      </div>
     </div>
   </footer>
 
   <script>
-       function toggleMenu() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-            x.className += " responsive";
-        } else {
-            x.className = "topnav";
-        }
-    }
-</script>
+    // Scripts existants...
+
+    // Animation subtile pour le copyright
+    const copyright = document.querySelector('.copyright');
+    copyright.addEventListener('mouseover', () => {
+      copyright.style.color = 'var(--primary-color)';
+      copyright.style.transition = 'color 0.3s ease';
+    });
+    copyright.addEventListener('mouseout', () => {
+      copyright.style.color = 'var(--text-color)';
+    });
+  </script>
 
   <script>
     // Animation des intervenants
