@@ -9,7 +9,22 @@ body, .container {
     overflow-x: hidden; /* Empêche le débordement horizontal */
     overflow-y: auto;
     transform-origin: top left; /* Point d'origine pour la réduction */
+    background: radial-gradient(circle, #12f355, #928cf1, #3b3a37, #eedd49, #3feb78);
+  background-size: 200% 200%;
+  animation: digitalGrid 8s linear infinite;
 }
+
+@keyframes digitalGrid {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
 
 /* Ajout du shrink pour les mobiles */
 @media (max-width: 600px) {
@@ -44,7 +59,8 @@ body, .container {
 /* Barre de navigation */
 .topnav {
     display: flex;
-    background-color: #ffffff;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
     width: 100%;
     justify-content: space-around;
     align-items: center;
@@ -54,7 +70,7 @@ body, .container {
 
 .topnav a {
     padding: 10px 20px;
-    color: #0a0707;
+    color: #faf6f6;
     text-decoration: none;
     display: block;
     transition: background-color 0.3s, transform 0.3s;
@@ -248,8 +264,9 @@ body, .container {
     align-items: center;
     justify-content: center;
     height: 50vh; /* Hauteur de la section */
-    background: linear-gradient(to right, #e2ebe4, #f3f3f7); /* Dégradé de rouge pour le fond */
-    color: #0a0808;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #faf2f2;
     text-align: center;
     padding: 20px;
 }
@@ -362,8 +379,9 @@ body, .container {
     align-items: center;
     justify-content: center;
     height: 50vh; /* Hauteur de la section */
-    background: linear-gradient(to right, #f0f3f3, #eff3ef); /* Dégradé vert foncé et turquoise */
-    color: #130e0e;
+    background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #faf7f7;
     text-align: center;
     padding: 20px;
 }
@@ -497,10 +515,12 @@ body, .container {
 
 
 .actions-column {
-    background-color: #fafafa;
+    background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
     padding: 20px;
     border-radius: 8px;
     width: auto;
+    color: white;
 }
 
 .actions-column h3 {
