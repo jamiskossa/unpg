@@ -9,7 +9,7 @@ body, .container {
     overflow-x: hidden; /* Empêche le débordement horizontal */
     overflow-y: auto;
     transform-origin: top left; /* Point d'origine pour la réduction */
-    background: radial-gradient(circle, #12f355, #928cf1, #2b0601, #19aace, #3feb78);
+    background: linear-gradient(120deg, rgba(255, 0, 255, 0.5), rgba(43, 231, 231, 0.5), rgba(133, 133, 16, 0.5));
   background-size: 200% 200%;
   animation: digitalGrid 8s linear infinite;
 }
