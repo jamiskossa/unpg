@@ -19,10 +19,12 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background-color: var(--background-color);
+            background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(0, 255, 255, 0.5) 40px, rgba(0, 255, 255, 0.5) 80px);
             color: var(--text-color);
             line-height: 1.6;
+
         }
+
 
         .header, .footer {
             background: var(--primary-color);
@@ -38,7 +40,8 @@
         }
 
         .topnav {
-            background-color: rgba(255, 255, 255, 0.1);
+            background: rgb(0, 0, 0); /* Fallback color */
+            background: rgba(0, 0, 0, 0.3); 
             overflow: hidden;
             transition: max-height 0.3s ease-out;
         }
@@ -185,7 +188,6 @@
         <div class="logo">
             <img src="loga.jpg" width="100" height="100" alt="Logo de l'UNPG">
         </div>
-        <i class="fas fa-bars icon" onclick="toggleMenu()"></i>
     </header>
 
     <nav class="topnav" id="myTopnav">
@@ -194,6 +196,7 @@
         <a href="programme.html">Programme</a>
         <a href="events.html">Événements</a>
         <a href="blog.html" class="active">Blog</a>
+        <a href="conference.html">Conférence</a>
         <a href="videos.html">Vidéos</a>
         <a href="contact.html">Contact</a>
         <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">

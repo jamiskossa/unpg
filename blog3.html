@@ -20,7 +20,7 @@
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            background-color: var(--background-color);
+            background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(0, 255, 255, 0.5) 40px, rgba(0, 255, 255, 0.5) 80px);
             color: var(--text-color);
         }
 
@@ -32,14 +32,15 @@
         }
 
         .navbar {
-            background-color: #333;
+            background: rgb(0, 0, 0); /* Fallback color */
+            background: rgba(0, 0, 0, 0.3); 
             overflow: hidden;
         }
 
         .navbar a {
             float: left;
             display: block;
-            color: white;
+            color: rgb(8, 6, 6);
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
@@ -143,6 +144,8 @@
         <a href="programme.html">Programme</a>
         <a href="events.html">Événements</a>
         <a href="blog.html">Blog</a>
+        <a href="conference.html">Conférence</a>
+        <a href="videos.html">Vidéos</a>
         <a href="contact.html">Contact</a>
     </nav>
 
