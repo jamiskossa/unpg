@@ -5,11 +5,30 @@
 <style>
   body {
     font-family: Arial, sans-serif;
-    background:  #d4d2cf;
+    
     margin: 0;
     padding: 20px;
-    
+    background: linear-gradient(120deg, rgba(255, 0, 255, 0.5), rgba(43, 231, 231, 0.5), rgba(133, 133, 16, 0.5));
+  background-size: 300% 300%;
+  animation: holographicGlow 6s ease-in-out infinite;
+  overflow: hidden;
   }
+
+  @keyframes holographicGlow {
+  0% {
+    background-position: 0% 50%;
+    filter: brightness(0.8);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: brightness(1.3);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: brightness(0.8);
+  }
+}
+
   .container {
   
     background-color: white;
@@ -32,7 +51,7 @@
   }
   .star {
     font-size: 30px;
-    color: #ddd;
+    color: #0407c9;
     cursor: pointer;
     transition: color 0.2s;
   }
@@ -94,45 +113,6 @@
     }
 }
 
-/* Barre de navigation */
-.topnav {
-    display: flex;
-    background-color: #ffffff;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
-    transition: height 0.3s;
-}
-
-.topnav a {
-    padding: 10px 20px;
-    color: #0a0707;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.3s, transform 0.3s;
-    font-size: 16px;
-}
-
-.topnav a:hover {
-    background-color: #fcc121;
-    transform: translateY(-5px);
-}
-
-.topnav .dropdown-content {
-    display: none;
-    background-color: #ece7e7;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 200px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    color: #000;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-    
-}
 
 /* Boutons Futuristes */
 .btn-futuristic {
@@ -165,26 +145,9 @@
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-    .topnav {
-        flex-direction: column;
-        height: 0;
-        overflow: hidden;
-    }
-
-    .topnav.responsive {
-        height: 100%;
-        transition: height 0.3s;
-    }
-
+    
     .icon {
         display: block;
-    }
-
-    .topnav a {
-        text-align: left;
-        padding: 10px;
-        width: 100%;
-        box-sizing: border-box;
     }
 
     .container {
@@ -202,31 +165,10 @@
     <div class="logo">
         <img src="loga.jpg" width="100" height="100" alt="Logo des Républicains">
     </div>
-    <i class="fas fa-bars icon" onclick="toggleMenu()"></i>
 </header>
 
-<div class="topnav" id="myTopnav">
-        <a href="index.html" class="active">Accueil</a>
-        <a href="about.html">Qui sommes-nous</a>
-        <a href="programme.html">Programme</a>
-        <a href="events.html">Événements</a>
-        <a href="blog">Blog</a>
-        <a href="videos.html">Vidéos</a>
-    <div class="dropdown">
-        <a href="#">Plus<i class="fa fa-caret-down"></i></a>
-        <div class="dropdown-content">
-            <a href="#">Logement</a>
-                    <a href="#">Redonner la parole aux Guinéens</a>
-                    <a href="#">Le contre-budget de l'UNDP</a>
-                    <a href="#">Textes fondateurs</a>
-        </div>
-    </div>
-    <a href="#">Contact</a>
-</div>
-
 <div class="btn-container">
-    <a href="#" class="btn-futuristic">Adhérer</a>
-    <a href="#" class="btn-futuristic">Faire un don</a>
+    <a href="index.html" class="btn-futuristic">Retour à l'accueil</a>
 </div>
   <div class="container">
     <h1>Donnez Votre Avis</h1>
