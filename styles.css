@@ -9,7 +9,7 @@ body, .container {
     overflow-x: hidden; /* Empêche le débordement horizontal */
     overflow-y: auto;
     transform-origin: top left; /* Point d'origine pour la réduction */
-    background: radial-gradient(circle, #12f355, #928cf1, #3b3a37, #eedd49, #3feb78);
+    background: radial-gradient(circle, #12f355, #928cf1, #2b0601, #19aace, #3feb78);
   background-size: 200% 200%;
   animation: digitalGrid 8s linear infinite;
 }
@@ -146,7 +146,6 @@ body, .container {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Effet de profondeur */
     animation: futuristicGlow 10s infinite alternate; /* Animation futuriste */
     margin-bottom: 15px;
-    animation: glitch 4s infinite;
 }
 
 
@@ -220,22 +219,6 @@ body, .container {
     margin: 0 auto; /* Centre l'image horizontalement */
     
 }
-
-
-@keyframes glitch {
-    0%, 100% {
-      clip: rect(0, 9999px, 100px, 0);
-    }
-    33% {
-      clip: rect(200px, 9999px, 300px, 0);
-    }
-    66% {
-      clip: rect(400px, 9999px, 500px, 0);
-    }
-    25%, 75% {
-      transform: translate(-20px, -10px);
-    }
-  }
 
 /* Masquer les images par défaut */
 .mySlides {
