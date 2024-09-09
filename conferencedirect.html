@@ -19,7 +19,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--background-color);
+  background: linear-gradient(120deg, rgba(255, 0, 255, 0.5), rgba(0, 255, 255, 0.5), rgba(255, 255, 0, 0.5));
   color: var(--text-color);
   line-height: 1.6;
   margin: 0;
@@ -42,6 +42,7 @@ header {
   background:  var(--primary-color);
   margin-bottom: 0px;
 }
+
 
 h1 {
   font-family: 'Orbitron', sans-serif;
@@ -166,11 +167,12 @@ h1 {
 
 .topnav  a{
     padding: 10px 10px;
-    color: #0a0707;
+    color: #f8f2f2;
     text-decoration: none;
     transition: background-color 0.3s, transform 0.3s;
     font-size: 16px;
-    background-color: #f1eeee;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); 
 }
 </style>
 </head>
@@ -181,7 +183,7 @@ h1 {
     
   </header>
   <div class="topnav">
-    <a href="index.html" class="active">Accueil</a>
+    <a href="conference.html" class="active">Retour à la Conférence</a>
   </div>
 
   <div class="container">

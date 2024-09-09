@@ -19,7 +19,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--background-color);
+  background: linear-gradient(120deg, rgba(255, 0, 255, 0.5), rgba(0, 255, 255, 0.5), rgba(255, 255, 0, 0.5));
   color: var(--text-color);
   line-height: 1.6;
   min-height: 100vh;
@@ -44,7 +44,6 @@ h1 {
   text-align: center;
   color: var(--text-color);
   margin-bottom: 30px;
-  font-size: 2.5rem;
   text-transform: uppercase;
   letter-spacing: 3px;
 }
@@ -69,7 +68,7 @@ input, select {
   width: 100%;
   padding: 12px;
   border: none;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(17, 34, 33, 0.1);
   color: var(--text-color);
   border-radius: 5px;
   font-size: 16px;
@@ -199,7 +198,8 @@ border-radius: 20px;
 /* Barre de navigation */
 .topnav {
     display: flex;
-    background-color: #ffffff;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5);
     width: 100%;
     justify-content: space-around;
     align-items: center;
@@ -208,11 +208,12 @@ border-radius: 20px;
 
 .topnav a {
     padding: 10px 20px;
-    color: #0a0707;
+    color: #d6bfbf;
     text-decoration: none;
     display: block;
     transition: background-color 0.3s, transform 0.3s;
-    font-size: 16px;
+    font-size: 16px; 
+
 }
 
 .topnav a:hover {
@@ -241,7 +242,7 @@ border-radius: 20px;
   </header>
 
   <div class="topnav" id="myTopnav">
-    <a href="index.html" class="active">Accueil</a>
+    <a href="conference.html" class="active">Retour à la Conférence</a>
 </div>
 
 
