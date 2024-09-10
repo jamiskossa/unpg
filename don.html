@@ -22,7 +22,7 @@ body, html {
 
 
 .container {
-  max-width: 800px;
+  max-width: 70%;
   margin: 0 auto;
   padding: 2rem;
   background-color: rgb(194, 189, 187);
@@ -46,164 +46,72 @@ h1 {
   }
 }
 
-.donation-form {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 2rem;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-}
+section#donation-form {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      width: 100%;
+      padding: 20px;
+      margin: 0 auto;
+    }
 
-.form-group {
-  margin-bottom: 1.5rem;
-}
+    h2 {
+      text-align: center;
+      color: #0044cc;
+      margin-bottom: 20px;
+    }
 
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
+    iframe {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+    }
 
-input[type="text"],
-input[type="email"],
-input[type="number"],
-select {
-  width: 100%;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 5px;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-size: 1rem;
-}
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      section#donation-form {
+        padding: 15px;
+        max-width: 80%;
+      }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="number"]:focus,
-select:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px var(--primary-color);
-}
+      iframe {
+        height: 700px;
+      }
 
-.btn {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background-color: var(--primary-color);
-  color: var(--background-color);
-  border: none;
-  border-radius: 50px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: bold;
-}
-
-.btn:hover {
-  background-color: var(--secondary-color);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.donation-options {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-}
-
-.donation-option {
-  flex: 1;
-  text-align: center;
-  padding: 1rem;
-  border: 2px solid var(--primary-color);
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.donation-option:hover,
-.donation-option.selected {
-  background-color: var(--primary-color);
-  color: var(--background-color);
-}
-
-@media (max-width: 768px) {
-  .donation-options {
-    flex-direction: column;
-  }
-  
-  .donation-option {
-    margin-bottom: 1rem;
-  }
-
-  .container {
-  max-width: 400px;
+      .container {
+  max-width: 80%;
   margin: 0 auto;
   padding: 1rem;
+  background-color: rgb(194, 189, 187);
 }
-}
+    }
 
-.loader {
-  display: none;
-  width: 50px;
-  height: 50px;
-  border: 5px solid var(--primary-color);
-  border-top: 5px solid var(--secondary-color);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 20px auto;
-}
+    @media (max-width: 480px) {
+      section#donation-form {
+        padding: 10px;
+      }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+      iframe {
+        height: 600px;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+    }
+
 </style>
 </head>
 <body>
   
   <div class="container">
-    <h1>Faire un don</h1>
-    <form class="donation-form" id="donationForm">
-      <div class="form-group">
-        <label for="name">Nom</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label>Montant du don</label>
-        <div class="donation-options">
-          <div class="donation-option" data-amount="5">5 €</div>
-          <div class="donation-option" data-amount="10">10 €</div>
-          <div class="donation-option" data-amount="20">20 €</div>
-          <div class="donation-option" data-amount="custom">Autre</div>
-        </div>
-      </div>
-      <div class="form-group" id="customAmountGroup" style="display: none;">
-        <label for="customAmount">Montant personnalisé (€)</label>
-        <input type="number" id="customAmount" name="customAmount" min="1" step="1">
-      </div>
-      <div class="form-group">
-        <label for="paymentMethod">Méthode de paiement</label>
-        <select id="paymentMethod" name="paymentMethod" required>
-          <option value="">Choisissez une méthode</option>
-          <option value="card">Carte bancaire</option>
-          <option value="paypal">PayPal</option>
-          <option value="crypto">Crypto-monnaie</option>
-        </select>
-      </div>
-      <button type="submit" class="btn">Faire un don</button>
-    </form>
-    <div class="loader" id="loader"></div>
+    <section id="donation-form">
+      <h2>Formulaire de don</h2>
+      <iframe src="https://docs.google.com/forms/d/e/[VOTRE_ID_DE_FORMULAIRE]/viewform?embedded=true" 
+              width="640" height="900" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+    </section>
+    
   </div>
 
   <script>
