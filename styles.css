@@ -178,9 +178,9 @@ body, .container {
 
 .slides {
   position: relative;
-  background: linear-gradient(120deg, #ff0000, #ffff00, #00ff00);
+  background: rgba(0, 0, 0, 0.1); 
   background-size: 400% 400%;
-  animation: gradientAnimation 10s ease infinite;
+
   overflow: hidden;
 }
 
