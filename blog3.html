@@ -31,24 +31,30 @@
             padding: 1rem;
         }
 
-        .navbar {
+        .topnav {
             background: rgb(0, 0, 0); /* Fallback color */
             background: rgba(0, 0, 0, 0.3); 
             overflow: hidden;
+            transition: max-height 0.3s ease-out;
         }
 
-        .navbar a {
+        .topnav a {
             float: left;
             display: block;
-            color: rgb(8, 6, 6);
+            color: var(--text-color);
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
+            font-size: 17px;
+            transition: background-color 0.3s;
         }
 
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
+        .topnav a:hover, .dropdown:hover .dropbtn {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .topnav .icon {
+            display: none;
         }
 
         .container {
@@ -129,6 +135,25 @@
                 width: 95%;
             }
         }
+
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {display: none;}
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+            .topnav.responsive {position: relative;}
+            .topnav.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
     </style>
 </head>
 <body>
@@ -138,15 +163,18 @@
         </div>
     </header>
 
-    <nav class="navbar">
+    <nav class="topnav" id="myTopnav">
         <a href="index.html">Accueil</a>
-        <a href="about.html">À propos</a>
+        <a href="about.html">Qui sommes-nous</a>
         <a href="programme.html">Programme</a>
         <a href="events.html">Événements</a>
         <a href="blog.html">Blog</a>
         <a href="conference.html">Conférence</a>
         <a href="videos.html">Vidéos</a>
         <a href="contact.html">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </a>
     </nav>
 
     <div class="container">
@@ -198,5 +226,16 @@
     <footer class="footer">
         <p>&copy; 2024 UNPG - Par YATTARA Ousmane Tous droits réservés</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
 </body>
 </html>

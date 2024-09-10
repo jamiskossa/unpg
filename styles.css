@@ -102,7 +102,7 @@ body, .container {
 .btn-futuristic {
     background: linear-gradient(90deg, #0a0908, #503b36);
     border: none;
-    border-radius: 50px;
+    border-radius: 20px;
     color: #faf5f5;
     padding: 10px 20px;
     font-size: 16px;
