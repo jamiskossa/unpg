@@ -3,37 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">  
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styless.css">
     <title>UNPG</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
 </head>
-
-<body class="container">
-<header class="header">
+<body>
+  <header class="header">
     <div class="logo">
-        <img src="loga.jpg" width="100" height="100" alt="Logo UNPG">
+        <img src="loga.jpg" width="100" height="100" alt="Logo de l'UNPG">
     </div>
-    <i class="fas fa-bars icon" onclick="toggleMenu()"></i>
-
+    <div class="btn-container">
+      <a href="adesion.html" class="btn-futuristic">Adhérer</a>
+      <a href="don.html" class="btn-futuristic">Faire un don</a>
+  </div>
 </header>
 
-<div class="topnav" id="myTopnav">
-        <a href="index.html" class="active">Accueil</a>
-        <a href="about.html">Qui sommes-nous</a>
-        <a href="programme.html">Programme</a>
-        <a href="events.html">Événements</a>
-        <a href="blog.html">Blog</a>
-        <a href="conference.html">Conférence</a>
-        <a href="videos.html">Vidéos</a>
-        <a href="contact.html">Contact</a>
-</div>
+<nav class="topnav" id="myTopnav">
+    <a href="index.html">Accueil</a>
+    <a href="about.html">Qui sommes-nous</a>
+    <a href="programme.html">Programme</a>
+    <a href="events.html">Événements</a>
+    <a href="blog.html">Blog</a>
+    <a href="conference.html">Conférence</a>
+    <a href="videos.html" class="active">Vidéos</a>
+    <a href="contact.html">Contact</a>
+    <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+        <i class="fa fa-bars"></i>
+    </a>
+</nav>
 
-<div class="btn-container">
-    <a href="adesion.html" class="btn-futuristic">Adhérer</a>
-    <a href="don.html" class="btn-futuristic">Faire un don</a>
-</div>
+
 
 <!-- Section de la bannière futuriste -->
 <section class="hero-banner">
@@ -42,164 +41,117 @@
     </div>
 </section>
 
-<main class="container">
-<section class="slides">
-    <!-- Slideshow container -->
-<div class="slideshow-container">
-
-    <!-- Full-width images with number and caption text -->
-    <div class="mySlides fade">
-      <img src="loga.jpg" style="width: 100%">
-
-    </div>
-  
-    <div class="mySlides fade">
-      <img src="d.png" style="width:100%">
-    </div>
-
-    <div class="mySlides fade">
-        <img src="e.png" style="width: 100%">
-      </div>
-    
-      <div class="mySlides fade">
-        <img src="c.png" style="width:100%">
-      </div>
-
-      <div class="mySlides fade">
-        <img src="team.png" style="width:100%">
-      </div>
-    
-      <div class="mySlides fade">
-        <img src="f.png" style="width:100%">
-      </div>
-</section>
-
-<!-- Section Slogan -->
-<section class="slogan-section">
-    <div class="slogan-content">
-        <h2>Vous en avez assez ?</h2>
-        <a href="contact.html" class="cta-button">Dites-le !</a>
-    </div>
-</section>
-
-<!-- Section Newsletter -->
-<section class="newsletter-section">
-    <div class="newsletter-content">
-        <h2>Abonnez-vous à notre newsletter</h2>
-        <p>Recevez les dernières nouvelles et mises à jour directement dans votre boîte e-mail.</p>
-        <form action="#" method="post" class="newsletter-form">
-            <input type="email" name="email" placeholder="Votre adresse e-mail" required>
-            <button type="submit" class="cta-button">S'inscrire!</button>
-        </form>
-    </div>
-</section>
-
-<!-- Section Slogan -->
-<section class="slogan-section">
-    <div class="slogan-content">
-        <h2>Redonner la parole aux Guinéens</h2>
-        <a href="blog.html" class="cta-button">Lire la suite</a>
-    </div>
-</section>
-
-<!-- Section Logement -->
-<section class="housing-section">
-    <div class="housing-content">
-        <h2>Nos propositions pour résoudre la crise</h2>
-        <a href="conference.html" class="cta-button">Lire la suite</a>
-    </div>
-</section>
-
-<!-- Section Plateforme -->
-<section class="platform-section">
-    <div class="platform-content">
-        <h1>Guinéennes et Guinéens</h1>
-        <p>Plateforme participative pour toutes les Guinéennes et tous les Guinéens</p>
-        <a href="avis.html" class="cta-button">Donner votre Avis</a>
-        <!-- Optionnel: Ajouter un bouton pour un call-to-action -->
-        <!-- <a href="#more-info" class="cta-button">En savoir plus</a> -->
-    </div>
-</section>
-<!-- Section Plateforme -->
-<section class="platform-section">
-    <div class="platform-content">
-        <h1>Nos Programmes</h1>
-        
-        <a href="programme.html" class="cta-button">Découvrir</a>
-        <!-- Optionnel: Ajouter un bouton pour un call-to-action -->
-        <!-- <a href="#more-info" class="cta-button">En savoir plus</a> -->
-    </div>
-</section>
-
-<!-- Section Réseaux sociaux -->
-<section class="social-media-section">
-    <div class="social-media-content">
-        <h2>Nous suivre sur les réseaux sociaux</h2>
-        <div class="social-media-icons">
-            <a href="https://facebook.com" class="social-icon facebook" target="_blank" aria-label="Facebook"></a>
-            <a href="https://twitter.com" class="social-icon twitter" target="_blank" aria-label="Twitter"></a>
-            <a href="https://instagram.com" class="social-icon instagram" target="_blank" aria-label="Instagram"></a>
-            <a href="https://linkedin.com" class="social-icon linkedin" target="_blank" aria-label="LinkedIn"></a>
-            <a href="https://youtube.com" class="social-icon youtube" target="_blank" aria-label="YouTube"></a>
+    <!-- Slideshow -->
+    <section class="slides">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="loga.jpg" style="width: 100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="d.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="e.png" style="width: 100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="c.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="team.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="f.png" style="width:100%">
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Section de soutien -->
-<section class="support-section">
-    <div class="container">
-        <div class="support-column">
-            <h2>Nous comptons sur votre soutien</h2>
-            <p>Faites un don pour renforcer notre action sur le terrain.</p>
-            <a href="don.html" class="cta-button">Je fais un don</a>
+    <section class="housing-section">
+      <div class="housing-content">
+          <h2>Nos propositions pour résoudre la crise</h2>
+          <a href="programme.html" class="cta-button">Lire la suite</a>
+      </div>
+  </section>
+
+    <section class="platform-section">
+      <div class="platform-content">
+          <h1>Guinéennes et Guinéens</h1>
+          <p>Plateforme participative pour toutes les Guinéennes et tous les Guinéens</p>
+          <a href="avis.html" class="cta-button">Donner votre Avis</a>
+      </div>
+  </section>
+
+    <section class="newsletter-section">
+        <div class="newsletter-content">
+            <h2>Abonnez-vous à notre newsletter</h2>
+            <p>Recevez les dernières nouvelles et mises à jour directement dans votre boîte e-mail.</p>
+            <form action="#" method="post" class="newsletter-form">
+                <input type="email" name="email" placeholder="Votre adresse e-mail" required>
+                <button type="submit" class="cta-button">S'inscrire!</button>
+            </form>
         </div>
-        <div class="actions-column">
-            <h3>Nos actions</h3>
-            <ul>
-                <li>Agir sur le terrain</li>
-                <li>Former nos jeunes élus</li>
-                <li>Organiser de grands rassemblements</li>
-                <li>Mobiliser sur les réseaux sociaux</li>
-                <li>Imprimer des tracts</li>
-                <li>Organiser des conventions partout en Guinée</li>
-            </ul>
+    </section>
+
+    <section class="social-media-section">
+        <div class="social-media-content">
+            <h2>Nous suivre sur les réseaux sociaux</h2>
+            <div class="social-media-icons">
+                <a href="https://facebook.com" class="social-icon facebook" target="_blank" aria-label="Facebook"></a>
+                <a href="https://twitter.com" class="social-icon twitter" target="_blank" aria-label="Twitter"></a>
+                <a href="https://instagram.com" class="social-icon instagram" target="_blank" aria-label="Instagram"></a>
+                <a href="https://linkedin.com" class="social-icon linkedin" target="_blank" aria-label="LinkedIn"></a>
+                <a href="https://youtube.com" class="social-icon youtube" target="_blank" aria-label="YouTube"></a>
+            </div>
         </div>
-    </div>
-</section>
-
-<!-- Section Rejoignez le mouvement -->
-<section class="join-section">
-    <div class="join-content">
-        <h2>Rejoignez le mouvement</h2>
-        <p>Adhérez à l'UNPG et faites partie de notre action pour un avenir meilleur.</p>
-        <a href="adesion.html" class="cta-button">Adhérez maintenant</a>
-    </div>
-</section>
-
-<section class="pdf-grid">
-    <figure class="pdf-item">
-        <img src="1.png" alt="PDF 1" class="pdf-image">
-        <figcaption>Document PDF 1</figcaption>
-        <button class="downloadBtn" data-pdf="1.png">Télécharger le PDF</button>
-    </figure>
-    <figure class="pdf-item">
-        <img src="2.png" alt="PDF 2" class="pdf-image">
-        <figcaption>Document PDF 2</figcaption>
-        <button class="downloadBtn" data-pdf="2.png">Télécharger le PDF</button>
-    </figure>
-    <figure class="pdf-item">
-        <img src="3.png" alt="PDF 3" class="pdf-image">
-        <figcaption>Document PDF 3</figcaption>
-        <button class="downloadBtn" data-pdf="3.png">Télécharger le PDF</button>
-    </figure>
-    <figure class="pdf-item">
-        <img src="4.png" alt="PDF 4" class="pdf-image">
-        <figcaption>Document PDF 4</figcaption>
-        <button class="downloadBtn" data-pdf="4.png">Télécharger le PDF</button>
-    </figure>
-</section>
-
-</main>
+    </section>
+    <section class="support-section">
+        <div class="container">
+            <div class="support-column">
+                <h2>Nous comptons sur votre soutien</h2>
+                <p>Faites un don pour renforcer notre action sur le terrain.</p>
+                <a href="don.html" class="cta-button">Je fais un don</a>
+            </div>
+            <div class="actions-column">
+                <h3>Nos actions</h3>
+                <ul>
+                    <li>Agir sur le terrain</li>
+                    <li>Former nos jeunes élus</li>
+                    <li>Organiser de grands rassemblements</li>
+                    <li>Mobiliser sur les réseaux sociaux</li>
+                    <li>Imprimer des tracts</li>
+                    <li>Organiser des conventions partout en Guinée</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="join-section">
+        <div class="join-content">
+            <h2>Rejoignez le mouvement</h2>
+            <p>Adhérez à l'UNPG et faites partie de notre action pour un avenir meilleur.</p>
+            <a href="adesion.html" class="cta-button">Adhérez maintenant</a>
+        </div>
+    </section>
+    <section class="pdf-grid">
+        <figure class="pdf-item">
+            <img src="1.png" alt="PDF 1" class="pdf-image">
+            <figcaption>Document PDF 1</figcaption>
+            <button class="downloadBtn" data-pdf="1.png">Télécharger le PDF</button>
+        </figure>
+        <figure class="pdf-item">
+            <img src="2.png" alt="PDF 2" class="pdf-image">
+            <figcaption>Document PDF 2</figcaption>
+            <button class="downloadBtn" data-pdf="2.png">Télécharger le PDF</button>
+        </figure>
+        <figure class="pdf-item">
+            <img src="3.png" alt="PDF 3" class="pdf-image">
+            <figcaption>Document PDF 3</figcaption>
+            <button class="downloadBtn" data-pdf="3.png">Télécharger le PDF</button>
+        </figure>
+        <figure class="pdf-item">
+            <img src="4.png" alt="PDF 4" class="pdf-image">
+            <figcaption>Document PDF 4</figcaption>
+            <button class="downloadBtn" data-pdf="4.png">Télécharger le PDF</button>
+        </figure>
+    </section>
 
 <!-- Footer -->
 <footer class="footer">
@@ -236,18 +188,10 @@
                 <li><a href="#material">Matériel militant</a></li>
             </ul>
         </div>
-        <div class="footer-column social-media">
-            <h4>Suivez-nous</h4>
-            <ul>
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-            </ul>
-        </div>
+        
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2024 Yattara Ousmane. Tous droits réservés.</p>
+        <p>&copy; UNPG 2024 par Yattara Ousmane. Tous droits réservés.</p>
     </div>
 </footer>
 
@@ -260,34 +204,20 @@
             x.className = "topnav";
         }
     }
-</script>
 
-<script>
     let slideIndex = 0;
-showSlides();
+    showSlides();
 
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 3000); // Change image every 2 seconds
-}
-
-</script>
-
-<script>
-    function toggleMenu() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-            x.className += " responsive";
-        } else {
-            x.className = "topnav";
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
         }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
     }
 
     // Add smooth scrolling
@@ -300,9 +230,7 @@ function showSlides() {
         });
     });
 
-</script>
-<script>
-    // Ajout d'événements pour les boutons de téléchargement
+    // Add events for download buttons
     const buttons = document.querySelectorAll(".downloadBtn");
 
     buttons.forEach(button => {
@@ -311,8 +239,6 @@ function showSlides() {
             window.location.href = pdfUrl;
         });
     });
-
 </script>
 </body>
 </html>
-
