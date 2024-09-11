@@ -2,87 +2,126 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
 
-:root {
-  --primary-color: #FFA500;
-  --secondary-color: #FF4500;
-  --accent-color: #ffd700;
-  --background-color: #1a1a2e;
-  --text-color: #d6caca;
-  --card-bg: rgba(255, 255, 255, 0.1);
-}
-
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    list-style: none;
 }
 
+/* Styles généraux et animations de fond */
 body {
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(120deg, rgba(255, 0, 255, 0.5), rgba(43, 231, 231, 0.5), rgba(133, 133, 16, 0.5));
-  color: var(--background-color);
-  line-height: 1.6;
+    margin: 10px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #f17107, #080808,  #3a3229);
+    background-size: 300% 300%;
+    animation: gradient 15s ease infinite;
+    color: #fff;
 }
 
-.container {
-  max-width: 80%;
-  margin: 0 auto;
-  padding: 1rem;
-  background-color: rgb(194, 189, 187);
+/* Animation de dégradé de fond */
+@keyframes gradient {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
 }
-.header, .footer {
-            background:  #FFA500;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
 
-        .logo img {
-            width: 120px;
-            height: auto;
-        }
+/* Mise en forme du header */
+.header {
+    background:  orange;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .topnav {
-            background-color: rgba(255, 255, 255, 0.1);
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
+.logo img {
+    width: 120px;
+    height: auto;
+}
 
-        .topnav a {
-            float: left;
-            display: block;
-            color: black;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-            transition: background-color 0.3s;
-        }
+.topnav {
+    background-color: rgba(8, 1, 1, 0.1);
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
 
-        .topnav a:hover, .dropdown:hover .dropbtn {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
+.topnav a {
+    float: left;
+    display: block;
+    color: rgb(247, 243, 243);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: background-color 0.3s;
+}
 
-        .topnav .icon {
-            display: none;
-        }
+.topnav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
 
+.topnav .icon {
+    display: none;
+}
+/* Styles pour le bouton adhérer et faire un don */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    gap: 10px;
+}
+
+/* Menu Toggle pour mobile */
+.topnav.responsive {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.topnav.responsive a {
+    display: block;
+    text-align: center;
+}
+
+.btn-futuristic {
+    background: linear-gradient(45deg, #000, #333);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.btn-futuristic:hover {
+    background: linear-gradient(45deg, #333, #000);
+}
+
+/* Sections avec dégradés */
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background: whitesmoke;
+    text-align: center;
+    color: #000;
+}
+
+.cta-button {
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
 h1, h2, h3 {
   font-family: 'Exo 2', sans-serif;
   text-align: center;
-  color: black;
+  color: rgb(10, 8, 8);
   text-transform: uppercase;
   letter-spacing: 3px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-h1 {
-  font-size: 2.5rem;
-}
-
 h2 {
-  font-size: 2rem;
+
   margin-bottom: 20px;
 }
 
@@ -130,15 +169,6 @@ h2 {
 }
 
  /* Section formulaire */
- section#form {
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      max-width: 100%;
-      width: 100%;
-      padding: 20px;
-      margin: 0 auto;
-    }
 
     /* Titre */
     h2 {
@@ -156,20 +186,18 @@ h2 {
 
     /* Ajustements responsive */
     @media (max-width: 768px) {
-      section#form {
-        padding: 15px;
-        max-width: 80%;
-        margin: 0 auto;
-      }
-
       iframe {
         height: 700px;
         max-width: 100%;
       }
+
+      .icon {
+        background-color: #fff;
+    }
     }
 
     @media (max-width: 480px) {
-      section#form {
+      section {
         padding: 10px;
       }
 
@@ -182,24 +210,42 @@ h2 {
       }
     }
 
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background: black;
-  color: var(--text-color);
-  text-decoration: none;
-  border-radius: 50px;
-  font-family: 'Exo 2', sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
+
+/* Footer */
+.footer {
+    background:  orange;
+    color: #0a0707;
+    padding: 20px;
+    text-align: center;
+    margin-top: 5px;
 }
 
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0, 168, 107, 0.5);
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.footer-column h4 {
+    margin-top: 0;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin: 5px 0;
+}
+
+.footer-column ul li a {
+    color: #070606;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    margin-top: 20px;
 }
 
 @media (max-width: 768px) {
@@ -208,41 +254,54 @@ h2 {
   }
 }
 
+@media screen and (max-width: 768px) {
+    .header {
+        grid-template-columns: 1fr auto;
+        justify-content: space-between;
+    }
+
+        .btn-container {
+        flex-direction: column;
+        margin: 5px;
+        gap: 5px;
+    }
+}
+
 @media screen and (max-width: 600px) {
-            .topnav a:not(:first-child) {
-                display: none;
-            }
-            .topnav a.icon {
-                float: right;
-                display: block;
-            }
-            .topnav.responsive {position: relative;}
-            .topnav.responsive a.icon {
-                position: absolute;
-                right: 0;
-                top: 0;
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+    .topnav.responsive {position: relative;}
+    .topnav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
 
-            }
-            .topnav.responsive a {
-                float: none;
-                display: block;
-                text-align: left;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
 
-            }
-            .topnav.responsive .dropdown {float: none;}
-            .topnav.responsive .dropdown-content {position: relative;}
-            .topnav.responsive .dropdown .dropbtn {
-                display: block;
-                width: 100%;
-                text-align: left;
+    }
+    .topnav.responsive .dropdown {float: none;}
+    .topnav.responsive .dropdown-content {position: relative;}
+    .topnav.responsive .dropdown .dropbtn {
+        display: block;
+        width: 100%;
+        text-align: left;
 
-            }
+    }
 
-            .topnav a {
-            display: block;
-            color: black;
-            }
-        }
+    .topnav a {
+    display: block;
+    color: rgb(248, 245, 245);
+    }
+}
 </style>
 </head>
 <body>
@@ -250,6 +309,10 @@ h2 {
     <div class="logo">
         <img src="loga.jpg" width="100" height="100" alt="Logo de l'UNPG">
     </div>
+    <div class="btn-container">
+      <a href="adesion.html" class="btn-futuristic">Adhérer</a>
+      <a href="don.html" class="btn-futuristic">Faire un don</a>
+  </div>
 </header>
 
 <nav class="topnav" id="myTopnav">
@@ -266,8 +329,6 @@ h2 {
     </a>
 </nav>
 
-
-  <main class="container">
     <section class="membership-info">
       <h2>Rejoignez le mouvement</h2>
       <p>Le Parti Politique du Futur est une organisation visionnaire dédiée à façonner un avenir meilleur pour tous. En devenant membre, vous participerez activement à la construction d'une société plus juste, plus durable et plus innovante.</p>
@@ -289,21 +350,64 @@ h2 {
       </div>
     </section>
 
-    <section id="form">
+    <section >
       <h2>Formulaire d'adhésion</h2>
       <iframe src="https://docs.google.com/forms/d/e/[VOTRE_ID_DE_FORMULAIRE]/viewform?embedded=true" 
               width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
     </section>
 
-  </main>
-  <footer class="footer">
-    <p>&copy; 2024 UNPG - Par YATTARA Ousmane Tous droits réservés</p>
-    <div class="social-icons">
-        <a href="https://facebook.com/UNPG" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://twitter.com/UNPG" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://instagram.com/UNPG" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
+  <!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+      <div class="footer-column">
+          <h4>Nous contacter</h4>
+          <ul>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#legal">Mentions légales</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>QUI SOMMES-NOUS</h4>
+          <ul>
+              <li><a href="#team">Notre équipe</a></li>
+              <li><a href="#strategy">Conseil stratégique</a></li>
+              <li><a href="#instances">Nos instances</a></li>
+              <li><a href="#texts">Textes fondateurs</a></li>
+              <li><a href="#federations">Fédérations</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>ACTUALITÉS</h4>
+          <ul>
+              <li><a href="#latest">Dernières actualités</a></li>
+              <li><a href="videos.html">Toutes les vidéos</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>NOS IDÉES</h4>
+          <ul>
+              <li><a href="programme.html">Une Certaine Idée</a></li>
+              <li><a href="#french">Guinéennes, Guinéens</a></li>
+              <li><a href="#material">Matériel militant</a></li>
+          </ul>
+      </div>
+      
+  </div>
+  <div class="footer-bottom">
+      <p>&copy; UNPG 2024 par Yattara Ousmane. Tous droits réservés.</p>
+  </div>
 </footer>
+
+<script>
+  function toggleMenu() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
   <script>
     // Animation futuriste pour les avantages
     const benefits = document.querySelectorAll('.benefit');
@@ -368,23 +472,6 @@ h2 {
       canvas.height = window.innerHeight;
     });
 
-    // Validation du formulaire
-    const form = document.querySelector('form');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      // Ici, vous pouvez ajouter une logique de validation plus poussée si nécessaire
-      alert('Merci pour votre candidature ! Nous l\'examinerons avec attention et vous contacterons bientôt.');
-      form.reset();
-    });
-
-    // Animation du bouton de soumission
-    const submitBtn = document.querySelector('input[type="submit"]');
-    submitBtn.addEventListener('mouseover', () => {
-      submitBtn.style.transform = 'scale(1.05) rotate(2deg)';
-    });
-    submitBtn.addEventListener('mouseout', () => {
-      submitBtn.style.transform = 'scale(1) rotate(0)';
-    });
   </script>
 </body>
 </html>
