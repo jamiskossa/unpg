@@ -17,15 +17,18 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(120deg, rgba(255, 0, 255, 0.5), rgba(0, 255, 255, 0.5), rgba(255, 255, 0, 0.5));
-            color: var(--text-color);
-            line-height: 1.6;
-        }
+        /* Styles généraux et animations de fond */
+body {
+    margin: 10px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #f17107, #080808,  #3a3229);
+    background-size: 300% 300%;
+    animation: gradient 15s ease infinite;
+    color: #fff;
+}
 
         .header, .footer {
-            background: var(--primary-color);
+            background: #FFA500;
             padding: 20px;
             display: flex;
             justify-content: space-between;
@@ -47,7 +50,7 @@
         .topnav a {
             float: left;
             display: block;
-            color: var(--text-color);
+            color: white;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
@@ -65,12 +68,12 @@
 
         .main-content {
             padding: 40px;
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
         }
 
         h1 {
-            color: var(--primary-color);
+            color: rgb(252, 247, 247);
             margin-bottom: 30px;
             font-size: 2.5em;
         }
@@ -86,6 +89,7 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #000000;
         }
 
         .form-group {
@@ -104,6 +108,7 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 16px;
+            color: #0e0a0a;
         }
 
         textarea {
@@ -130,6 +135,7 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #000000;
         }
 
         .contact-info h2 {
@@ -180,6 +186,16 @@
                 text-align: left;
             }
         }
+
+        
+/* Sections avec dégradés */
+section {
+    margin: 20px 0;
+    padding: 20px;
+    
+    text-align: center;
+    color: #000;
+}
     </style>
 </head>
 <body>
@@ -203,7 +219,7 @@
         </a>
     </nav>
 
-    <main class="main-content">
+    <section class="main-content">
         <h1>Contactez-nous</h1>
 
         <div class="contact-grid">
@@ -244,7 +260,7 @@
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
     <footer class="footer">
         <p>&copy; 2024 UNPG - Par YATTARA Ousmane Tous droits réservés</p>
