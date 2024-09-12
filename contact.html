@@ -187,6 +187,67 @@ body {
             }
         }
 
+        /* Nouveaux styles pour le footer */
+footer {
+  background:  orange;
+  color: black;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social-links {
+  margin-bottom: 15px;
+}
+
+.social-links a {
+  color: var(--text-color);
+  font-size: 24px;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--text-color);
+}
+
+.copyright {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+/* Animation pour les icônes de réseaux sociaux */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.social-links a:hover i {
+  animation: pulse 0.5s infinite;
+}
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+  .footer-content {
+    padding: 0 20px;
+  }
+}
+
         
 /* Sections avec dégradés */
 section {
@@ -253,23 +314,34 @@ section {
                 <p><strong>Email :</strong> contact@unpg.gn</p>
                 <p><strong>Heures d'ouverture :</strong> Lundi - Vendredi, 9h00 - 17h00</p>
                 
-                <div class="social-icons">
-                    <a href="https://facebook.com/UNPG" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="https://twitter.com/UNPG" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://instagram.com/UNPG" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <p>&copy; 2024 UNPG - Par YATTARA Ousmane Tous droits réservés</p>
-        <div class="social-icons">
-            <a href="https://facebook.com/UNPG" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com/UNPG" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://instagram.com/UNPG" target="_blank"><i class="fab fa-instagram"></i></a>
+    <footer>
+        <div class="footer-content">
+          <div class="social-links">
+            <a href="https://facebook.com/partipolitiquedufutur" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://twitter.com/PPFutur" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://instagram.com/partipolitiquedufutur" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com/company/parti-politique-du-futur" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://youtube.com/c/PartipolitiqueduFutur" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+          <div class="copyright">
+            &copy; 2024 UNPG. Tous droits réservés. Créé par YATTARA Ousmane.
+          </div>
         </div>
-    </footer>
+      </footer>
 
     <script>
         function toggleMenu() {
