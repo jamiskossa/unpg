@@ -156,45 +156,41 @@ section {
     border-radius: 5px;
 }
 
-/* Section des réseaux sociaux */
-.social-media-icons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    
+.social-links {
+    margin-bottom: 15px;
+  }
+  
+  .social-links a {
+    color: var(--text-color);
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    background-color: #f17107;
+  }
+  
+  .social-links a:hover {
+    color: blueviolet;
+  }
 
-.social-icon {
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    background-size: cover;
-}
+  .social-links a:hover i {
+    animation: pulse 0.5s infinite;
+  }
 
-.social-icon.facebook {
-    background-image: url('facebook-icon.png');
-    background-color: blue;
-}
-}
-
-.social-icon.twitter {
-    background-image: url('twitter-icon.png');
-    background-color: black;
-}
-
-.social-icon.instagram {
-    background-image: url('instagram-icon.png');
-    background-color: crimson;
-}
-
-.social-icon.linkedin {
-    background-image: url('linkedin-icon.png');
-    background-color: blue;
-}
-
-.social-icon.youtube {
-    background-image: url('youtube-icon.png');
-    background-color: red;
-}
+  
+/* Animation pour les icônes de réseaux sociaux */
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
 
 /* Section PDF Grid */
 .pdf-grid {
